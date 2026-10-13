@@ -3,18 +3,9 @@ import Layout from "../components/Layout.astro";
 import TopBanner from "../components/TopBanner.astro";
 import RibbonCard from "../components/RibbonCard.astro";
 import Footer from "../components/Footer.astro";
-import { readFileSync } from "node:fs";
-import type { Bank } from "../../scripts/schema";
+import { subjectCards } from "../lib/subject-cards";
 
-function total(subject: string): number | null {
-  try {
-    const bank = JSON.parse(readFileSync(`public/data/${subject}.json`, "utf8")) as Bank;
-    return bank.questions.length;
-  } catch {
-    return null;
-  }
-}
-const teo = total("teo");
+const cards = subjectCards();
 ---
 <Layout title="Treino — COER Classe C">
   <TopBanner label="TREINO" />
@@ -25,16 +16,16 @@ const teo = total("teo");
       cada resposta vem com explicação imediata, sem nota mínima.
     </p>
 
-    <RibbonCard
-      title="Técnica e Ética Operacional"
-      tint="lime"
-      meta={teo ? `${teo} questões no banco` : "em construção"}
-      body="Todas as áreas da ementa: estação, antenas, frequência, propagação, interferências, comunicados, ética e emergências."
-      to="/treino/teo"
-    />
-
-    <RibbonCard title="Legislação de Telecomunicações" tint="sky" meta="Em breve" disabled />
-    <RibbonCard title="Conhecimentos Básicos de Eletrônica e Eletricidade" tint="steel" meta="Em breve" disabled />
+    {cards.map((c) => (
+      <RibbonCard
+        title={c.title}
+        tint={c.tint}
+        meta={c.total ? `${c.total} questões no banco` : "Em breve"}
+        body={c.blurb}
+        to={c.total ? `/treino/${c.slug}` : undefined}
+        disabled={!c.total}
+      />
+    ))}
   </main>
   <Footer />
 </Layout>
