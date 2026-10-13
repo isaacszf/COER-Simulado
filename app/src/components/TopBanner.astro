@@ -1,0 +1,29 @@
+---
+interface Props {
+    label?: string;
+}
+const { label } = Astro.props;
+---
+
+<header class="top-banner">
+    <div class="top-banner__main">
+        <div class="top-banner__copy">
+            <div class="top-banner__headline">
+                Simulado para COER - Classe C
+            </div>
+            <div class="top-banner__sub">
+                Técnica &middot; Legislação &middot; Eletrônica
+            </div>
+        </div>
+    </div>
+    {label && (
+        <div class="crumb">
+            <a href="/">HOME</a> &nbsp;/&nbsp; {label}
+        </div>
+    )}
+</header>
+<div class="cert-seal cert-seal--floating" aria-label="Selo de treinamento COER Classe C">
+    <span>PREPARE-SE</span>
+    <strong>COER</strong>
+    <b>CLASSE C</b>
+</div>

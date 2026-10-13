@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  tint: string;
+  meta?: string;
+  body?: string;
+  to?: string;
+  disabled?: boolean;
+}
+const { title, tint, meta, body, to, disabled } = Astro.props;
+---
+<div class:list={["ribbon-card", disabled && "is-disabled"]}>
+  <div class="ribbon-card__title">{title}</div>
+  <div class:list={["ribbon-card__body", `ribbon-card__body--${tint}`]}>
+    {meta && <div class="ribbon-card__meta">{meta}</div>}
+    {body && <div class="ribbon-card__text">{body}</div>}
+    {to
+      ? <a class="btn-primary" href={to}>ENTRAR &raquo;</a>
+      : <span class="ribbon-card__soon">EM BREVE</span>}
+  </div>
+</div>

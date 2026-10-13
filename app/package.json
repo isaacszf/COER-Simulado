@@ -1,0 +1,19 @@
+{
+  "name": "coer-help",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "tsx scripts/generate.ts",
+    "validate": "tsx scripts/validate.ts",
+    "dev": "astro dev",
+    "build": "npm run generate && npm run validate && astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "astro": "^5.1.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

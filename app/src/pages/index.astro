@@ -1,0 +1,92 @@
+---
+import Layout from "../components/Layout.astro";
+import TopBanner from "../components/TopBanner.astro";
+import RibbonCard from "../components/RibbonCard.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+    <TopBanner />
+    <main>
+        <section class="eyebrow eyebrow--olive">MODOS DE ESTUDO</section>
+
+        <RibbonCard
+            title="Simulado"
+            tint="sage"
+            meta="Prova oficial · 15 questões · 20 min · mínimo 8 acertos"
+            body="Reproduza fielmente o exame da Anatel para a Classe C: questões certa/errado, uma matéria por vez, cronômetro e correção com nota mínima de aprovação (51%)."
+            to="/simulado"
+        />
+
+        <RibbonCard
+            title="Treino"
+            tint="periwinkle"
+            meta="Por assunto &amp; tipo · explicações imediatas"
+            body="Treine por assunto da ementa, escolha entre certa/errado ou múltipla escolha, e veja a explicação de cada questão na hora."
+            to="/treino"
+        />
+
+        <div class="section-separator" aria-hidden="true">
+            <span>---</span>
+        </div>
+
+        <section class="eyebrow eyebrow--salmon" id="sobre">SOBRE</section>
+
+        <div class="about-layout">
+            <div class="about-copy">
+                <h2>COMO FUNCIONA</h2>
+                <p>
+                    Escolha entre dois modos. O <strong>Simulado</strong> reproduz a prova da Anatel:
+                    uma matéria por vez, questões certa/errado, cronômetro e resultado final.
+                </p>
+                <p>
+                    No <strong>Treino</strong>, você escolhe o assunto e o tipo de questão. A resposta e
+                    a explicação aparecem imediatamente para ajudar nos estudos.
+                </p>
+                <h2>ESCOPO</h2>
+                <p>
+                    O projeto é focado na <strong>Classe C</strong> do COER e cobre Técnica e Ética
+                    Operacional, Legislação de Telecomunicações e Conhecimentos Básicos de Eletrônica
+                    e Eletricidade.
+                </p>
+                <p>
+                    As matérias são escolhidas dentro das páginas de <a href="/simulado">Simulado</a> e
+                    <a href="/treino">Treino</a>.
+                </p>
+                <h2>SOBRE AS QUESTÕES</h2>
+                <p>
+                    As questões são organizadas a partir da
+                    <a
+                        href="https://informacoes.anatel.gov.br/legislacao/atos-de-requisitos-operacionais-de-outorga-e-licenciamento/2148-ato-3448-26"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >ementa oficial do Ato nº 3448/2026</a
+                    > e da
+                    <a
+                        href="https://www.gov.br/anatel/pt-br/assuntos/noticias/anatel-simplifica-regras-e-fortalece-o-radioamadorismo-no-brasil/cartilha_radioamador.pdf/@@display-file/file"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Cartilha do Serviço Radioamador</a
+                    >. O banco não é o banco oficial da Anatel.
+                </p>
+                <p>
+                    O conteúdo é revisado contra as normas atuais e o site é um projeto independente de
+                    estudo.
+                </p>
+            </div>
+
+            <aside class="about-note">
+                <span class="sticker">GUIA RÁPIDO</span>
+                <h2>CLASSE C</h2>
+                <ul>
+                    <li>3 matérias</li>
+                    <li>15 questões por matéria</li>
+                    <li>20 minutos no Simulado</li>
+                    <li>8 acertos para aprovação</li>
+                </ul>
+                <a class="btn-primary" href="/simulado">COMEÇAR</a>
+            </aside>
+        </div>
+    </main>
+    <Footer />
+</Layout>

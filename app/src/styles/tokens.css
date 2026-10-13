@@ -1,0 +1,50 @@
+/* DESIGN.md tokens — Dell 1996 design language */
+:root {
+  /* Brand & accent */
+  --primary: #e91d2a;
+  --on-primary: #ffffff;
+  --yellow-sticker: #fcc20f;
+  --purple-stripe: #6a26a4;
+
+  /* Surface */
+  --frame-ink: #000000;
+  --canvas: #ffffff;
+  --ink: #000000;
+  --link: #0000ee;
+
+  /* Ribbon-card tint family */
+  --tint-olive: #8e8a25;
+  --tint-sage: #c5d58f;
+  --tint-salmon: #e48787;
+  --tint-peach: #f0a067;
+  --tint-lime: #c4e58b;
+  --tint-sky: #9bcfe5;
+  --tint-steel: #b8cdd4;
+  --tint-periwinkle: #a5b1f5;
+
+  /* Status fills (adapted from the closed palette) */
+  --ok: var(--tint-lime);
+  --bad: var(--tint-salmon);
+
+  /* Typography — system stacks, no webfonts */
+  --font-display: "Arial Black", Helvetica, Arial, system-ui, sans-serif;
+  --font-ui: Helvetica, Arial, system-ui, sans-serif;
+  --font-body: "Times New Roman", Times, serif;
+
+  /* Spacing (4px base) */
+  --sp-xs: 2px;
+  --sp-s: 4px;
+  --sp-sm: 6px;
+  --sp-m: 8px;
+  --sp-md: 10px;
+  --sp-lg: 12px;
+  --sp-xl: 16px;
+  --sp-xxl: 20px;
+  --sp-2xl: 24px;
+  --sp-section: 40px;
+  --sp-section-sm: 32px;
+
+  /* Radii */
+  --r-none: 0px;
+  --r-full: 9999px;
+}

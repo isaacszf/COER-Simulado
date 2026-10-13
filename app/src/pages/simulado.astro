@@ -1,0 +1,39 @@
+---
+import Layout from "../components/Layout.astro";
+import TopBanner from "../components/TopBanner.astro";
+import RibbonCard from "../components/RibbonCard.astro";
+import Footer from "../components/Footer.astro";
+import { readFileSync } from "node:fs";
+import type { Bank } from "../../scripts/schema";
+
+function count(subject: string): number | null {
+  try {
+    const bank = JSON.parse(readFileSync(`public/data/${subject}.json`, "utf8")) as Bank;
+    return bank.questions.filter((q) => q.questionType === "true-false").length;
+  } catch {
+    return null;
+  }
+}
+const teo = count("teo");
+---
+<Layout title="Simulado — COER Classe C">
+  <TopBanner label="SIMULADO" />
+  <main>
+    <p>
+      O simulado replica a prova oficial da Anatel: <strong>15 questões certa/errado</strong>, <strong>20
+      minutos</strong> e <strong>mínimo de 8 acertos (51%)</strong> por matéria. Escolha uma matéria para começar.
+    </p>
+
+    <RibbonCard
+      title="Técnica e Ética Operacional"
+      tint="lime"
+      meta={teo ? `${teo} questões certa/errado no banco` : "em construção"}
+      body="Todas as áreas da ementa: estação, antenas, frequência, propagação, interferências, comunicados, ética e emergências."
+      to="/simulado/teo"
+    />
+
+    <RibbonCard title="Legislação de Telecomunicações" tint="sky" meta="Em breve" disabled />
+    <RibbonCard title="Conhecimentos Básicos de Eletrônica e Eletricidade" tint="steel" meta="Em breve" disabled />
+  </main>
+  <Footer />
+</Layout>

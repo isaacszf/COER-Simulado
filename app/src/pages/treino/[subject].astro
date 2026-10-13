@@ -1,0 +1,108 @@
+---
+import Layout from "../../components/Layout.astro";
+import TopBanner from "../../components/TopBanner.astro";
+import Footer from "../../components/Footer.astro";
+import { readFileSync } from "node:fs";
+import { SUBJECT_ORDER, SUBJECTS } from "../../../scripts/schema";
+import type { Bank, Question } from "../../../scripts/schema";
+
+export function getStaticPaths() {
+  return SUBJECT_ORDER.map((code) => ({
+    params: { subject: code.toLowerCase() },
+    props: { code },
+  }));
+}
+
+const { code } = Astro.props;
+const meta = SUBJECTS[code];
+
+let bank: Bank | null = null;
+try {
+  bank = JSON.parse(readFileSync(`public/data/${code.toLowerCase()}.json`, "utf8")) as Bank;
+} catch {
+  bank = null;
+}
+
+const hasBank = !!bank && bank.questions.length > 0;
+
+/** Topics that actually exist in this bank, in ementa order. */
+const topicList = hasBank
+  ? meta.topics.filter((t) => bank!.questions.some((q: Question) => q.topic === t.slug))
+  : [];
+
+const inlineJson = JSON.stringify(bank ?? { subject: code, subjectName: meta.name, questions: [] });
+---
+<Layout title={`Treino ${meta.name} — COER`}>
+  <TopBanner label={`TREINO — ${meta.name.toUpperCase()}`} />
+  <main>
+    {hasBank ? (
+      <>
+        <div id="bank-data" hidden>{inlineJson}</div>
+
+        <section class="notice" id="config-panel">
+          <div class="notice__title">CONFIGURAR TREINO</div>
+          <div class="field">
+            <label for="f-topic">Assunto</label>
+            <select id="f-topic">
+              <option value="all">Todos os assuntos</option>
+              {
+                topicList.map((t) => (
+                  <option value={t.slug}>
+                    {t.name} ({bank!.questions.filter((q) => q.topic === t.slug).length})
+                  </option>
+                ))
+              }
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-type">Tipo de questão</label>
+            <select id="f-type">
+              <option value="mixed">Misto — 50/50</option>
+              <option value="true-false">Certa/errado</option>
+              <option value="multiple-choice">Múltipla escolha</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-qty">Quantidade</label>
+            <select id="f-qty">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+          <button class="btn-primary" id="start-treino">INICIAR TREINO</button>
+        </section>
+
+        <div id="quiz-mount" aria-live="polite"></div>
+
+        <script>
+          import { initQuiz } from "../../lib/quiz-runner";
+          const mount = document.getElementById("quiz-mount") as HTMLElement;
+          const panel = document.getElementById("config-panel") as HTMLElement;
+          const bank = JSON.parse(document.getElementById("bank-data")!.textContent!);
+
+          document.getElementById("start-treino")!.addEventListener("click", () => {
+            const topic = (document.getElementById("f-topic") as HTMLSelectElement).value;
+            const type = (document.getElementById("f-type") as HTMLSelectElement).value as
+              | "true-false"
+              | "multiple-choice"
+              | "mixed";
+            const quantity = Number((document.getElementById("f-qty") as HTMLSelectElement).value);
+            panel.hidden = true;
+            initQuiz(mount, { mode: "treino", bank, topic, type, quantity });
+          });
+        </script>
+      </>
+    ) : (
+      <section class="notice">
+        <div class="notice__title">BANCO EM CONSTRUÇÃO</div>
+        <p>
+          Ainda não há questões de <strong>{meta.name}</strong> disponíveis.
+        </p>
+        <a class="btn-secondary" href="/treino">VOLTAR</a>
+      </section>
+    )}
+  </main>
+  <Footer />
+</Layout>

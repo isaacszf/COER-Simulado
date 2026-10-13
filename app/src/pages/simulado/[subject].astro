@@ -1,0 +1,57 @@
+---
+import Layout from "../../components/Layout.astro";
+import TopBanner from "../../components/TopBanner.astro";
+import Footer from "../../components/Footer.astro";
+import { readFileSync } from "node:fs";
+import { SUBJECT_ORDER, SUBJECTS } from "../../../scripts/schema";
+import type { Bank } from "../../../scripts/schema";
+
+export function getStaticPaths() {
+  return SUBJECT_ORDER.map((code) => ({
+    params: { subject: code.toLowerCase() },
+    props: { code },
+  }));
+}
+
+const { code } = Astro.props;
+const meta = SUBJECTS[code];
+
+let bank: Bank | null = null;
+try {
+  bank = JSON.parse(readFileSync(`public/data/${code.toLowerCase()}.json`, "utf8")) as Bank;
+} catch {
+  bank = null;
+}
+
+const hasBank = !!bank && bank.questions.length > 0;
+const inlineJson = JSON.stringify(bank ?? { subject: code, subjectName: meta.name, questions: [] });
+---
+<Layout title={`Simulado ${meta.name} — COER`}>
+  <TopBanner label={`SIMULADO — ${meta.name.toUpperCase()}`} />
+  <main>
+    {hasBank ? (
+      <>
+        <div id="bank-data" hidden>{inlineJson}</div>
+        <div id="quiz-mount" aria-live="polite"></div>
+        <script>
+          import { initQuiz } from "../../lib/quiz-runner";
+          const mount = document.getElementById("quiz-mount") as HTMLElement;
+          const raw = document.getElementById("bank-data")!.textContent!;
+          const bank = JSON.parse(raw);
+          initQuiz(mount, { mode: "simulado", bank });
+        </script>
+      </>
+    ) : (
+      <section class="notice">
+        <div class="notice__title">BANCO EM CONSTRUÇÃO</div>
+        <p>
+          Ainda não há questões de <strong>{meta.name}</strong> disponíveis. O banco é gerado por
+          um pipeline em <code>app/scripts</code> e as primeiras questões publicadas são de
+          Técnica e Ética Operacional.
+        </p>
+        <a class="btn-secondary" href="/simulado">VOLTAR</a>
+      </section>
+    )}
+  </main>
+  <Footer />
+</Layout>

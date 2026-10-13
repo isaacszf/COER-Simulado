@@ -1,0 +1,7 @@
+# implementation
+app/node_modules/
+app/dist/
+
+# noise
+.DS_Store
+*.log
