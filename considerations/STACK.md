@@ -32,7 +32,7 @@ app/scripts/
 │   ├── helpers.ts   # shared builders (tf, mc) + Cartilha citation helpers
 │   ├── index.ts     # registry: subject code → builder function
 │   ├── teo.ts       # TEO items (content only)
-│   ├── ele.ts       # (to do)
+│   ├── ele.ts       # ELE (CBEE) items (content only)
 │   └── leg.ts       # (to do)
 ├── generate.ts      # render templates → JSON in public/data/
 └── validate.ts      # lint JSON: enforce the invariants (fail build on violation)

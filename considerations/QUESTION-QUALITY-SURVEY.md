@@ -72,7 +72,7 @@ Every one of the 161 TEO items was checked against the Cartilha 2026-06 text: an
   - TEO-107, TEO-120: page range corrected to pp. 34–35.
 - **Corrected 3 references** (TEO-139, TEO-140, TEO-156): they point to Anexo 2, not the main body.
 - **Limit:** rules from Ato 3448 were checked only through the Cartilha's transcription, because the Ato PDF couldn't be fetched.
-3. **Next:** apply the same standard to ELE, then LEG. For LEG, the Cartilha's Anexo 2 tables (call-sign regions, class rules, special call signs) are where the "Região 8 → Pará"-style detail lives.
+3. **Next:** ELE done (153 items, same standard). LEG remains. For LEG, the Cartilha's Anexo 2 tables (call-sign regions, class rules, special call signs) are where the "Região 8 → Pará"-style detail lives.
 
 ---
 
