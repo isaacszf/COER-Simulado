@@ -37,7 +37,7 @@ Related docs: [`IDEA.md`](./IDEA.md) (the idea) · [`SUBJECTS-SURVEY.md`](./SUBJ
 - Freewriting thousands of certa/errado statements degrades quality fast (the ementa is compact). Instead:
   - **Parametric/template questions**: one reviewed template yields distinct items (e.g. bounded frequency-band and wavelength calculations, selected Código Q and phonetic-alphabet checks, and computable λ/f and Ohm items). Parameter expansion is capped by the diversity guard below.
   - **Template register** as the review artifact: one line per template (topic, shape, option/parameter ranges, expected count). You approve the register, not each sentence.
-- **Diversity guard:** parametric expansion must not become a one-fact-per-question dump. In particular, avoid a long sequence of questions like “a letra X representa Y?” or “o código Q X significa Y?”. Keep a smaller representative set of direct-recall items and use the remaining question budget for scenarios, comparisons, distractors, and application of the same knowledge.
+- **Diversity guard:** parametric expansion must not become a one-fact-per-question dump. In particular, avoid a long sequence of questions like “a letra X representa Y?” or “o código Q X significa Y?”. Parametric families are kept only for real computations; direct recall is capped (see the quality standard in §5).
 - Honest per-subject pool targets (Parametric-driven):
 
 | Matéria | Pool estimado |
@@ -47,7 +47,7 @@ Related docs: [`IDEA.md`](./IDEA.md) (the idea) · [`SUBJECTS-SURVEY.md`](./SUBJ
 | Legislação de Telecomunicações | ~165–185 (most hand-written — law content) |
 | **Classe C total** | **~660** |
 
-- **Current MVP bank:** TEO has 75 reviewed questions (59 certo/errado, 16 multiple-choice). The larger pool estimates remain long-term targets, not current requirements.
+- **Current MVP bank (2026-10-13):** TEO has 161 questions (126 certo/errado, 35 multiple-choice), rebuilt to the §5 quality standard against Cartilha 2026-06; all `checkedByAi: true` after a full AI review (2026-10-13), none human-reviewed yet. It replaced the earlier 75-item bank, which was 71% phonetic/Código Q/band recall (see `QUESTION-QUALITY-SURVEY.md`). The larger pool estimates remain long-term targets.
 
 - **Build order:** TEO → ELE → LEG (Eletrônica is the high-yield/low-review win; Legislação last, writ-heavy).
 - Legislação is the honest low spot: if we ever want it > ~250 we'd need legacy extraction or looser/repetitive questions — the recommendation is that ~180 strong items is enough.
@@ -67,14 +67,35 @@ Related docs: [`IDEA.md`](./IDEA.md) (the idea) · [`SUBJECTS-SURVEY.md`](./SUBJ
   "options": ["…", "…", "…"],            // 3–5 options
   "answer": 2,                           // index of the single correct option
   "explanation": "…",
+  "kind": "cenario",                     // conceitual | cenario | calculo
+  "level": 3,                            // 1 (direct recall) … 5 (multi-step reasoning)
+  "pitfall": "…",                        // the misconception the item tests
+  "recall": true,                        // optional: pure lookup (phonetic, Código Q, table row)
   "source": "generated",                 // generated | extracted
   "sourceRef": "Ato 3448/2026 §11.4 – …",
-  "reviewed": false                      // human-validated against the current official Cartilha + ementa
+  "reviewed": false,                     // human-validated against the current official Cartilha + ementa (optional)
+  "checkedByAi": true                    // AI-validated against the Cartilha text
 }
 ```
 
 - Storage: JSON (per subject file) now; SQLite migration later if needed.
-- Quality guard: `reviewed: false` until validated; healthy sets mix certos and errados.
+- Quality guard: every item is checked against the Cartilha before shipping, by AI (`checkedByAi`) or by a human (`reviewed`). Human review is optional (decided 2026-10-13). Healthy sets mix certos and errados.
+
+### Quality standard (decided 2026-10-13)
+
+Benchmarked against id.qsl.br, the strongest community bank (`QUESTION-QUALITY-SURVEY.md`). Enforced by `app/scripts/validate.ts`: field rules are errors, distribution targets are warnings plus a per-bank report.
+
+- **Every item** carries `kind`, `level` and `pitfall`.
+- **Errado items change exactly one plausible point** of a true statement (a value, a direction, a swapped term). No absurd distractors.
+- **Statements** run about 60–220 characters for certo/errado. Each is self-contained, one judgeable claim, in pt-BR. Multiple-choice stems may be short questions.
+- **Kind mix:** roughly 45% conceitual, 35% cenario, 20% calculo. TEO runs lighter on calculo; ELE should run heavier.
+- **Level mix:** roughly 10% L1, 30% L2, 40% L3, 15% L4, 5% L5.
+- **Recall cap:** at most 10% of a subject is pure lookup (`recall: true`). Phonetic and Código Q items are framed as QSO scenarios where possible.
+- **Coverage:** every ementa topic is between 8% and 25% of the bank.
+- **Answer balance:** certo share between 40% and 60%; multiple-choice answer index rotates.
+- **sourceRef** cites the Cartilha 2026-06 section and page (or Ato 3448 via the Cartilha's transcription).
+- **Calculations** use only real computations (λ ≈ 300/f, λ/2 and λ/4, period, repeater shift, beat frequency, dB/SNR reasoning) with bounded values.
+- **Inspiration, not copying:** community banks (id.qsl.br, LABRE-DF) inform structure and topic breadth only; our wording is original.
 
 ## 6. Other decisions
 

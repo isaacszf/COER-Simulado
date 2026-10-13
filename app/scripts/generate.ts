@@ -35,7 +35,7 @@ function buildBank(subject: keyof typeof SUBJECTS & string): Bank {
   return {
     subject,
     subjectName: meta.name,
-    sourceBasis: "Ato 3448/2026 §11.4 ementa · Cartilha do Serviço Radioamador, versão 2026-03",
+    sourceBasis: "Ato 3448/2026 §11.4 ementa · Cartilha do Serviço Radioamador, versão 2026-06",
     generatedAt: new Date().toISOString(),
     questions,
   };

@@ -7,6 +7,11 @@
 export type SubjectId = "TEO" | "LEG" | "ELE";
 export type QuestionType = "true-false" | "multiple-choice";
 export type QuestionSource = "generated" | "extracted";
+/** What the item asks the candidate to do (see BRAINSTORM §5 quality standard). */
+export type QuestionKind = "conceitual" | "cenario" | "calculo";
+/** Difficulty: 1 = direct recall … 5 = multi-step reasoning across concepts. */
+export type QuestionLevel = 1 | 2 | 3 | 4 | 5;
+export const QUESTION_KINDS: QuestionKind[] = ["conceitual", "cenario", "calculo"];
 
 export interface Topic {
   slug: string;
@@ -71,9 +76,14 @@ export interface BaseQuestion {
   topicName: string;
   statement: string; // pt-BR
   explanation: string;
+  kind: QuestionKind;
+  level: QuestionLevel;
+  pitfall: string; // the misconception the item tests
+  recall?: boolean; // pure lookup (phonetic, Q code, table row); capped per bank
   source: QuestionSource;
   sourceRef: string;
-  reviewed: boolean;
+  reviewed: boolean; // human-validated against the Cartilha
+  checkedByAi: boolean; // AI-validated against the Cartilha text
 }
 
 export interface TrueFalseQuestion extends BaseQuestion {

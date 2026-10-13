@@ -6,7 +6,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  SUBJECTS, SUBJECT_ORDER, SIMULADO_SIZE,
+  SUBJECTS, SUBJECT_ORDER, SIMULADO_SIZE, QUESTION_KINDS,
   type Bank, type Question, type SubjectId,
 } from "./schema";
 
@@ -32,6 +32,53 @@ function loadBank(code: SubjectId): Bank | null {
   }
 }
 
+// Quality standard (considerations/BRAINSTORM.md §5). Hard limits are errors;
+// distribution targets are warnings so a person reviews the mix.
+const STATEMENT_MIN = 60; // certo/errado only; multiple-choice stems may be short questions
+const STATEMENT_MAX = 220;
+const RECALL_MAX = 0.10;
+const TOPIC_MIN = 0.08;
+const TOPIC_MAX = 0.25;
+const CERTO_MIN = 0.40;
+const CERTO_MAX = 0.60;
+
+const pct = (n: number, total: number) => `${Math.round((100 * n) / total)}%`;
+
+function share<T>(items: T[], key: (x: T) => string | number): Map<string | number, number> {
+  const m = new Map<string | number, number>();
+  for (const x of items) m.set(key(x), (m.get(key(x)) ?? 0) + 1);
+  return m;
+}
+
+function report(code: SubjectId, qs: Question[]) {
+  const n = qs.length;
+  const fmt = (m: Map<string | number, number>) =>
+    [...m.entries()].sort(([a], [b]) => String(a).localeCompare(String(b))).map(([k, v]) => `${k} ${v} (${pct(v, n)})`).join(" · ");
+  const avg = Math.round(qs.reduce((s, q) => s + q.statement.length, 0) / n);
+  console.log(`[${code}] ${n} questions — avg statement ${avg} chars`);
+  console.log(`  kind:  ${fmt(share(qs, (q) => q.kind))}`);
+  console.log(`  level: ${fmt(share(qs, (q) => `L${q.level}`))}`);
+  console.log(`  topic: ${fmt(share(qs, (q) => q.topic))}`);
+  console.log(`  recall: ${qs.filter((q) => q.recall).length} (${pct(qs.filter((q) => q.recall).length, n)})`);
+}
+
+function checkDistribution(code: SubjectId, qs: Question[]) {
+  const n = qs.length;
+  const recall = qs.filter((q) => q.recall).length;
+  warn(recall / n <= RECALL_MAX, `[${code}] recall share ${pct(recall, n)} above ${pct(RECALL_MAX * 100, 100)}`);
+  for (const t of SUBJECTS[code].topics) {
+    const c = qs.filter((q) => q.topic === t.slug).length;
+    warn(c / n >= TOPIC_MIN, `[${code}] topic ${t.slug} at ${pct(c, n)} (min ${TOPIC_MIN * 100}%)`);
+    warn(c / n <= TOPIC_MAX, `[${code}] topic ${t.slug} at ${pct(c, n)} (max ${TOPIC_MAX * 100}%)`);
+  }
+  const tfq = qs.filter((q) => q.questionType === "true-false");
+  if (tfq.length) {
+    const certo = tfq.filter((q) => q.answer === true).length / tfq.length;
+    warn(certo >= CERTO_MIN && certo <= CERTO_MAX, `[${code}] certo share ${Math.round(certo * 100)}% outside ${CERTO_MIN * 100}-${CERTO_MAX * 100}%`);
+  }
+  warn(qs.some((q) => q.level >= 4), `[${code}] no level 4-5 items`);
+}
+
 function validateQuestion(q: Question, subject: SubjectId) {
   assert(typeof q.id === "string" && /^(TEO|LEG|ELE)-\d{3,}$/.test(q.id), `[${q.id}] id must match <SUBJECT>-NNN`);
   assert(q.subject === subject, `[${q.id}] subject field mismatch`);
@@ -44,6 +91,13 @@ function validateQuestion(q: Question, subject: SubjectId) {
   assert(q.source === "generated" || q.source === "extracted", `[${q.id}] bad source "${q.source}"`);
   assert(typeof q.sourceRef === "string" && q.sourceRef.trim().length > 0, `[${q.id}] empty sourceRef`);
   assert(typeof q.reviewed === "boolean", `[${q.id}] reviewed must be boolean`);
+  assert(typeof q.checkedByAi === "boolean", `[${q.id}] checkedByAi must be boolean`);
+  assert(QUESTION_KINDS.includes(q.kind), `[${q.id}] bad kind "${q.kind}"`);
+  assert(Number.isInteger(q.level) && q.level >= 1 && q.level <= 5, `[${q.id}] level must be 1-5`);
+  assert(typeof q.pitfall === "string" && q.pitfall.trim().length > 0, `[${q.id}] empty pitfall`);
+  assert(q.recall === undefined || typeof q.recall === "boolean", `[${q.id}] recall must be boolean`);
+  const len = q.statement.length;
+  warn(q.questionType !== "true-false" || (len >= STATEMENT_MIN && len <= STATEMENT_MAX), `[${q.id}] statement length ${len} outside ${STATEMENT_MIN}-${STATEMENT_MAX}`);
 
   if (q.questionType === "true-false") {
     assert(typeof q.answer === "boolean", `[${q.id}] true-false answer must be boolean`);
@@ -80,7 +134,10 @@ for (const code of SUBJECT_ORDER) {
   warn(trueFalse.length >= SIMULADO_SIZE, `[${code}] Simulado needs >= ${SIMULADO_SIZE} true-false questions (has ${trueFalse.length})`);
   warn(trueFalse.some((q) => q.answer === true) && trueFalse.some((q) => q.answer === false), `[${code}] true-false set not mixed (all one side)`);
   warn(mc.length === 0 || new Set(mc.map((q) => q.answer)).size > 1, `[${code}] mc correct answer should vary`);
-  warn(bank.questions.some((q) => q.reviewed), `[${code}] no reviewed questions yet (expected for MVP)`);
+  const unchecked = bank.questions.filter((q) => !q.checkedByAi && !q.reviewed);
+  warn(unchecked.length === 0, `[${code}] ${unchecked.length} questions not checked by AI or human: ${unchecked.slice(0, 10).map((q) => q.id).join(", ")}`);
+  report(code, bank.questions);
+  checkDistribution(code, bank.questions);
 }
 
 if (warns.length) {

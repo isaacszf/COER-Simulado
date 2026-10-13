@@ -107,7 +107,7 @@ From Ato 3448/2026, §2 (normas de referência). Useful for tagging questions an
 | Source | Notes | Link |
 | --- | --- | --- |
 | **SEC — question bank** | The official bank used by the tests lives inside the SEC system; **not publicly downloadable**. Content is based on the Ato 3448 ementa. | http://sistemas.anatel.gov.br/sec |
-| **Cartilha do Serviço Radioamador** | Official study guide from ANATEL covering the full ementa per class (2026 edition); the closest thing to "official questions" (exercises inside). | sistemas.anatel.gov.br/anexar-api/publico/anexos/download/e2bee3ec4783c5c41a8ce4affe7baef8 |
+| **Cartilha do Serviço Radioamador** | Official study guide from ANATEL covering the full ementa per class — **versão 2026-06** as of 2026-10-13; the closest thing to "official questions". | sistemas.anatel.gov.br/anexar-api/publico/anexos/download/e2bee3ec4783c5c41a8ce4affe7baef8 |
 | **Manual do Candidato** | Rules/procedure for the online exam (equipment, environment, proctoring). | sistemas.anatel.gov.br/anexar-api/publico/anexos/download/0a5f21136202dc8e4135caab170cfb45 |
 | **Ato nº 3448/2026** | The ementa itself (authoritative for content + format). | informacoes.anatel.gov.br/legislacao/atos-de-requisitos-operacionais-de-outorga-e-licenciamento/2148-ato-3448-26 |
 
@@ -115,7 +115,7 @@ From Ato 3448/2026, §2 (normas de referência). Useful for tagging questions an
 
 | Source | Notes | Link |
 | --- | --- | --- |
-| **id.qsl.br/simulados** | Explicitly aligned to the Ato 3448/2026 ementa + its own community guide (2026-06). Certo/errado w/ explanations, per-subject training, timed mock. Community-run; **not** the official bank. | https://id.qsl.br/simulados |
+| **id.qsl.br/simulados** | Aligned to the Ato 3448/2026 ementa and the official Cartilha 2026-06 (page-level citations). ~1.877 certo/errado items w/ explanations, levels, kinds and pitfalls; benchmark for our bank (see `QUESTION-QUALITY-SURVEY.md`). Community-run; **not** the official bank. | https://id.qsl.br/simulados |
 | **LABRE-BA** | Community simulator championed by LABRE. | (via LABRE-DF article) |
 | **Radio Farol DX Group** | Community simulator. | (via LABRE-DF article) |
 | **Falcon DX Group** | Community simulator. | (via LABRE-DF article) |
@@ -143,11 +143,11 @@ Community simulator roundup: https://labredf.org.br/2026/05/como-se-preparar-par
 
 ## 7. Open questions / next steps
 
-- [x] **Cartilha edition confirmed:** the current official ANATEL PDF is **versão 2026-03**. The `id.qsl.br` 2026-06 material is a community guide, not the official edition.
+- [x] **Cartilha edition confirmed (corrected 2026-10-13):** the official ANATEL attachment URL (§5.1) now serves **versão 2026-06**, byte-identical (same md5) to the copy hosted by `id.qsl.br`. The earlier note calling 2026-06 "a community guide" was wrong; 2026-03 is superseded. See `QUESTION-QUALITY-SURVEY.md`.
 - [x] **Official question/study set beyond the Cartilha:** none expected publicly (SEC bank is internal). Fallback **decided**: generate or extract questions based on the subjects, drawing on other exams/sources (legacy banks, community exercise sets), re-validated against the current ementa (see §6.2).
 - [x] **Scope:** **Classe C only for now** — B/A banks, Morse, and higher-class content are out of scope (Ato 3448 B/A tables kept here only as reference/contrast).
 - [x] **Question data model & pipeline:** schema defined in `data/questions/README.md` (subject + ementa-topic tags, certo/errado format, source/review flags).
-- [~] **First question set — sanity check:** the MVP TEO bank is generated at `app/public/data/teo.json` from templates covering the 8 topics. It requires periodic review against the current official Cartilha (§6.2 — `reviewed: false`).
+- [~] **First question set — sanity check:** the TEO bank was rebuilt on 2026-10-13 to the quality standard (BRAINSTORM §5) against Cartilha 2026-06. All items passed a full AI review against the Cartilha text (`checkedByAi: true`); human review is optional.
 
 ---
 
