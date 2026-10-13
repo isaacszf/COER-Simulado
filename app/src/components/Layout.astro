@@ -3,24 +3,25 @@ import "../styles/tokens.css";
 import "../styles/base.css";
 
 interface Props {
-  title?: string;
+    title?: string;
 }
-const { title = "COER HELP — Radioamador Classe C" } = Astro.props;
+const { title = "SIMULADO COER — Radioamador Classe C" } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta
-      name="description"
-      content="Treinamento para a prova do Certificado de Operador de Estação de Radioamador (COER) — Classe C. Simulado e treino por assunto."
-    />
-  </head>
-  <body>
-    <div class="page">
-      <slot />
-    </div>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        <meta
+            name="description"
+            content="Treinamento para a prova do Certificado de Operador de Estação de Radioamador (COER) — Classe C. Simulado e treino por assunto."
+        />
+    </head>
+    <body>
+        <div class="page">
+            <slot />
+        </div>
+    </body>
 </html>
