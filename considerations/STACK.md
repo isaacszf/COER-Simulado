@@ -29,9 +29,11 @@ Static, backendless quiz app. Two independent halves: a **build-time question pi
 app/scripts/
 ├── schema.ts        # types + invariants (questionType, ementa topics, kind/level/pitfall, review flags, options, single correct index)
 ├── templates/
-│   ├── teo.ts       # parametric templates per ementa topic
-│   ├── ele.ts
-│   └── leg.ts
+│   ├── helpers.ts   # shared builders (tf, mc) + Cartilha citation helpers
+│   ├── index.ts     # registry: subject code → builder function
+│   ├── teo.ts       # TEO items (content only)
+│   ├── ele.ts       # (to do)
+│   └── leg.ts       # (to do)
 ├── generate.ts      # render templates → JSON in public/data/
 └── validate.ts      # lint JSON: enforce the invariants (fail build on violation)
 ```

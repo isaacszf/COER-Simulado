@@ -36,11 +36,32 @@ function loadBank(code: SubjectId): Bank | null {
 // distribution targets are warnings so a person reviews the mix.
 const STATEMENT_MIN = 60; // certo/errado only; multiple-choice stems may be short questions
 const STATEMENT_MAX = 220;
-const RECALL_MAX = 0.10;
-const TOPIC_MIN = 0.08;
-const TOPIC_MAX = 0.25;
-const CERTO_MIN = 0.40;
-const CERTO_MAX = 0.60;
+
+interface Targets {
+  recallMax: number; // max share of `recall: true` items
+  topicMin: number; // min share of each ementa topic
+  topicMax: number; // max share of each ementa topic
+  certoMin: number; // certo share among certo/errado items
+  certoMax: number;
+  calculoMin: number; // min share of `kind: "calculo"` items
+}
+
+const DEFAULT_TARGETS: Targets = {
+  recallMax: 0.10,
+  topicMin: 0.08,
+  topicMax: 0.25,
+  certoMin: 0.40,
+  certoMax: 0.60,
+  calculoMin: 0.10,
+};
+
+/** Per-subject overrides of DEFAULT_TARGETS. */
+const SUBJECT_TARGETS: Partial<Record<SubjectId, Partial<Targets>>> = {
+  ELE: { calculoMin: 0.25 }, // electronics leans on computation (Ohm, power, λ)
+  LEG: { calculoMin: 0 }, // law content has few computations
+};
+
+const targetsFor = (code: SubjectId): Targets => ({ ...DEFAULT_TARGETS, ...SUBJECT_TARGETS[code] });
 
 const pct = (n: number, total: number) => `${Math.round((100 * n) / total)}%`;
 
@@ -64,18 +85,22 @@ function report(code: SubjectId, qs: Question[]) {
 
 function checkDistribution(code: SubjectId, qs: Question[]) {
   const n = qs.length;
+  const t = targetsFor(code);
+  const p = (x: number) => `${Math.round(x * 100)}%`;
   const recall = qs.filter((q) => q.recall).length;
-  warn(recall / n <= RECALL_MAX, `[${code}] recall share ${pct(recall, n)} above ${pct(RECALL_MAX * 100, 100)}`);
-  for (const t of SUBJECTS[code].topics) {
-    const c = qs.filter((q) => q.topic === t.slug).length;
-    warn(c / n >= TOPIC_MIN, `[${code}] topic ${t.slug} at ${pct(c, n)} (min ${TOPIC_MIN * 100}%)`);
-    warn(c / n <= TOPIC_MAX, `[${code}] topic ${t.slug} at ${pct(c, n)} (max ${TOPIC_MAX * 100}%)`);
+  warn(recall / n <= t.recallMax, `[${code}] recall share ${pct(recall, n)} above ${p(t.recallMax)}`);
+  for (const topic of SUBJECTS[code].topics) {
+    const c = qs.filter((q) => q.topic === topic.slug).length;
+    warn(c / n >= t.topicMin, `[${code}] topic ${topic.slug} at ${pct(c, n)} (min ${p(t.topicMin)})`);
+    warn(c / n <= t.topicMax, `[${code}] topic ${topic.slug} at ${pct(c, n)} (max ${p(t.topicMax)})`);
   }
   const tfq = qs.filter((q) => q.questionType === "true-false");
   if (tfq.length) {
     const certo = tfq.filter((q) => q.answer === true).length / tfq.length;
-    warn(certo >= CERTO_MIN && certo <= CERTO_MAX, `[${code}] certo share ${Math.round(certo * 100)}% outside ${CERTO_MIN * 100}-${CERTO_MAX * 100}%`);
+    warn(certo >= t.certoMin && certo <= t.certoMax, `[${code}] certo share ${p(certo)} outside ${p(t.certoMin)}-${p(t.certoMax)}`);
   }
+  const calculo = qs.filter((q) => q.kind === "calculo").length;
+  warn(calculo / n >= t.calculoMin, `[${code}] calculo share ${pct(calculo, n)} below ${p(t.calculoMin)}`);
   warn(qs.some((q) => q.level >= 4), `[${code}] no level 4-5 items`);
 }
 

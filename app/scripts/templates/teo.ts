@@ -8,78 +8,24 @@
  * and capped. Content follows the Cartilha do Serviço Radioamador, versão
  * 2026-06 (Anexo 1 for TEO, plus the operational sections it points to).
  *
- * Every item must be checked against the Cartilha before shipping: either
- * by AI (`checkedByAi: true`) or by a human (`reviewed: true`). See AGENTS.md.
+ * Builders and citation helpers live in ./helpers.ts. Every item must be
+ * checked against the Cartilha before shipping: by AI (`checkedByAi: true`)
+ * or by a human (`reviewed: true`). See AGENTS.md.
  */
-import type { QuestionDraft, QuestionKind, QuestionLevel } from "../schema";
-import { SUBJECTS } from "../schema";
+import type { QuestionDraft } from "../schema";
+import { createBuilder, cite } from "./helpers";
 
-const S = "TEO" as const;
-const TOPICS = SUBJECTS[S].topics;
-const REVIEWED = false;
-// Full AI review of every item below against the Cartilha 2026-06 text,
-// done 2026-10-13. New items added after that date must not inherit this
-// flag: give them `checkedByAi: false` until they are checked.
-const CHECKED_BY_AI = true;
+// Full AI review of every item in this file against the Cartilha 2026-06
+// text, done 2026-10-13. Items added later must pass `checkedByAi: false`
+// in their Meta until they are checked.
+const { tf, mc } = createBuilder("TEO", { checkedByAi: true });
 
-function topic(slug: string) {
-  const t = TOPICS.find((x) => x.slug === slug);
-  if (!t) throw new Error(`unknown TEO topic: ${slug}`);
-  return t;
-}
-
-const CARTILHA = "Cartilha do Serviço Radioamador, versão 2026-06";
 /** Anexo 1 (Técnica e Ética Operacional) reference. */
-const a1 = (sec: string, page: number | string) => `${CARTILHA}, Anexo 1 §${sec}, p. ${page}`;
+const a1 = (sec: string, page: number | string) => cite.annex(1, sec, page);
 /** Main-body section reference. */
-const body = (sec: string, page: number) => `${CARTILHA}, §${sec}, p. ${page}`;
+const body = cite.body;
 /** Anexo 2 (Legislação) reference — used where TEO conduct rests on the Ato. */
-const a2 = (sec: string, page: number) => `${CARTILHA}, Anexo 2 §${sec}, p. ${page}; Ato 3448/2026`;
-
-interface Meta {
-  kind: QuestionKind;
-  level: QuestionLevel;
-  pitfall: string;
-  ref: string;
-  recall?: boolean;
-}
-
-function base(slug: string, m: Meta, statement: string, explanation: string) {
-  const t = topic(slug);
-  return {
-    subject: S,
-    topic: t.slug,
-    topicName: t.name,
-    statement,
-    explanation,
-    kind: m.kind,
-    level: m.level,
-    pitfall: m.pitfall,
-    ...(m.recall ? { recall: true } : {}),
-    source: "generated" as const,
-    sourceRef: m.ref,
-    reviewed: REVIEWED,
-    checkedByAi: CHECKED_BY_AI,
-  };
-}
-
-function tf(slug: string, m: Meta, statement: string, answer: boolean, explanation: string): QuestionDraft {
-  return { ...base(slug, m, statement, explanation), questionType: "true-false", answer };
-}
-
-/**
- * Multiple-choice builder. `optionsWithCorrectFirst` arrives with the correct
- * option FIRST; it is rotated deterministically so the answer index varies.
- */
-let mcCounter = 0;
-function mc(slug: string, m: Meta, statement: string, optionsWithCorrectFirst: string[], explanation: string): QuestionDraft {
-  const [correct, ...distractors] = optionsWithCorrectFirst;
-  const pos = mcCounter % optionsWithCorrectFirst.length;
-  mcCounter++;
-  const options = [...distractors];
-  options.splice(pos, 0, correct);
-  return { ...base(slug, m, statement, explanation), questionType: "multiple-choice", options, answer: pos };
-}
+const a2 = (sec: string, page: number) => cite.annex(2, sec, page, "; Ato 3448/2026");
 
 /* ── 1. Estação de radioamador (Anexo 1 §1, pp. 26–28) ─────────────────── */
 
