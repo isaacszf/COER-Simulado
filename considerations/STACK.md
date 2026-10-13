@@ -33,7 +33,7 @@ app/scripts/
 │   ├── index.ts     # registry: subject code → builder function
 │   ├── teo.ts       # TEO items (content only)
 │   ├── ele.ts       # ELE (CBEE) items (content only)
-│   └── leg.ts       # (to do)
+│   └── leg.ts       # LEG items (content only)
 ├── generate.ts      # render templates → JSON in public/data/
 └── validate.ts      # lint JSON: enforce the invariants (fail build on violation)
 ```

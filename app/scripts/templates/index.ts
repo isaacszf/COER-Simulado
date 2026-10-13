@@ -5,9 +5,11 @@
  */
 import type { QuestionDraft, SubjectId } from "../schema";
 import { buildEleQuestions } from "./ele";
+import { buildLegQuestions } from "./leg";
 import { buildTeoQuestions } from "./teo";
 
 export const BUILDERS: Partial<Record<SubjectId, () => QuestionDraft[]>> = {
   TEO: buildTeoQuestions,
+  LEG: buildLegQuestions,
   ELE: buildEleQuestions,
 };

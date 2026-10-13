@@ -71,8 +71,9 @@ Every one of the 161 TEO items was checked against the Cartilha 2026-06 text: an
   - TEO-136: removed an inference the Cartilha doesn't make.
   - TEO-107, TEO-120: page range corrected to pp. 34–35.
 - **Corrected 3 references** (TEO-139, TEO-140, TEO-156): they point to Anexo 2, not the main body.
-- **Limit:** rules from Ato 3448 were checked only through the Cartilha's transcription, because the Ato PDF couldn't be fetched.
-3. **Next:** ELE done (153 items, same standard). LEG remains. For LEG, the Cartilha's Anexo 2 tables (call-sign regions, class rules, special call signs) are where the "Região 8 → Pará"-style detail lives.
+- **Limit (resolved later the same day):** rules from Ato 3448 were first checked only through the Cartilha's transcription. The Ato PDF was then supplied locally (`gov/`, not committed), and the TEO items that cite it (Código Q series, identification, simultaneous transmission) match its text. The 10-character special-callsign limit is confirmed by Ato item 12.11.
+
+ELE (153 items) and LEG (182 items) were written to the same standard and AI-reviewed the same way. LEG is checked against both the Cartilha Anexo 2 and the Ato text: call-sign formation (Ato item 12, Tabelas II–V), operating and repeater rules (item 10), exams (item 11), IARP and foreign operators (items 7–8). Items that rest only on the Ato cite it as `Ato nº 3448/2026, item N`.
 
 ---
 

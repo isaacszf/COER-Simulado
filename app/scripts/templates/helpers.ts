@@ -85,6 +85,11 @@ export const cite = {
   /** Section of an annex, e.g. cite.annex(1, "2.4", 29). Pages may be a range like "34–35". */
   annex: (annex: 1 | 2 | 3, sec: string, page: number | string, suffix = "") =>
     `${CARTILHA}, Anexo ${annex} §${sec}, p. ${page}${suffix}`,
+  /** Unnumbered part of an annex, e.g. cite.annexPart(2, "Regulamento de Rádio (UIT)", 39). */
+  annexPart: (annex: 1 | 2 | 3, part: string, page: number | string) =>
+    `${CARTILHA}, Anexo ${annex}, ${part}, p. ${page}`,
   /** Section of the Cartilha's main body (before the annexes). */
   body: (sec: string, page: number | string) => `${CARTILHA}, §${sec}, p. ${page}`,
+  /** Item of the Ato nº 3448/2026 (Requisitos Operacionais do Serviço de Radioamador). */
+  ato: (item: string) => `Ato nº 3448/2026, item ${item}`,
 };

@@ -37,8 +37,9 @@ Additional rules from Ato 3448 §11 (affect app behavior later):
 
 - Each subject is evaluated **independently**; approval in one subject gives **credit that carries over** (§11.8, §11.8.1) — a candidate retakes only failed subjects.
 - Retake cooldown of **8 days** after a failed attempt (§11.8.2).
-- **Subject exemption (isenção de disciplinas)** is possible (§11.11) by petition via SEI with proof, e.g. for professional/technical qualifications.
-- Review of results within 60 days via SEI (§11.6).
+- Credits from a passed subject are valid for **12 months** (§11.8).
+- **Subject exemption (isenção)** (§11.11) covers **only Eletrônica e Eletricidade**, for the military, engineering and technical backgrounds listed in the Ato's Tabela de Isenção, with documentary proof.
+- Review of results within 60 days via SEI (§11.9). An unexcused absence blocks new registrations for 30 days (§11.7).
 - Minors must be registered by a legal representative through SEI (§11.10).
 - Exams are taken **online** through the **SEC** system (sistemas.anatel.gov.br/sec) with a gov.br login; a "Manual do Candidato" governs the online-procedure rules.
 
