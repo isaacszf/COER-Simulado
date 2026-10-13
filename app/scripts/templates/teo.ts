@@ -1,17 +1,26 @@
 /**
- * templates/teo.ts — Técnica e Ética Operacional question templates.
- * Parametric families (phonetic alphabet, Q codes, bands, wavelength) plus
- * hand-written items for the remaining ementa topics.
- * Per BRAINSTORM §4: a reviewed template yields dozens of distinct items.
+ * templates/teo.ts — Técnica e Ética Operacional question bank.
+ *
+ * Written to the quality standard in considerations/BRAINSTORM.md §5:
+ * every item carries a kind (conceitual | cenario | calculo), a level (1–5)
+ * and the pitfall it tests; errado items change exactly one plausible point;
+ * pure lookups (phonetic alphabet, Código Q, band names) are flagged `recall`
+ * and capped. Content follows the Cartilha do Serviço Radioamador, versão
+ * 2026-06 (Anexo 1 for TEO, plus the operational sections it points to).
+ *
+ * Every item must be checked against the Cartilha before shipping: either
+ * by AI (`checkedByAi: true`) or by a human (`reviewed: true`). See AGENTS.md.
  */
-import type { MultipleChoiceQuestion, Question, QuestionDraft, TrueFalseQuestion } from "../schema";
+import type { QuestionDraft, QuestionKind, QuestionLevel } from "../schema";
 import { SUBJECTS } from "../schema";
 
-const S = "TEO";
+const S = "TEO" as const;
 const TOPICS = SUBJECTS[S].topics;
-// The current TEO template set was checked against the official Cartilha
-// (versão 2026-03) and Ato 3448/2026 before publishing the generated bank.
-const REVIEWED = true;
+const REVIEWED = false;
+// Full AI review of every item below against the Cartilha 2026-06 text,
+// done 2026-10-13. New items added after that date must not inherit this
+// flag: give them `checkedByAi: false` until they are checked.
+const CHECKED_BY_AI = true;
 
 function topic(slug: string) {
   const t = TOPICS.find((x) => x.slug === slug);
@@ -19,374 +28,650 @@ function topic(slug: string) {
   return t;
 }
 
-/** Minimal draft shape; ids are assigned later by generate.ts. */
-type Draft = QuestionDraft;
+const CARTILHA = "Cartilha do Serviço Radioamador, versão 2026-06";
+/** Anexo 1 (Técnica e Ética Operacional) reference. */
+const a1 = (sec: string, page: number | string) => `${CARTILHA}, Anexo 1 §${sec}, p. ${page}`;
+/** Main-body section reference. */
+const body = (sec: string, page: number) => `${CARTILHA}, §${sec}, p. ${page}`;
+/** Anexo 2 (Legislação) reference — used where TEO conduct rests on the Ato. */
+const a2 = (sec: string, page: number) => `${CARTILHA}, Anexo 2 §${sec}, p. ${page}; Ato 3448/2026`;
 
-function tf(
-  slug: string,
-  statement: string,
-  answer: boolean,
-  explanation: string,
-  sourceRef: string,
-): Draft {
+interface Meta {
+  kind: QuestionKind;
+  level: QuestionLevel;
+  pitfall: string;
+  ref: string;
+  recall?: boolean;
+}
+
+function base(slug: string, m: Meta, statement: string, explanation: string) {
   const t = topic(slug);
   return {
     subject: S,
     topic: t.slug,
     topicName: t.name,
-    questionType: "true-false",
     statement,
-    answer,
     explanation,
-    source: "generated",
-    sourceRef,
+    kind: m.kind,
+    level: m.level,
+    pitfall: m.pitfall,
+    ...(m.recall ? { recall: true } : {}),
+    source: "generated" as const,
+    sourceRef: m.ref,
     reviewed: REVIEWED,
+    checkedByAi: CHECKED_BY_AI,
   };
+}
+
+function tf(slug: string, m: Meta, statement: string, answer: boolean, explanation: string): QuestionDraft {
+  return { ...base(slug, m, statement, explanation), questionType: "true-false", answer };
 }
 
 /**
- * Multiple-choice builder. `options` arrives with the correct option FIRST;
- * the correct answer is rotated deterministically so its index varies across
- * the bank (schema: options must keep 3–5 items).
+ * Multiple-choice builder. `optionsWithCorrectFirst` arrives with the correct
+ * option FIRST; it is rotated deterministically so the answer index varies.
  */
 let mcCounter = 0;
-function mc(
-  slug: string,
-  statement: string,
-  optionsWithCorrectFirst: string[],
-  explanation: string,
-  sourceRef: string,
-): Draft {
-  const t = topic(slug);
-  const total = optionsWithCorrectFirst.length;
-  const correct = optionsWithCorrectFirst[0];
-  const distractors = optionsWithCorrectFirst.slice(1);
-  const pos = mcCounter % total;
+function mc(slug: string, m: Meta, statement: string, optionsWithCorrectFirst: string[], explanation: string): QuestionDraft {
+  const [correct, ...distractors] = optionsWithCorrectFirst;
+  const pos = mcCounter % optionsWithCorrectFirst.length;
   mcCounter++;
   const options = [...distractors];
   options.splice(pos, 0, correct);
-  return {
-    subject: S,
-    topic: t.slug,
-    topicName: t.name,
-    questionType: "multiple-choice",
-    statement,
-    options,
-    answer: pos,
-    explanation,
-    source: "generated",
-    sourceRef,
-    reviewed: REVIEWED,
-  };
+  return { ...base(slug, m, statement, explanation), questionType: "multiple-choice", options, answer: pos };
 }
 
-const REF = {
-  comunicados: "Cartilha do Serviço Radioamador, versão 2026-03, Anexo 1 §§6.2–6.3; Ato 3448/2026 §§10.4, 11.4",
-  freq: "Cartilha do Serviço Radioamador, versão 2026-03, Anexo 1 §§3.1–3.6; Ato 3448/2026 §11.4",
-  estacao: "Cartilha do Serviço Radioamador, versão 2026-03, Anexo 1 §§1.1–1.2; Ato 3448/2026 §11.4",
-  antenas: "Cartilha do Serviço Radioamador, versão 2026-03, Anexo 1 §§2.1–2.5; Ato 3448/2026 §11.4",
-  propagacao: "Cartilha do Serviço Radioamador, versão 2026-03, Anexo 1 §§4.2–4.6; Ato 3448/2026 §11.4",
-  interferencias: "Cartilha do Serviço Radioamador, versão 2026-03, Anexo 1 §§5.1–5.3; Ato 3448/2026 §11.4",
-  etica: "Cartilha do Serviço Radioamador, versão 2026-03, Anexo 1 §§7.1–7.8; Ato 3448/2026 §§4.1, 10.2–10.4",
-  emergencias: "Cartilha do Serviço Radioamador, versão 2026-03, Anexo 1 §§8.1–8.4; Ato 3448/2026 §§10.1, 10.3, 11.4",
-};
+/* ── 1. Estação de radioamador (Anexo 1 §1, pp. 26–28) ─────────────────── */
 
-/* ── Parametric family 1: Alfabeto fonético da UIT ─────────────────────── */
-
-const PHONETIC: Array<[string, string]> = [
-  ["A", "Alfa"], ["B", "Bravo"], ["C", "Charlie"], ["D", "Delta"], ["E", "Echo"],
-  ["F", "Foxtrot"], ["G", "Golf"], ["H", "Hotel"], ["I", "Índia"], ["J", "Juliett"],
-  ["K", "Kilo"], ["L", "Lima"], ["M", "Mike"], ["N", "November"], ["O", "Oscar"],
-  ["P", "Papa"], ["Q", "Quebec"], ["R", "Romeo"], ["S", "Sierra"], ["T", "Tango"],
-  ["U", "Uniform"], ["V", "Victor"], ["W", "Whiskey"], ["X", "X-ray"], ["Y", "Yankee"],
-  ["Z", "Zulu"],
-];
-
-// Representative direct-recall coverage. Do not emit one standalone item
-// for every letter; the rest of the alphabet is used as distractor material
-// in varied multiple-choice questions when appropriate.
-const PHONETIC_REPRESENTATIVE: Array<[string, string]> = [
-  ["A", "Alfa"],
-  ["F", "Foxtrot"],
-  ["S", "Sierra"],
-  ["Z", "Zulu"],
-];
-
-const phoneticWord = (letter: string) => PHONETIC.find((p) => p[0] === letter)?.[1];
-
-function phoneticTf(): Draft[] {
-  const out: Draft[] = [];
-  for (const [letter, word] of PHONETIC_REPRESENTATIVE) {
-    out.push(
-      tf("comunicados", `No alfabeto fonético da UIT, a letra «${letter}» é anunciada como «${word}».`, true,
-        `No alfabeto fonético internacional da UIT, «${letter}» corresponde a «${word}».`, REF.comunicados),
-    );
-  }
-  const mismatches: Array<[string, string]> = [
-    ["A", "Bravo"], ["F", "Victor"], ["S", "Tango"], ["Z", "Yankee"],
-  ];
-  for (const [letter, wrong] of mismatches) {
-    out.push(
-      tf("comunicados", `No alfabeto fonético da UIT, a letra «${letter}» é anunciada como «${wrong}».`, false,
-        `No alfabeto fonético internacional da UIT, «${letter}» não é «${wrong}», e sim «${phoneticWord(letter)}».`, REF.comunicados),
-    );
-  }
-  return out;
-}
-
-function phoneticMc(): Draft[] {
+function estacao(): QuestionDraft[] {
+  const t = "estacao-de-radioamador";
   return [
-    mc("comunicados", "Qual é a palavra fonética da UIT para a letra «B»?",
-      ["Bravo", "Beta", "Baker", "Brasil"],
-      "No alfabeto fonético da UIT, «B» é anunciada como «Bravo».", REF.comunicados),
-    mc("comunicados", "Qual letra é anunciada como «Foxtrot»?",
-      ["F", "X", "V", "P"],
-      "«Foxtrot» é a palavra fonética da letra «F».", REF.comunicados),
-    mc("comunicados", "Qual é a palavra fonética da UIT para a letra «S»?",
-      ["Sierra", "Sara", "Sinal", "Sable"],
-      "No alfabeto fonético da UIT, «S» é anunciada como «Sierra».", REF.comunicados),
+    tf(t, { kind: "conceitual", level: 1, pitfall: "Confundir transceptor com repetidora.", ref: a1("1.1", 26) },
+      "Um equipamento que reúne transmissor e receptor em um único conjunto é chamado de transceptor.", true,
+      "A Cartilha define o transceptor como o equipamento que reúne TX e RX em um só conjunto. A repetidora é outra coisa: recebe em uma frequência e retransmite em outra."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Inverter as funções de TX e RX.", ref: a1("1.1", 26) },
+      "Na estação, é o receptor que gera o sinal de RF a partir da voz do operador e entrega potência à linha de transmissão.", false,
+      "Quem gera a RF a partir da informação e entrega potência à linha/antena é o transmissor. O receptor faz o caminho inverso: recebe a RF e reconstrói a informação."),
+    tf(t, { kind: "conceitual", level: 1, pitfall: "Achar que o sistema irradiante é só a antena.", ref: a1("1.1", 26) },
+      "O sistema irradiante de uma estação compreende somente a antena; cabos, conectores, filtros e casadores fazem parte do transmissor.", false,
+      "A Cartilha define o sistema irradiante como antena + linha de transmissão, incluindo cabos, conectores e eventuais filtros/casadores."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que sintonizar ajusta a potência ou o volume.", ref: a1("1.1", 26) },
+      "Ao sintonizar uma estação no receptor, em geral o operador está ajustando a frequência da portadora do sinal desejado.", true,
+      "Sintonizar é selecionar a frequência da portadora do sinal que se quer receber; volume e potência são outros controles."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que a repetidora retransmite na mesma frequência em que recebe.", ref: a1("1.2", 26) },
+      "Uma repetidora de VHF/UHF recebe o sinal em uma frequência e o retransmite em outra, permitindo o contato entre estações que não se escutariam diretamente.", true,
+      "É exatamente a definição da Cartilha: recebe em uma frequência (entrada) e retransmite em outra (saída)."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Trocar entrada e saída da repetidora.", ref: a1("1.2", 26) },
+      "Para usar uma repetidora, o usuário transmite na frequência de saída da repetidora e escuta na frequência de entrada dela.", false,
+      "É o contrário: o usuário transmite na entrada da repetidora e recebe na saída dela."),
+    tf(t, { kind: "calculo", level: 3, pitfall: "Aplicar o shift na direção errada.", ref: a1("1.3", 27) },
+      "Com recepção programada em 146,940 MHz e shift de −600 kHz, o rádio transmitirá em 147,540 MHz.", false,
+      "Shift negativo subtrai: 146,940 − 0,600 = 146,340 MHz. 147,540 MHz resultaria de um shift de +600 kHz."),
+    tf(t, { kind: "calculo", level: 3, pitfall: "Subtrair um shift positivo.", ref: a1("1.3", 27) },
+      "Com recepção programada em 439,250 MHz e shift de +5 MHz, o rádio transmitirá em 434,250 MHz.", false,
+      "Shift positivo soma: 439,250 + 5 = 444,250 MHz. 434,250 MHz resultaria de um shift de −5 MHz."),
+    tf(t, { kind: "calculo", level: 5, pitfall: "Programar a entrada da repetidora como se fosse simplex.", ref: body("6.5", 16) },
+      "Repetidora com saída em 145,370 MHz e shift −600 kHz: quem programa o rádio em simplex em 144,770 MHz transmite na entrada dela, mas não ouve a saída.", true,
+      "144,770 MHz é a entrada (145,370 − 0,600). Em simplex o rádio transmite e recebe nessa mesma frequência, então nunca escuta a saída em 145,370 MHz. A Cartilha cita esse erro clássico: falar em uma entrada como se fosse simplex (§6.5)."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Ignorar a instrução de split e chamar na frequência da estação DX.", ref: a1("1.3", 27) },
+      "Em um pile-up em split, quando a estação DX anuncia 'escuto 5 acima', quem responde deve transmitir na própria frequência em que a estação DX transmite.", false,
+      "No split, a estação DX transmite em uma frequência e escuta em outra. 'Escuto 5 acima' indica que ela escuta acima da própria transmissão; chamar na frequência dela é ignorar a instrução e causar QRM. A Cartilha exige seguir exatamente a instrução."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que subida e descida do satélite usam a mesma frequência.", ref: a1("1.3", 27) },
+      "A operação via satélite não é considerada operação em split, pois a subida e a descida usam a mesma frequência.", false,
+      "A Cartilha cita o satélite justamente como exemplo comum de split: há uma frequência de subida e outra de descida."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Ignorar o papel da blindagem do coaxial.", ref: a1("1.4", 27) },
+      "No cabo coaxial, por causa da blindagem, os campos de RF ficam mais confinados e a linha irradia menos que uma linha paralela.", true,
+      "Entre as vantagens do coaxial, a Cartilha lista campos de RF mais confinados e menor irradiação indesejada pela linha (blindado)."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Inverter a característica de perda do dielétrico de ar.", ref: a1("1.4", 27) },
+      "O cabo coaxial com dielétrico de ar tem perda maior que o de dielétrico sólido e, por isso, é evitado em UHF.", false,
+      "É o contrário: o coaxial com dielétrico de ar tem menor perda e geralmente é usado em UHF ou acima."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Começar o diagnóstico pela antena e ignorar a alimentação.", ref: a1("1.5", 27) },
+      "Um rádio que desliga sozinho ao transmitir deve ter, como primeira verificação, a tensão e a corrente de alimentação, citadas como primeira causa de falhas.", true,
+      "A Cartilha aponta as tensões e correntes de alimentação dos equipamentos como a primeira causa de falhas, então são a primeira medição a fazer."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Achar que só equipamento caro avalia emissões.", ref: a1("1.5", 28) },
+      "Um analisador de espectro de baixo custo, como o TinySA, permite verificar o espectro irradiado pela estação em busca de emissões indesejadas.", true,
+      "A Cartilha cita analisadores de baixo custo, como o TinySA, para observar o espectro livre e o irradiado pela estação."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que a ROE se mede só pela potência do transmissor.", ref: a1("1.5", 28) },
+      "A ROE de uma instalação pode ser avaliada medindo apenas a potência direta que o transmissor entrega à linha.", false,
+      "A ROE/SWR é avaliada pela potência direta e pela refletida na linha. Só a potência direta não revela o descasamento."),
+    mc(t, { kind: "calculo", level: 3, pitfall: "Usar a saída da repetidora como frequência de transmissão.", ref: a1("1.3", 27) },
+      "Uma repetidora de 2 m tem saída em 147,300 MHz e shift de +600 kHz. Em que frequência o radioamador deve transmitir para acessá-la?",
+      ["147,900 MHz", "146,700 MHz", "147,300 MHz", "147,360 MHz"],
+      "O rádio recebe na saída (147,300 MHz) e transmite com o shift aplicado: 147,300 + 0,600 = 147,900 MHz."),
+    mc(t, { kind: "conceitual", level: 1, pitfall: "Confundir transceptor com repetidora.", ref: a1("1.1", 26) },
+      "Qual equipamento reúne transmissor e receptor em um único conjunto?",
+      ["Transceptor", "Repetidora", "Antena artificial", "Frequencímetro"],
+      "O transceptor reúne TX e RX. A repetidora retransmite sinais em outra frequência; a antena artificial e o frequencímetro são acessórios de teste e medição."),
+    mc(t, { kind: "conceitual", level: 3, pitfall: "Atribuir ao cabo uma função que ele não tem.", ref: a1("1.4", 27) },
+      "Qual é a principal vantagem do cabo coaxial sobre a linha paralela nas instalações típicas de radioamador?",
+      ["Campos de RF confinados e menor irradiação pela linha, graças à blindagem", "Aumentar a potência de saída do transmissor", "Dispensar o casamento de impedância com a antena", "Permitir transmitir e receber ao mesmo tempo na mesma frequência"],
+      "A blindagem confina os campos de RF e reduz a irradiação indesejada pela linha. O cabo não aumenta potência nem dispensa o casamento de impedância."),
+    mc(t, { kind: "cenario", level: 3, pitfall: "Começar o diagnóstico pela parte mais sofisticada.", ref: a1("1.5", 27) },
+      "Um transceptor apresenta falhas intermitentes. Por qual medição é mais indicado começar a investigação?",
+      ["Tensões e correntes de alimentação", "Espectro irradiado com analisador", "Ganho da antena em relação ao dipolo", "Frequência da portadora com frequencímetro"],
+      "A Cartilha aponta a alimentação como primeira causa de falhas; por isso é o primeiro ponto a verificar."),
   ];
 }
 
-/* ── Parametric family 2: Código Q ─────────────────────────────────────── */
+/* ── 2. Antenas (Anexo 1 §2, pp. 28–29; §5.6, p. 13) ──────────────────── */
 
-// Keep this list aligned with the current Cartilha's “principais códigos de
-// utilização”. Older banks commonly mix in codes from other radio services.
-const QCODES: Array<[string, string]> = [
-  ["QRA", "nome da estação, do operador ou indicativo"],
-  ["QRG", "frequência de operação"],
-  ["QTH", "localização da estação"],
-  ["QSL", "confirmado ou entendido; também cartão de QSO"],
-  ["QRO", "aumentar a potência"],
-  ["QAP", "estar na escuta ou à disposição"],
-  ["QTC", "mensagem a transmitir"],
-  ["QRM", "interferência de outras estações"],
-  ["QRP", "operação com baixa potência"],
-  ["QRV", "estar pronto ou preparado"],
-  ["QSA", "intensidade do sinal recebido"],
-];
-
-const QCODES_REPRESENTATIVE: Array<[string, string]> = QCODES.filter(([code]) =>
-  ["QRA", "QRG", "QTH", "QSL", "QRM", "QRP"].includes(code),
-);
-
-const qcodeMeaning = (code: string) => QCODES.find((q) => q[0] === code)?.[1];
-
-function qcodesTf(): Draft[] {
-  const out: Draft[] = [];
-  for (const [code, meaning] of QCODES_REPRESENTATIVE) {
-    out.push(
-      tf("comunicados", `No Código Q, a abreviatura «${code}» significa: «${meaning}».`, true,
-        `No Código Q, «${code}» corresponde a «${meaning}».`, REF.comunicados),
-    );
-  }
-  const mismatches: Array<[string, string]> = [
-    ["QRG", "a localização da estação"],
-    ["QTH", "a frequência de operação"],
-    ["QRM", "aumentar a potência"],
-    ["QRP", "aumentar a potência"],
-  ];
-  for (const [code, wrong] of mismatches) {
-    out.push(
-      tf("comunicados", `No Código Q, a abreviatura «${code}» significa: «${wrong}».`, false,
-        `No Código Q, «${code}» não significa «${wrong}». Significado correto: «${qcodeMeaning(code)}».`, REF.comunicados),
-    );
-  }
-  return out;
-}
-
-function qcodesMc(): Draft[] {
+function antenas(): QuestionDraft[] {
+  const t = "antenas";
   return [
-    mc("comunicados", "No Código Q, qual abreviatura indica interferência de outras estações?",
-      ["QRM", "QRG", "QTC", "QSA"],
-      "«QRM» indica interferência de outras estações.", REF.comunicados),
-    mc("comunicados", "No Código Q, qual abreviatura se relaciona à frequência de operação?",
-      ["QRG", "QSL", "QTH", "QRV"],
-      "«QRG» se refere à frequência de operação.", REF.comunicados),
-    mc("comunicados", "«QTH» no Código Q refere-se:",
-      ["à localização da estação", "à potência transmitida", "à mensagem a transmitir", "à intensidade do sinal"],
-      "«QTH» indica a localização da estação.", REF.comunicados),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que a linha também deve irradiar.", ref: a1("2.1", 28) },
+      "A linha de transmissão leva energia do transmissor à antena e, idealmente, não deve irradiar de forma significativa.", true,
+      "Quem irradia é a antena; a linha deve conduzir a energia sem irradiar de forma significativa."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Não relacionar impedâncias iguais com ausência de reflexão.", ref: a1("2.1", 28) },
+      "Quando o transmissor está adaptado à impedância característica da linha e a antena apresenta essa mesma impedância, não há reflexão e a transferência de potência é máxima.", true,
+      "No sistema ideal, com as impedâncias casadas, não há reflexão de energia e ocorre a transferência máxima de potência."),
+    tf(t, { kind: "calculo", level: 3, pitfall: "Esquecer de dividir λ por 4.", ref: a1("2.2", 28) },
+      "Uma antena vertical de ¼ de onda para 145 MHz tem cerca de 2 m, já que λ ≈ 300 / 145 ≈ 2,07 m.", false,
+      "Cerca de 2 m é o comprimento de onda inteiro. A antena de ¼ de onda tem λ/4 ≈ 2,07 / 4 ≈ 0,52 m."),
+    tf(t, { kind: "calculo", level: 3, pitfall: "Confundir o comprimento de onda inteiro com meia onda.", ref: a1("2.2", 28) },
+      "Um dipolo de meia onda para 7 MHz tem aproximadamente 42 m de comprimento total.", false,
+      "λ ≈ 300 / 7 ≈ 42,8 m é o comprimento de onda inteiro. O dipolo de meia onda tem λ/2 ≈ 21 m."),
+    tf(t, { kind: "calculo", level: 4, pitfall: "Errar a conta em duas etapas (λ e depois λ/2).", ref: a1("2.2", 28) },
+      "Um dipolo de meia onda para 14 MHz mede aproximadamente 10,7 m.", true,
+      "λ ≈ 300 / 14 ≈ 21,4 m; λ/2 ≈ 10,7 m."),
+    tf(t, { kind: "calculo", level: 5, pitfall: "Achar que o comprimento cresce com a frequência.", ref: a1("2.2", 28) },
+      "Uma vertical de ¼ de onda para 7,1 MHz tem cerca de 10,6 m; para 14,2 MHz, ela precisaria ter cerca do dobro desse comprimento.", false,
+      "O primeiro dado está certo (300 / 7,1 / 4 ≈ 10,6 m), mas o comprimento é inversamente proporcional à frequência: dobrando a frequência, a antena cai para cerca da metade (≈ 5,3 m)."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Confundir antena omnidirecional com direcional.", ref: a1("2.3", 28) },
+      "Antenas omnidirecionais irradiam de forma quase uniforme no plano horizontal, enquanto antenas direcionais concentram a energia em um feixe.", true,
+      "É a distinção da Cartilha: as omnidirecionais são quase uniformes no plano horizontal; Yagi, log-periódica e algumas loops concentram energia em um feixe."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que o ganho direcional surge sem perda em outras direções.", ref: a1("2.3", 28) },
+      "Uma antena Yagi, por ser direcional, oferece mais ganho em uma direção à custa de menos ganho em outras.", true,
+      "As antenas direcionais concentram energia em um feixe, ganhando em uma direção e perdendo nas demais."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Tratar o ganho como medida absoluta.", ref: a1("2.3", 28) },
+      "O ganho de uma antena é uma medida absoluta, que dispensa comparação com qualquer antena de referência.", false,
+      "A Cartilha define o ganho em comparação com uma antena de referência (isotrópica ou dipolo)."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Entender a onda estacionária como sinal de bom casamento.", ref: a1("2.4", 29) },
+      "A presença de onda estacionária na linha indica bom casamento de impedância entre transmissor, linha e antena.", false,
+      "A Cartilha é explícita: onda estacionária é sinal de descasamento, não de bom casamento."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Interpretar ROE alta como bom casamento.", ref: a1("2.4", 29) },
+      "Uma ROE de 3:1 medida na linha indica bom casamento, com pouca energia refletida para o transmissor.", false,
+      "Bom casamento é ROE próxima de 1:1. Uma ROE de 3:1 é alta e indica que boa parte da energia está sendo refletida."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Subestimar o efeito da ROE alta no transmissor.", ref: a1("2.4", 29) },
+      "Com ROE elevada, uma grande fração da energia volta ao transmissor, o que pode causar aquecimento e perda de eficiência.", true,
+      "Com ROE alta, grande parte da energia é refletida de volta ao transmissor, causando aquecimento e perda de eficiência."),
+    tf(t, { kind: "conceitual", level: 4, pitfall: "Achar que a onda refletida tem outra frequência.", ref: a1("2.4", 29) },
+      "Havendo descasamento, a onda refletida tem frequência diferente da onda direta e, por isso, pode ser separada por um filtro.", false,
+      "A onda refletida tem a mesma frequência da direta, só que em sentido oposto; a superposição das duas forma a onda estacionária."),
+    tf(t, { kind: "cenario", level: 1, pitfall: "Testar o transmissor na antena real e irradiar sem necessidade.", ref: a1("2.5", 29) },
+      "Para ajustar o transmissor na bancada sem irradiar sinal, o operador deve usar uma antena artificial (carga fictícia), geralmente resistiva.", true,
+      "A antena artificial, geralmente resistiva, serve para testar e ajustar o transmissor sem irradiar."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Restringir a função da antena artificial.", ref: a1("2.5", 29) },
+      "A antena artificial serve apenas para medir a ROE; ela não é adequada para medir a potência de saída do transmissor.", false,
+      "Entre os usos listados estão justamente medir a potência de saída, ajustar moduladores e etapas de RF e evitar interferências nos testes."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que antenas pequenas são sempre piores em ruído.", ref: a1("2.2", 28) },
+      "A loop magnética, projetada com algo entre λ/3 e λ/10, é indicada para espaços reduzidos, mas costuma captar mais ruído que antenas maiores.", false,
+      "A tabela da Cartilha associa a loop magnética a espaços reduzidos e a menor ruído, não maior."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Achar que dobrar a potência rende mais que ajustar a antena.", ref: body("5.6", 13) },
+      "Uma antena corretamente ajustada costuma render mais do que um grande aumento de potência, pois o sinal é medido em dB e esse aumento traz pouco ganho.", true,
+      "A Cartilha observa que a antena bem ajustada representa muito mais ganho que a amplificação: em dB, grandes aumentos de potência rendem pequenos ganhos."),
+    mc(t, { kind: "calculo", level: 3, pitfall: "Esquecer de dividir o comprimento de onda por 4.", ref: a1("2.2", 28) },
+      "Qual é o comprimento aproximado de uma antena vertical de ¼ de onda para 28 MHz?",
+      ["≈ 2,7 m", "≈ 10,7 m", "≈ 5,4 m", "≈ 1,3 m"],
+      "λ ≈ 300 / 28 ≈ 10,7 m; λ/4 ≈ 2,7 m. 10,7 m é o λ inteiro e 5,4 m é meia onda."),
+    mc(t, { kind: "conceitual", level: 3, pitfall: "Atribuir a onda estacionária a outra causa que não a reflexão.", ref: a1("2.4", 29) },
+      "Em uma linha de transmissão, a onda estacionária resulta de:",
+      ["Superposição da onda direta com uma onda refletida de mesma frequência e sentido oposto", "Aumento da frequência da portadora ao longo da linha", "Excesso de ganho da antena direcional", "Uso de cabo coaxial em vez de linha paralela"],
+      "Com descasamento, parte da energia é refletida; a onda refletida (mesma frequência, sentido oposto) se superpõe à direta e forma a onda estacionária."),
+    mc(t, { kind: "cenario", level: 2, pitfall: "Testar o transmissor irradiando.", ref: a1("2.5", 29) },
+      "Para testar e ajustar um transmissor sem irradiar e sem causar interferência, ele deve ser conectado a:",
+      ["Uma antena artificial (carga fictícia)", "Uma antena Yagi apontada para o alto", "Uma antena vertical de ¼ de onda", "Um frequencímetro no lugar da antena"],
+      "Só a antena artificial absorve a potência sem irradiar. Qualquer antena irradia, mesmo apontada para cima."),
+    mc(t, { kind: "cenario", level: 3, pitfall: "Escolher uma antena omnidirecional para concentrar sinal.", ref: a1("2.3", 28) },
+      "Qual antena é mais indicada para concentrar energia em uma direção, como em contatos DX em VHF/UHF?",
+      ["Yagi", "Vertical omnidirecional de ¼ de onda", "Antena artificial", "Linha paralela sem antena"],
+      "A Yagi é direcional, com alta diretividade, típica de DX em VHF/UHF. A vertical é omnidirecional e a antena artificial não irradia."),
   ];
 }
 
-/* ── Parametric family 3: Faixas de frequência ─────────────────────────── */
+/* ── 3. Frequência, comprimento de onda e modulação (Anexo 1 §3, pp. 29–31) */
 
-const BAND_TABLE: Array<{ band: string; lo: number; hi: number; unit: string }> = [
-  { band: "VLF", lo: 3, hi: 30, unit: "kHz" },
-  { band: "LF", lo: 30, hi: 300, unit: "kHz" },
-  { band: "MF", lo: 300, hi: 3000, unit: "kHz" },
-  { band: "HF", lo: 3, hi: 30, unit: "MHz" },
-  { band: "VHF", lo: 30, hi: 300, unit: "MHz" },
-  { band: "UHF", lo: 300, hi: 3000, unit: "MHz" },
-  { band: "SHF", lo: 3, hi: 30, unit: "GHz" },
-];
-
-const bandLabel = (band: string) => {
-  const b = BAND_TABLE.find((x) => x.band === band);
-  return b ? `${b.lo} a ${b.hi} ${b.unit}` : "";
-};
-
-function bandsTf(): Draft[] {
-  const out: Draft[] = [];
-  const correct: Array<[number, string, string]> = [
-    [14, "MHz", "HF"], [145, "MHz", "VHF"], [433, "MHz", "UHF"], [7.1, "MHz", "HF"],
-    [27, "MHz", "HF"], [100, "MHz", "VHF"], [900, "MHz", "UHF"], [5, "GHz", "SHF"],
-    [520, "kHz", "MF"], [150, "kHz", "LF"],
-  ];
-  for (const [freq, unit, band] of correct) {
-    out.push(
-      tf("frequencia-comprimento-de-onda", `A frequência de ${freq} ${unit} pertence à faixa de ${band}.`, true,
-        `Com ${freq} ${unit}, o sinal está na faixa de ${band} (${bandLabel(band)}).`, REF.freq),
-    );
-  }
-  const wrong: Array<[number, string, string]> = [
-    [433, "MHz", "VHF"], [27, "MHz", "VLF"], [100, "MHz", "UHF"], [7.1, "MHz", "VHF"],
-    [520, "kHz", "HF"], [145, "MHz", "SHF"],
-  ];
-  for (const [freq, unit, band] of wrong) {
-    out.push(
-      tf("frequencia-comprimento-de-onda", `A frequência de ${freq} ${unit} pertence à faixa de ${band}.`, false,
-        `Com ${freq} ${unit}, a faixa correta é ${bandOf(freq, unit)}, não ${band}.`, REF.freq),
-    );
-  }
-  return out;
-}
-
-function bandOf(freq: number, unit: string): string {
-  const mhz = unit === "kHz" ? freq / 1000 : unit === "GHz" ? freq * 1000 : freq;
-  if (mhz >= 0.003 && mhz < 0.03) return "VLF";
-  if (mhz >= 0.03 && mhz < 0.3) return "LF";
-  if (mhz >= 0.3 && mhz < 3) return "MF";
-  if (mhz >= 3 && mhz < 30) return "HF";
-  if (mhz >= 30 && mhz < 300) return "VHF";
-  if (mhz >= 300 && mhz < 3000) return "UHF";
-  if (mhz >= 3000 && mhz < 30000) return "SHF";
-  return "fora das designações";
-}
-
-function bandsMc(): Draft[] {
+function frequencia(): QuestionDraft[] {
+  const t = "frequencia-comprimento-de-onda";
   return [
-    mc("frequencia-comprimento-de-onda", "A faixa de 3 a 30 MHz recebe a designação:",
-      ["HF", "VHF", "MF", "UHF"],
-      "A faixa de 3 a 30 MHz é a HF (onda curta).", REF.freq),
-    mc("frequencia-comprimento-de-onda", "A faixa de 30 a 300 MHz recebe a designação:",
-      ["VHF", "HF", "UHF", "SHF"],
-      "A faixa de 30 a 300 MHz é a VHF.", REF.freq),
-    mc("frequencia-comprimento-de-onda", "A frequência de 433 MHz encontra-se na faixa de:",
-      ["UHF", "VHF", "HF", "SHF"],
-      "433 MHz está entre 300 e 3000 MHz, ou seja, na UHF.", REF.freq),
+    tf(t, { kind: "calculo", level: 2, pitfall: "Errar a ordem de grandeza ao aplicar 300/f.", ref: a1("3.1", 29) },
+      "Usando λ (m) ≈ 300 / f (MHz), um sinal de 50 MHz tem comprimento de onda de aproximadamente 6 m.", true,
+      "300 / 50 = 6 m; por isso 50 MHz é a faixa de 6 metros."),
+    tf(t, { kind: "calculo", level: 3, pitfall: "Deslocar a vírgula no resultado.", ref: a1("3.1", 29) },
+      "Um sinal de 430 MHz tem comprimento de onda de cerca de 7 m.", false,
+      "300 / 430 ≈ 0,70 m, ou seja, cerca de 70 cm (daí o nome da faixa de 70 cm). 7 m seria uma frequência em torno de 43 MHz."),
+    tf(t, { kind: "calculo", level: 3, pitfall: "Não saber converter nome de faixa em frequência.", ref: a1("3.1", 29) },
+      "A faixa de 40 metros corresponde a frequências em torno de 14 MHz.", false,
+      "f (MHz) ≈ 300 / λ (m) = 300 / 40 = 7,5 MHz, ou seja, a faixa de 7 MHz. 14 MHz corresponde a cerca de 21 m (faixa de 20 metros)."),
+    tf(t, { kind: "calculo", level: 3, pitfall: "Errar a unidade ao calcular T = 1/f.", ref: a1("3.1", 29) },
+      "O período de um sinal de 1 MHz é de 1 milissegundo, pois T = 1 / f.", false,
+      "T = 1 / 1.000.000 Hz = 1 µs (microssegundo). 1 ms seria o período de um sinal de 1 kHz."),
+    tf(t, { kind: "calculo", level: 4, pitfall: "Achar que λ é diretamente proporcional a f.", ref: a1("3.1", 29) },
+      "Dobrar a frequência de um sinal, no mesmo meio, também dobra o seu comprimento de onda.", false,
+      "λ = c / f: com a velocidade constante, dobrar a frequência reduz o comprimento de onda à metade."),
+    tf(t, { kind: "conceitual", level: 1, pitfall: "Confundir as designações das faixas.", ref: a1("3.2", 29), recall: true },
+      "A faixa de 3 a 30 MHz é designada HF e suas ondas são chamadas decamétricas.", true,
+      "Pela tabela da Cartilha, HF vai de 3 a 30 MHz (ondas decamétricas)."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Classificar a faixa pelo número sem considerar a unidade.", ref: a1("3.2", 29) },
+      "Um sinal de 1.500 kHz pertence à faixa de HF, já que esse valor é superior a 1.000 kHz.", false,
+      "1.500 kHz = 1,5 MHz, dentro de MF (300 a 3.000 kHz). HF só começa em 3 MHz (3.000 kHz)."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Trocar decimétricas por centimétricas.", ref: a1("3.2", 30) },
+      "As ondas da faixa de UHF (300 a 3.000 MHz) são chamadas centimétricas.", false,
+      "As ondas de UHF são decimétricas. Centimétricas são as de SHF (3 a 30 GHz)."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Situar a faixa de 2 m fora de VHF.", ref: a1("3.2", 30) },
+      "A faixa de 2 metros (em torno de 144 MHz) pertence a VHF, que vai de 30 a 300 MHz e cujas ondas são chamadas métricas.", true,
+      "144 MHz está entre 30 e 300 MHz (VHF, ondas métricas), e 300 / 144 ≈ 2,1 m confirma o nome da faixa."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Confundir a faixa da voz telefônica com a da audição.", ref: a1("3.2", 30) },
+      "A voz telefônica ocupa aproximadamente de 16 Hz a 16.000 Hz, a mesma faixa da audição humana típica.", false,
+      "A Cartilha dá ~300–3.400 Hz para a voz telefônica; ~16–16.000 Hz é a audição humana típica."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que a modulação gera a portadora.", ref: a1("3.3", 30) },
+      "Na modulação, a mensagem é 'impressa' na portadora pela alteração da amplitude, da frequência ou da fase.", true,
+      "É a definição da Cartilha: modular é imprimir a mensagem na portadora alterando amplitude, frequência ou fase."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Trocar o parâmetro que varia em FM e AM.", ref: a1("3.4", 31) },
+      "Em FM, a amplitude da portadora varia conforme a mensagem, enquanto a frequência é mantida fixa.", false,
+      "É o inverso: em FM varia a frequência instantânea e a amplitude fica fixa. Variar a amplitude é AM."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que SSB não é uma forma de AM.", ref: a1("3.4", 30) },
+      "O SSB (faixa lateral única) é um tipo de modulação em frequência, muito usado em HF.", false,
+      "O SSB é AM: a Cartilha o classifica como AM-SSB (faixa lateral única), muito usado em HF."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Confundir CW com modulação de frequência.", ref: a1("3.4", 31) },
+      "Em CW, a portadora é ligada e desligada, formando os pontos e traços do código Morse.", true,
+      "CW (telegrafia) é a portadora ligada e desligada no padrão Morse."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que a portadora é entregue ao alto-falante.", ref: a1("3.5", 31) },
+      "Na demodulação, o receptor extrai a mensagem do sinal modulado, e a portadora é removida ou ignorada nas etapas de detecção.", true,
+      "A demodulação é o processo inverso da modulação; a portadora é removida/ignorada na detecção."),
+    tf(t, { kind: "calculo", level: 4, pitfall: "Errar a subtração na componente de diferença.", ref: a1("3.6", 31) },
+      "Em um misturador, combinar um sinal de 14,200 MHz com um oscilador de 9,000 MHz produz componentes em 23,200 MHz e 4,200 MHz.", false,
+      "A soma está correta (23,200 MHz), mas a diferença é 14,200 − 9,000 = 5,200 MHz."),
+    tf(t, { kind: "conceitual", level: 4, pitfall: "Achar que o batimento ocorre em circuito linear.", ref: a1("3.6", 31) },
+      "O batimento de duas frequências, que gera as componentes de soma e diferença, ocorre em circuitos lineares ideais.", false,
+      "A Cartilha especifica circuitos não lineares: é a não linearidade que produz f₁ + f₂ e f₁ − f₂, princípio usado nos misturadores para gerar a FI."),
+    tf(t, { kind: "calculo", level: 5, pitfall: "Não aplicar o batimento ao projeto do oscilador local.", ref: a1("3.6", 31) },
+      "Para que um receptor com FI de 10,7 MHz e oscilador local acima do sinal sintonize 145,000 MHz, o oscilador deve operar em 155,700 MHz.", true,
+      "A FI é a diferença entre o oscilador e o sinal: 155,700 − 145,000 = 10,700 MHz."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que instrumentos combinados são sempre tão precisos quanto o dedicado.", ref: a1("3.7", 31) },
+      "O instrumento específico para medir frequência é o frequencímetro; instrumentos combinados costumam ter menos precisão nessa função.", true,
+      "A Cartilha diz que muitos instrumentos combinados têm frequencímetro, mas geralmente com menos precisão e opções que o instrumento dedicado."),
+    mc(t, { kind: "calculo", level: 3, pitfall: "Errar a ordem de grandeza.", ref: a1("3.1", 29) },
+      "Qual é o comprimento de onda aproximado de um sinal de 21 MHz?",
+      ["≈ 14,3 m", "≈ 1,43 m", "≈ 6,3 m", "≈ 143 m"],
+      "300 / 21 ≈ 14,3 m (faixa de 15 metros)."),
+    mc(t, { kind: "conceitual", level: 1, pitfall: "Confundir as designações das faixas.", ref: a1("3.2", 30), recall: true },
+      "Qual designação corresponde à faixa de 30 a 300 MHz?",
+      ["VHF", "HF", "UHF", "MF"],
+      "VHF vai de 30 a 300 MHz; HF é 3–30 MHz, UHF é 300–3.000 MHz e MF é 300–3.000 kHz."),
+    mc(t, { kind: "calculo", level: 4, pitfall: "Escolher a soma em vez da diferença.", ref: a1("3.6", 31) },
+      "Um receptor mistura um sinal de 7,100 MHz com um oscilador local de 7,555 MHz. Qual componente de diferença surge na saída do misturador?",
+      ["455 kHz", "14,655 MHz", "7,555 MHz", "45,5 kHz"],
+      "7,555 − 7,100 = 0,455 MHz = 455 kHz. 14,655 MHz é a soma."),
+    mc(t, { kind: "conceitual", level: 2, pitfall: "Trocar o parâmetro que varia em FM.", ref: a1("3.4", 31) },
+      "Na modulação em frequência (FM), o que varia conforme a mensagem?",
+      ["A frequência instantânea da portadora", "A amplitude da portadora", "O liga-desliga da portadora", "A impedância da antena"],
+      "Em FM varia a frequência instantânea, com a amplitude fixa. Variar a amplitude é AM; ligar e desligar é CW."),
+    mc(t, { kind: "calculo", level: 3, pitfall: "Errar a conversão de unidades no período.", ref: a1("3.1", 29) },
+      "Qual é o período de um sinal de 10 kHz?",
+      ["100 µs", "10 µs", "1 ms", "0,1 µs"],
+      "T = 1 / 10.000 Hz = 0,0001 s = 100 µs."),
   ];
 }
 
-/* ── Parametric family 4: Comprimento de onda (λ = 300 / f[MHz]) ───────── */
+/* ── 4. Propagação (Anexo 1 §4, pp. 31–33) ─────────────────────────────── */
 
-function wavelengthTf(): Draft[] {
-  const out: Draft[] = [];
-  const correct: Array<[number, number]> = [
-    [100, 3], [150, 2], [300, 1], [50, 6], [75, 4], [30, 10],
-  ];
-  for (const [freq, lambda] of correct) {
-    out.push(
-      tf("frequencia-comprimento-de-onda", `O comprimento de onda no espaço livre de um sinal de ${freq} MHz é, aproximadamente, ${lambda} metro(s).`, true,
-        `λ = 300 / f(MHz): 300 / ${freq} = ${lambda} m.`, REF.freq),
-    );
-  }
-  const wrong: Array<[number, number]> = [
-    [100, 0.3], [50, 3], [300, 30], [150, 15],
-  ];
-  for (const [freq, lambda] of wrong) {
-    out.push(
-      tf("frequencia-comprimento-de-onda", `O comprimento de onda no espaço livre de um sinal de ${freq} MHz é, aproximadamente, ${lambda} metro(s).`, false,
-        `λ = 300 / f(MHz): 300 / ${freq} = ${(300 / freq).toFixed(2)} m, e não ${lambda} m.`, REF.freq),
-    );
-  }
-  return out;
-}
-
-function wavelengthMc(): Draft[] {
+function propagacao(): QuestionDraft[] {
+  const t = "propagacao";
   return [
-    mc("frequencia-comprimento-de-onda", "O comprimento de onda no espaço livre de um sinal de 300 MHz é, aproximadamente:",
-      ["1 metro", "3 metros", "30 metros", "300 metros"],
-      "λ = 300 / 300 = 1 m.", REF.freq),
+    tf(t, { kind: "conceitual", level: 1, pitfall: "Achar que ondas de rádio só se propagam pelo ar.", ref: a1("4.1", 31) },
+      "Ondas de rádio podem se propagar em condutores elétricos, pelo espaço livre e em fibras ópticas usadas em telecomunicações.", true,
+      "A Cartilha lista três meios: condutores elétricos, espaço livre e condutores ópticos."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Classificar a tropodifusão como onda espacial.", ref: a1("4.2", 32) },
+      "As ondas terrestres incluem a onda de superfície, a difração e a visada direta, mas não a tropodifusão, que é uma onda espacial.", false,
+      "A Cartilha inclui a tropodifusão entre as ondas terrestres (ocorre na troposfera). Ondas espaciais são as refratadas/refletidas na ionosfera."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Confundir ondas espaciais com ondas terrestres.", ref: a1("4.2", 32) },
+      "As ondas espaciais sofrem refração ou reflexão na ionosfera e possibilitam contatos a grande distância (DX) em HF.", true,
+      "É a definição da Cartilha para ondas espaciais."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Errar a altitude da ionosfera.", ref: a1("4.3", 32) },
+      "A ionosfera, aproximadamente entre 10 e 50 km de altura, é a região relevante para as reflexões que permitem DX em HF.", false,
+      "A ionosfera fica em ~60–400 km. A faixa de 10–50 km é a estratosfera."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Atribuir à troposfera as reflexões de HF.", ref: a1("4.3", 32) },
+      "A troposfera é a região responsável pelas reflexões que permitem contatos DX em HF.", false,
+      "A troposfera (0–10/15 km) é relevante para VHF/UHF/SHF, visada direta e tropodifusão. As reflexões de HF ocorrem na ionosfera."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Superestimar o papel da estratosfera.", ref: a1("4.3", 32) },
+      "A estratosfera, entre cerca de 10 e 50 km de altura, tem pouco impacto direto na prática do radioamador.", true,
+      "A tabela da Cartilha indica para a estratosfera 'menos impacto direto na prática do radioamador'."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Associar a onda de superfície ao VHF.", ref: a1("4.4", 32) },
+      "Em LF/MF, o mecanismo predominante é a onda de superfície, que acompanha a curvatura da Terra com alcance moderado.", true,
+      "Para 100 kHz – 3 MHz, a Cartilha aponta a onda de superfície, que segue a curvatura da Terra com alcance moderado."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Esperar propagação ionosférica em VHF.", ref: a1("4.4", 32) },
+      "Um enlace em 145 MHz entre duas cidades separadas por uma serra alta depende principalmente da reflexão ionosférica.", false,
+      "Em VHF/UHF predominam a linha de visada, a difração e a tropodifusão; a refração/reflexão ionosférica é o mecanismo do HF. A serra é um obstáculo à visada."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Ignorar a altura e os obstáculos em VHF/UHF.", ref: a1("4.5", 32) },
+      "Em UHF, instalar as antenas mais altas e livres de obstáculos favorece o enlace, pois a propagação é predominantemente em visada direta.", true,
+      "Na visada direta o sinal se propaga praticamente em linha reta; reduzir obstáculos melhora o enlace."),
+    tf(t, { kind: "conceitual", level: 4, pitfall: "Achar que a tropodifusão dá sinais fortes.", ref: a1("4.5", 33) },
+      "A tropodifusão, relevante entre 300 MHz e 3 GHz, permite comunicações além do horizonte com sinais tipicamente fortes.", false,
+      "A Cartilha diz que a tropodifusão permite ir além do horizonte, porém com sinais fracos."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Ignorar a atenuação por chuva em micro-ondas.", ref: a1("4.4", 32) },
+      "Acima de 3 GHz (SHF), a chuva e os obstáculos podem atenuar significativamente o sinal.", true,
+      "Para SHF, a Cartilha aponta visada direta, reflexões locais e atenuação por chuva e obstáculos."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Achar que a propagação em HF é constante.", ref: a1("4.6", 33) },
+      "A propagação em HF é estável: as condições não variam com a hora do dia, o ciclo solar ou a estação do ano.", false,
+      "Pela Cartilha, a propagação em HF varia com a hora do dia (dia/noite), o ciclo solar e a estação do ano."),
+    tf(t, { kind: "cenario", level: 5, pitfall: "Atribuir a uma falha da estação o que é variação da propagação.", ref: a1("4.6", 33) },
+      "Um contato DX em 14 MHz que funciona ao entardecer pode deixar de funcionar à noite sem mudança na estação, pois a propagação em HF varia com a hora.", true,
+      "A ionosfera muda entre dia e noite; o mesmo enlace em HF pode abrir e fechar sem que a estação tenha nenhum defeito."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Subestimar o alcance com múltiplos saltos.", ref: a1("4.6", 33) },
+      "Em HF, o sinal pode fazer múltiplos saltos entre a ionosfera e a Terra, alcançando milhares de quilômetros.", true,
+      "A Cartilha menciona os múltiplos 'saltos' que permitem alcançar milhares de quilômetros."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que só o sinal mais forte melhora a SNR.", ref: a1("4.7", 33) },
+      "Se a potência do ruído diminuir e o sinal permanecer igual, a relação sinal-ruído (SNR) diminui.", false,
+      "A SNR é sinal/ruído: com o denominador menor, a razão aumenta. A Cartilha lista 'ruído menor' entre as condições que aumentam a SNR."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Ignorar as fontes de ruído locais.", ref: a1("4.7", 33) },
+      "Para melhorar a SNR na recepção, reduzir fontes de ruído locais, como fontes com defeito e iluminação ruidosa, é uma medida eficaz.", true,
+      "Reduzir fontes de ruído locais (eletrônicos, iluminação, fontes com defeito) está entre as formas de melhorar a SNR citadas pela Cartilha."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Achar que o volume do áudio melhora a SNR.", ref: a1("4.7", 33) },
+      "Aumentar o volume do áudio do receptor melhora a relação sinal-ruído de um sinal fraco.", false,
+      "O volume amplifica igualmente o sinal e o ruído, então a razão não muda. A SNR melhora com frequência menos ruidosa, antena adequada, menos ruído local, filtros/DSP e cabos em bom estado."),
+    mc(t, { kind: "conceitual", level: 2, pitfall: "Associar HF à visada direta.", ref: a1("4.4", 32) },
+      "Qual mecanismo de propagação predomina na faixa de HF (3 a 30 MHz)?",
+      ["Refração/reflexão ionosférica", "Linha de visada", "Onda de superfície", "Tropodifusão"],
+      "Para HF, a Cartilha aponta a refração/reflexão ionosférica, principal faixa para DX."),
+    mc(t, { kind: "conceitual", level: 3, pitfall: "Confundir camadas ionosféricas com regiões da atmosfera.", ref: a1("4.6", 33) },
+      "Com quais camadas ionosféricas interage a propagação em HF?",
+      ["D, E, F1 e F2", "Troposfera e estratosfera", "Apenas a camada de ozônio", "VLF, LF e MF"],
+      "A Cartilha cita as camadas D, E, F1 e F2. Troposfera e estratosfera são outras regiões da atmosfera; VLF, LF e MF são faixas de frequência."),
+    mc(t, { kind: "cenario", level: 3, pitfall: "Escolher HF para contato local em visada.", ref: a1("4.4", 32) },
+      "Para contatos locais e regionais em visada direta, a faixa mais adequada é:",
+      ["VHF/UHF", "HF", "VLF", "LF"],
+      "A Cartilha associa VHF/UHF ao uso local/regional e aos enlaces em visada."),
+    mc(t, { kind: "cenario", level: 4, pitfall: "Achar que amplificar o áudio melhora a SNR.", ref: a1("4.7", 33) },
+      "Qual das medidas abaixo NÃO melhora a relação sinal-ruído na recepção?",
+      ["Aumentar o volume do alto-falante", "Reduzir fontes de ruído locais", "Usar filtros e recursos de DSP do receptor", "Escolher uma frequência menos congestionada"],
+      "O volume amplifica sinal e ruído por igual. As outras três estão na lista da Cartilha de formas de melhorar a SNR."),
+    mc(t, { kind: "conceitual", level: 3, pitfall: "Situar a visada e a tropodifusão na ionosfera.", ref: a1("4.3", 32) },
+      "Em qual região da atmosfera ocorrem a visada direta e a tropodifusão relevantes para VHF/UHF/SHF?",
+      ["Troposfera", "Ionosfera", "Estratosfera", "Camada F2"],
+      "A tabela da Cartilha associa a troposfera (0–10/15 km) a VHF/UHF/SHF, à visada direta e à tropodifusão."),
   ];
 }
 
-/* ── Hand-written items ────────────────────────────────────────────────── */
+/* ── 5. Interferências (Anexo 1 §5, pp. 33–34; §6.6, p. 16) ────────────── */
 
-function handwritten(): Draft[] {
+function interferencias(): QuestionDraft[] {
+  const t = "interferencias";
   return [
-    // Estação de Radioamador
-    tf("estacao-de-radioamador", "O transceptor reúne, em uma mesma unidade, as funções de transmissor e de receptor.", true,
-      "Transceptor (transceiver) combina transmissor e receptor num só equipamento.", REF.estacao),
-    tf("estacao-de-radioamador", "Uma repetidora retransmite, na mesma frequência em que recebe, o sinal recebido.", false,
-      "A repetidora recebe numa frequência e retransmite em outra (full-duplex), ampliando a cobertura.", REF.estacao),
-    tf("estacao-de-radioamador", "No diagrama de blocos de um transmissor, o modulador varia a portadora de radiofrequência conforme o sinal de áudio.", true,
-      "A modulação consiste em variar uma característica da portadora conforme o sinal modulante (áudio).", REF.estacao),
-    mc("estacao-de-radioamador", "O equipamento que combina transmissor e receptor em uma única unidade é o:",
-      ["transceptor", "repetidora", "modulador", "amplificador"],
-      "Transceptor = transmissor + receptor.", REF.estacao),
+    tf(t, { kind: "conceitual", level: 1, pitfall: "Achar que só o tráfego de rotina pode ser afetado.", ref: a1("5.1", 33) },
+      "Antes de transmitir, o radioamador deve evitar interferir em comunicações em andamento, inclusive serviços essenciais e tráfego de emergência.", true,
+      "A Cartilha lista comunicações de rotina, serviços essenciais e de segurança, e tráfego de emergência entre os prejudicados pela interferência."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Confundir interferência irradiada com conduzida.", ref: a1("5.2", 33) },
+      "Na interferência irradiada, a RF chega a outros equipamentos conduzida pelos cabos de energia da rede elétrica.", false,
+      "Isso descreve a interferência conduzida. Na irradiada, a RF vaza pelo sistema irradiante ou por instalação deficiente e atinge os equipamentos pelo ar."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Inverter as definições de conduzida e irradiada.", ref: a1("5.2", 33) },
+      "Na interferência conduzida, a RF chega a outros equipamentos apenas pelo ar, sem passar por cabos de energia, áudio ou sinal.", false,
+      "Na conduzida, a RF entra em cabos de energia, áudio ou sinal e é conduzida até outros equipamentos. Pelo ar é a irradiada."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Não usar a bateria como teste de diagnóstico.", ref: a1("5.2", 33) },
+      "Se, ao trocar a alimentação da rede por uma bateria, a interferência muda muito, isso indica forte componente conduzida pela fonte ou pela rede.", true,
+      "É a 'dica clássica' da Cartilha para suspeita de interferência via alimentação."),
+    tf(t, { kind: "cenario", level: 5, pitfall: "Não combinar dois testes para isolar a origem.", ref: a1("5.2", 33) },
+      "Interferência que continua com o rádio na carga fictícia e some ao alimentá-lo por bateria sugere origem conduzida pela fonte, e não irradiada pela antena.", true,
+      "Com a carga fictícia a antena não irradia, e mesmo assim o problema continua: logo não vem da antena. Se some com a bateria, o caminho é a alimentação, ou seja, interferência conduzida."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Achar que mais potência é sempre melhor.", ref: a1("5.3", 34) },
+      "Operar sempre com a potência máxima permitida é boa prática para reduzir interferências, pois encurta o tempo de transmissão.", false,
+      "A boa prática é o contrário: operar com a menor potência necessária para manter a comunicação."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Trocar filtro passa-baixas por passa-altas na saída do TX.", ref: a1("5.3", 34) },
+      "Um filtro passa-baixas na saída do transmissor ajuda a reduzir os harmônicos que podem interferir em outros serviços.", true,
+      "A Cartilha recomenda filtros passa-baixas na saída do transmissor justamente para reduzir harmônicos."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Aplicar receita genérica sem identificar a causa.", ref: a1("5.3", 34) },
+      "Sempre operar em frequência mais baixa ou instalar filtros passa-altas aleatoriamente resolve, como regra geral, qualquer problema de interferência.", false,
+      "A Cartilha diz expressamente que isso não é regra geral correta: é preciso identificar a causa da interferência."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Desconhecer o uso de balun/choque de RF.", ref: a1("5.3", 34) },
+      "Baluns e choques de RF podem ser usados para reduzir a corrente de modo comum no cabo coaxial.", true,
+      "A Cartilha recomenda baluns/choques de RF onde for preciso para reduzir a corrente de modo comum no coaxial."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Ignorar o acoplamento com a fiação da casa.", ref: a1("5.3", 34) },
+      "Passar o cabo coaxial paralelo e junto à fiação elétrica interna da casa é recomendado para reduzir interferências.", false,
+      "A Cartilha recomenda evitar cabos paralelos a fiações internas, porque isso favorece o acoplamento."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Desconsiderar o aterramento.", ref: a1("5.3", 34) },
+      "Um bom aterramento da estação, quando aplicável, faz parte das boas práticas para reduzir interferências.", true,
+      "O bom aterramento está entre as boas práticas listadas pela Cartilha."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Continuar transmitindo após o relato.", ref: body("6.6", 16) },
+      "Se um vizinho relata interferência, a primeira atitude adequada é aumentar a potência para verificar se o problema piora.", false,
+      "O roteiro da Cartilha (§6.6) começa por parar a transmissão e ouvir; depois, reduzir a potência e testar novamente."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Manter a operação sem resolver a causa.", ref: body("6.6", 16) },
+      "Se a interferência persiste após verificar cabos, filtros, aterramento e segmento de operação, o radioamador deve suspender a operação até achar a causa.", true,
+      "O último passo do roteiro é suspender a operação até identificar a causa, se o problema persistir."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Adotar postura de disputa diante da interferência.", ref: body("6.6", 16) },
+      "Diante de um relato de interferência, a postura esperada é manter a transmissão e disputar o canal até que o reclamante comprove a origem.", false,
+      "A postura esperada é cooperativa e técnica: resolver o problema, não disputar no ar."),
+    mc(t, { kind: "cenario", level: 4, pitfall: "Não interpretar o teste da bateria.", ref: a1("5.2", 33) },
+      "A interferência que um radioamador causa na TV do vizinho some quando ele alimenta o rádio por bateria. A causa mais provável é:",
+      ["Interferência conduzida pela fonte ou pela rede elétrica", "Variação da propagação ionosférica", "ROE próxima de 1:1", "Operação em frequência de chamada"],
+      "Pela dica clássica da Cartilha, uma grande mudança ao usar bateria indica forte componente conduzida pela fonte/rede."),
+    mc(t, { kind: "cenario", level: 3, pitfall: "Escolher o filtro errado para harmônicos.", ref: a1("5.3", 34) },
+      "Qual recurso reduz os harmônicos gerados na saída do transmissor?",
+      ["Filtro passa-baixas na saída do transmissor", "Filtro passa-altas na entrada do receptor", "Aumento da potência de saída", "Frequencímetro em série com a antena"],
+      "Os harmônicos são múltiplos da frequência de operação; um passa-baixas na saída do TX os atenua."),
+    mc(t, { kind: "cenario", level: 3, pitfall: "Reagir à reclamação sem roteiro.", ref: body("6.6", 16) },
+      "Ao receber um relato de interferência, qual sequência é a mais adequada?",
+      ["Parar a transmissão, ouvir, reduzir a potência e verificar a instalação", "Aumentar a potência para superar o ruído", "Mudar de faixa sem investigar a causa", "Continuar operando até a fiscalização intervir"],
+      "É o roteiro da Cartilha (§6.6): parar e ouvir, reduzir a potência e testar, verificar cabos, filtros e aterramento, e suspender se persistir."),
+    mc(t, { kind: "conceitual", level: 3, pitfall: "Desconhecer o recurso contra corrente de modo comum.", ref: a1("5.3", 34) },
+      "Para reduzir a corrente de modo comum no cabo coaxial, utiliza-se:",
+      ["Balun ou choque de RF", "Antena artificial", "Frequencímetro", "Linha paralela no lugar do coaxial"],
+      "A Cartilha indica baluns/choques de RF para reduzir a corrente de modo comum no coaxial."),
+  ];
+}
 
-    // Antenas
-    tf("antenas", "Uma relação de onda estacionária (ROE) igual a 1:1 indica o casamento ideal de impedâncias entre a linha de transmissão e a antena.", true,
-      "ROE 1:1 significa ausência de ondas refletidas, ou seja, máxima transferência de potência.", REF.antenas),
-    tf("antenas", "Uma antena direcional irradia igualmente em todas as direções.", false,
-      "Antena direcional concentra a irradiação em determinadas direções, gerando ganho.", REF.antenas),
-    tf("antenas", "A antena artificial é utilizada nos ajustes do transmissor para não irradiar sinais.", true,
-      "A antena artificial (carga fantasma) dissipa a energia como calor, evitando irradiação.", REF.antenas),
-    mc("antenas", "Para ajustar o transmissor sem irradiar sinal pela antena, utiliza-se:",
-      ["uma antena artificial", "uma antena direcional", "um amplificador", "um cabo mais longo"],
-      "A antena artificial converte a energia de RF em calor durante os ajustes.", REF.antenas),
+/* ── 6. Comunicados (Anexo 1 §6, pp. 34–36) ────────────────────────────── */
 
-    // Propagação
-    tf("propagacao", "Na faixa de HF, as ondas podem ser refletidas pela ionosfera, permitindo comunicações a longas distâncias.", true,
-      "A reflexão ionosférica é característica da faixa de HF (DX).", REF.propagacao),
-    tf("propagacao", "Na faixa de VHF, o modo predominante de comunicação é a reflexão ionosférica.", false,
-      "Em VHF a reflexão ionosférica é excepcional; o modo predominante é a propagação em linha de visada.", REF.propagacao),
-    tf("propagacao", "Em VHF e UHF, a propagação predominante é praticamente em linha de visada (troposférica).", true,
-      "Em VHF/UHF a propagação direta é limitada pela curvatura da Terra.", REF.propagacao),
-    mc("propagacao", "A reflexão de ondas de HF pela ionosfera permite:",
-      ["comunicações a longas distâncias", "comunicações apenas em linha de visada", "eliminar qualquer interferência", "aumentar a potência transmitida"],
-      "O salto ionosférico em HF possibilita contatos a milhares de quilômetros.", REF.propagacao),
+function comunicados(): QuestionDraft[] {
+  const t = "comunicados";
+  return [
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que os códigos são só tradição, sem função prática.", ref: a1("6.1", 34) },
+      "Padrões como o alfabeto fonético e o Código Q existem para evitar mal-entendidos com sinal fraco, vencer diferenças de idioma e agilizar contatos.", true,
+      "A Cartilha lista esses três motivos para a padronização."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Soletrar com palavras não padronizadas.", ref: a1("6.2", "34–35"), recall: true },
+      "Para soletrar o indicativo PY2KJ em fonia, o operador diz: Papa, Yankee, dois, Kilo, Juliett.", true,
+      "P = Papa, Y = Yankee, K = Kilo, J = Juliett pelo Alfabeto Fonético Internacional; o número é dito normalmente."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Usar nomes de cidades no lugar do fonético oficial.", ref: a1("6.2", 35), recall: true },
+      "Ao soletrar a letra W em um QSO, o operador deve usar a palavra 'Washington'.", false,
+      "No Alfabeto Fonético Internacional, W é 'Whiskey'. Nomes de cidades não são o padrão."),
+    tf(t, { kind: "conceitual", level: 1, pitfall: "Confundir as palavras fonéticas de letras menos usadas.", ref: a1("6.2", 35), recall: true },
+      "No alfabeto fonético internacional, as letras Q e X são anunciadas, respectivamente, como Quebec e X-Ray.", true,
+      "Q = Quebec e X = X-Ray, conforme a tabela da Cartilha."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Confundir QTH com QRA.", ref: a1("6.3", 36), recall: true },
+      "Um operador que pergunta 'qual o seu QTH?' quer saber o indicativo de chamada da outra estação.", false,
+      "QTH é a localização (cidade, região, latitude e longitude). O indicativo é QRA."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Confundir QRM com ruído atmosférico.", ref: a1("6.3", 36), recall: true },
+      "Ao dizer 'estou com muito QRM', o operador informa que está recebendo interferência de outras estações.", true,
+      "QRM = interferência de outras estações."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Trocar QRP por QRO.", ref: a1("6.3", 36), recall: true },
+      "Pedir 'QRP' à outra estação equivale a pedir que ela aumente a potência do transmissor.", false,
+      "QRP é diminuir a potência; aumentar é QRO."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Confundir QRV com QRT.", ref: a1("6.3", 36), recall: true },
+      "Em um QSO, 'QRV' indica que a estação vai cessar a transmissão e sair do ar.", false,
+      "QRV = estou pronto/preparado. Cessar a transmissão é QRT."),
+    tf(t, { kind: "conceitual", level: 4, pitfall: "Achar que o radioamador pode usar todo o Código Q.", ref: a1("6.3", 36) },
+      "Para o radioamadorismo, o regulamento especifica o uso somente do subconjunto do Código Q das séries QRA a QUZ.", true,
+      "A Cartilha registra que só as séries QRA a QUZ são para o radioamadorismo; os demais subconjuntos são para serviços aeronáuticos, marítimos e outros."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Interpretar CL como 'na escuta'.", ref: a1("6.3", 36) },
+      "Em CW, o sinal 'CL' ao final de um QSO indica que a estação continua na escuta.", false,
+      "A Cartilha é explícita: CL indica encerramento (sair do ar), não 'na escuta'."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que o QSL é documento de licença.", ref: a1("6.4", 36) },
+      "O cartão QSL, físico ou eletrônico, confirma formalmente um contato e pode servir como prova para diplomas e certificações.", true,
+      "É a descrição da Cartilha para o cartão QSL."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Confundir conteste com rodada.", ref: a1("6.5", 36) },
+      "Em um conteste (concurso de rádio), o objetivo é realizar o maior número possível de contatos válidos.", true,
+      "A Cartilha define o conteste como o concurso em que se busca o maior número de contatos válidos."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Trocar os limites convencionais de QRP entre CW e SSB.", ref: a1("6.5", 36) },
+      "Por convenção, a operação QRP costuma usar até 10 W em CW e até 5 W em SSB.", false,
+      "Os valores estão trocados: a convenção citada na Cartilha é ≤ 5 W em CW e ≤ 10 W em SSB."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Responder ao CQ fora da frequência de quem chamou.", ref: a1("7.4", 37) },
+      "Ao responder a um CQ, o correto é chamar na sua própria frequência habitual e aguardar que a estação que chamou o encontre.", false,
+      "A Cartilha indica que, ao responder a um CQ, se deve sintonizar na QRG (frequência) do colega que chamou."),
+    mc(t, { kind: "cenario", level: 2, pitfall: "Usar palavras não padronizadas para soletrar.", ref: a1("6.2", "34–35"), recall: true },
+      "Qual sequência soletra corretamente o sufixo 'BEM' em fonia?",
+      ["Bravo, Echo, Mike", "Brasil, Europa, México", "Bravo, Eco, Maria", "Bola, Escola, Mike"],
+      "B = Bravo, E = Echo, M = Mike no Alfabeto Fonético Internacional."),
+    mc(t, { kind: "cenario", level: 3, pitfall: "Confundir QRG com QTH.", ref: a1("6.3", 36), recall: true },
+      "Um operador quer saber a frequência exata de transmissão da outra estação. Qual código Q ele deve usar?",
+      ["QRG", "QTH", "QRA", "QSL"],
+      "QRG = frequência exata de transmissão. QTH é a localização, QRA o indicativo e QSL a confirmação."),
+    mc(t, { kind: "conceitual", level: 2, pitfall: "Confundir o cartão QSL com licença.", ref: a1("6.4", 36) },
+      "Qual é a função do cartão QSL?",
+      ["Confirmar formalmente um contato realizado", "Autorizar o funcionamento da estação", "Substituir o COER em viagens ao exterior", "Comunicar uma interferência à Anatel"],
+      "O QSL confirma o contato e serve como recordação e prova para diplomas; não é licença nem autorização."),
+    mc(t, { kind: "conceitual", level: 4, pitfall: "Achar que todo o Código Q vale para o radioamador.", ref: a1("6.3", 36) },
+      "Qual subconjunto do Código Q o regulamento especifica para uso no radioamadorismo?",
+      ["Séries QRA a QUZ", "Séries QAA a QNZ", "Séries QOA a QQZ", "Todo o Código Q, sem restrição"],
+      "Só QRA a QUZ; os demais subconjuntos atendem a operações aeronáuticas, marítimas e de outros serviços."),
+  ];
+}
 
-    // Interferências
-    tf("interferencias", "Para evitar interferências, o radioamador deve operar somente nas faixas e limites de potência destinados à sua classe.", true,
-      "Operar dentro da faixa e potência da classe é medida básica de prevenção de interferência.", REF.interferencias),
-    tf("interferencias", "Operar o transmissor com a antena desconectada e sem carga adequada é um procedimento seguro.", false,
-      "Sem carga adequada, a energia refletida pode danificar o estágio final e gerar emissões espúrias.", REF.interferencias),
-    mc("interferencias", "Ao perceber que sua estação causa interferência em outro serviço, o radioamador deve:",
-      ["reduzir ou cessar as transmissões até corrigir a causa", "aumentar a potência", "mudar para o modo digital", "ignorar o problema"],
-      "Corrigir a causa e evitar causar interferência é dever do operador.", REF.interferencias),
+/* ── 7. Ética (Anexo 1 §7, pp. 37–38; identificação, p. 53) ────────────── */
 
-    // Ética
-    tf("etica", "A propaganda política é compatível com a natureza do Serviço de Radioamador.", false,
-      "A Cartilha inclui propaganda política entre os temas incompatíveis com a natureza do serviço.", REF.etica),
-    tf("etica", "O indicativo de chamada deve ser usado no início, durante e no término das emissões ou comunicados.", true,
-      "O Ato 3448/2026 §3.2 determina o uso do indicativo no início, durante e no término das emissões ou comunicados.", REF.etica),
-    mc("etica", "Quanto à identificação da estação, é correto afirmar que o radioamador deve:",
-      ["usar o indicativo no início, durante e no término das emissões", "nunca transmitir o indicativo", "usar um pseudônimo no lugar do indicativo", "identificar-se apenas se solicitado"],
-      "O indicativo deve ser usado no início, durante e no término das emissões ou comunicados.", REF.etica),
+function etica(): QuestionDraft[] {
+  const t = "etica";
+  return [
+    tf(t, { kind: "conceitual", level: 1, pitfall: "Tratar o espectro como recurso individual.", ref: a1("7.1", 37) },
+      "Como o espectro é compartilhado, a conduta de cada operador afeta todos os demais.", true,
+      "É a regra principal da ética operacional na Cartilha: 'Respeite para ser respeitado.'"),
+    tf(t, { kind: "cenario", level: 1, pitfall: "Transmitir sem antes escutar.", ref: a1("7.2", 37) },
+      "Antes de transmitir, o operador deve escutar por um tempo para verificar se a frequência está livre.", true,
+      "A Cartilha manda escutar antes de transmitir para saber se a frequência está livre."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Achar que sinal mais forte dá prioridade.", ref: a1("7.4", 37) },
+      "Se há um QSO ativo na frequência, o operador pode chamar por cima, desde que seu sinal seja mais forte.", false,
+      "Passar por cima da fala de outros, mesmo com sinal mais forte, é interferência intencional (QRM deliberado). Deve-se esperar ou procurar outra frequência."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Usar BREAK para pedir vez em conversa comum.", ref: a1("7.3", 37) },
+      "Usar 'BREAK' para pedir a vez em uma conversa comum de rodada é procedimento adequado.", false,
+      "A Cartilha diz para não usar 'BREAK' apenas para pedir vez em conversas comuns; ele indica tráfego prioritário."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Interromper a rodada sem aguardar o câmbio.", ref: a1("7.3", 37) },
+      "Para entrar em uma rodada, o operador deve aguardar um câmbio e pedir oportunidade de forma cortês.", true,
+      "É o procedimento da Cartilha para entrar em rodadas."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Manter conversa paralela longa dentro da rodada.", ref: a1("7.3", 37) },
+      "Em uma rodada movimentada, dois participantes que queiram uma conversa longa à parte devem combinar um QSY para outra frequência.", true,
+      "A Cartilha recomenda evitar conversas paralelas longas em rodada movimentada e combinar um QSY se preciso."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Não reconhecer o 'passar por cima' como QRM intencional.", ref: a1("7.4", 37) },
+      "Transmitir por cima da fala de outro operador constitui interferência intencional (QRM deliberado), prática antiética.", true,
+      "A Cartilha classifica essa prática como QRM deliberado, antiético e prejudicial a todos."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Responder a um CQ direcionado sem ser o alvo.", ref: a1("7.5", 37) },
+      "Se uma estação faz CQ direcionado à Europa, um operador no Brasil interessado em DX pode responder normalmente.", false,
+      "Em CQ direcionado (continente, país, região, prefixo), só responde quem for o alvo. Uma estação no Brasil não é alvo de um CQ para a Europa."),
+    tf(t, { kind: "cenario", level: 5, pitfall: "Não combinar a regra do CQ direcionado com as entidades DX.", ref: a1("7.9", 38) },
+      "Uma estação em Fernando de Noronha que responde a um CQ dirigido a 'entidades fora do Brasil continental' age corretamente, pois Noronha é entidade DX distinta.", true,
+      "Fernando de Noronha é entidade DX distinta do Brasil continental, então é alvo legítimo desse CQ direcionado."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Fazer comentários longos em pile-up.", ref: a1("7.5", 37) },
+      "Em um pile-up, deve-se passar o indicativo e o relatório de forma breve, sem comentários longos.", true,
+      "Em pile-up/DXpedition, a Cartilha manda ser breve, porque há muitos aguardando contato."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Usar o sinal forte para dominar o pile-up.", ref: a1("7.5", 37) },
+      "Quem chega com sinal muito forte em um pile-up deve usar isso com responsabilidade, dando espaço a estações mais fracas.", true,
+      "É a orientação da Cartilha para quem 'chega muito forte'."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Resolver conflitos no ar.", ref: a1("7.6", 37) },
+      "Divergências entre operadores devem ser resolvidas de forma objetiva e, preferencialmente, fora do 'palco' do rádio.", true,
+      "A Cartilha recomenda resolver divergências fora do 'palco' do rádio."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Ocupar HF de longo alcance com bate-papo local.", ref: a1("7.6", 37) },
+      "Bate-papos locais devem dar preferência às faixas de HF, por terem maior alcance.", false,
+      "A Cartilha recomenda dar preferência a faixas de curto alcance, como VHF ou UHF, para bate-papos locais."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Achar aceitável o uso comercial do serviço.", ref: a1("7.8", 38) },
+      "Anunciar a venda de um equipamento usado durante uma rodada é compatível com a natureza do serviço de radioamador.", false,
+      "Negócios e mercantilização (publicidade, vendas etc.) estão entre os temas a evitar."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Usar a repetidora sem deixar espaço para outros.", ref: a1("7.7", 37) },
+      "Em uma repetidora, o ideal é emendar uma transmissão na outra, sem pausas, para não perder o canal.", false,
+      "A Cartilha recomenda pausas entre transmissões para permitir intervenções importantes, como uma emergência."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que a identificação só é exigida no início.", ref: a2("13", 53) },
+      "O indicativo de chamada deve ser usado no início, durante e no término das emissões, sendo vedada a operação de estação sem identificação.", true,
+      "A Cartilha transcreve a regra: indicativo no início, durante e no término; é vedada a operação sem identificação."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Continuar usando o indicativo antigo após mudança.", ref: a2("13", 53) },
+      "Quando a mudança de endereço exige troca de indicativo, o radioamador pode continuar operando com o indicativo antigo até receber o novo.", false,
+      "A operação só deve ser reiniciada depois do recebimento do novo indicativo de chamada."),
+    mc(t, { kind: "cenario", level: 2, pitfall: "Disputar uma frequência ocupada.", ref: a1("7.2", 37) },
+      "Ao encontrar uma frequência ocupada por um QSO, qual é o procedimento ético?",
+      ["Esperar o intervalo ou procurar outra frequência", "Transmitir por cima, se o seu sinal for mais forte", "Usar 'BREAK' para pedir a frequência", "Aumentar a potência para ser ouvido primeiro"],
+      "A Cartilha manda esperar ou procurar outra frequência; não se 'expulsa' quem já está usando, salvo emergência real."),
+    mc(t, { kind: "conceitual", level: 2, pitfall: "Não reconhecer os temas a evitar.", ref: a1("7.8", 38) },
+      "Qual tema deve ser evitado no serviço de radioamador?",
+      ["Propaganda política", "Troca de informações técnicas", "Relatório de sinal", "Organização de conteste"],
+      "A Cartilha lista entre os temas a evitar negócios/mercantilização, propaganda política e trotes."),
+    mc(t, { kind: "cenario", level: 4, pitfall: "Responder a CQ direcionado sem ser o alvo.", ref: a1("7.5", 37) },
+      "Uma estação chama 'CQ PY5', isto é, dirigido a um prefixo específico. Quem deve responder?",
+      ["Apenas estações com prefixo PY5", "Qualquer estação brasileira", "Somente estações estrangeiras", "Qualquer estação com sinal forte"],
+      "Em CQ direcionado, só responde quem é o alvo; no caso, as estações com prefixo PY5."),
+    mc(t, { kind: "conceitual", level: 3, pitfall: "Confundir ilhas costeiras com entidades DX.", ref: a1("7.9", 38) },
+      "Para efeitos de DX, quais são consideradas entidades distintas do Brasil continental?",
+      ["Fernando de Noronha, Ilhas de São Pedro e São Paulo e Ilha de Trindade", "Ilha de Marajó, Ilha Grande e Ilhabela", "Florianópolis, Vitória e São Luís", "Ilha do Mel, Ilha Comprida e Ilha do Bananal"],
+      "A Cartilha lista Brasil (continente), Fernando de Noronha, Ilhas de São Pedro e São Paulo e Ilha de Trindade."),
+    mc(t, { kind: "cenario", level: 3, pitfall: "Usar a repetidora para conflitos.", ref: a1("7.7", 37) },
+      "Em uma repetidora, qual conduta está de acordo com a ética operacional?",
+      ["Respeitar o tempo máximo por câmbio e fazer pausas entre transmissões", "Usar o canal para resolver conflitos pessoais", "Criticar no ar outra repetidora da região", "Transmitir sem pausas para manter o canal ocupado"],
+      "A Cartilha recomenda respeitar o tempo por câmbio, fazer pausas e não usar a repetidora para conflitos, boatos e intrigas."),
+  ];
+}
 
-    // Emergências
-    tf("emergencias", "Em situação de emergência, as mensagens de socorro têm prioridade sobre qualquer outro tráfego.", true,
-      "O tráfego de emergência tem prioridade absoluta no serviço de radioamador.", REF.emergencias),
-    tf("emergencias", "A transmissão simultânea em mais de uma faixa de frequências é permitida para atendimento de situação de emergência ou calamidade pública.", true,
-      "O Ato 3448/2026 §10.1 inclui o atendimento de situação de emergência ou calamidade pública entre as hipóteses autorizadas.", REF.emergencias),
-    mc("emergencias", "Em situação de emergência, o radioamador deve:",
-      ["dar prioridade às mensagens de socorro", "transmitir em qualquer frequência", "interromper todo tipo de comunicação", "usar potência máxima em qualquer faixa"],
-      "O suporte às comunicações de emergência ocorre dentro da regulamentação, com prioridade ao socorro.", REF.emergencias),
+/* ── 8. Emergências (Anexo 1 §8, p. 38; §12, p. 53; Anexo 2 §4.4, p. 46) ─ */
+
+function emergencias(): QuestionDraft[] {
+  const t = "emergencias";
+  return [
+    tf(t, { kind: "conceitual", level: 1, pitfall: "Achar que tráfego de emergência disputa espaço com os demais.", ref: a1("8.1", 38) },
+      "Em situação de emergência, as comunicações de socorro têm prioridade real sobre qualquer outro tráfego.", true,
+      "É a 'prioridade absoluta' da Cartilha: o foco é salvar vidas e minimizar danos."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Ignorar o 'break break' em QSO comum.", ref: a1("8.2", 38) },
+      "Ao ouvir 'break break' em uma frequência ocupada por um QSO comum, os operadores devem interromper a conversa e dar espaço à estação em emergência.", true,
+      "É o procedimento descrito pela Cartilha."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Banalizar o uso de BREAK.", ref: a1("8.2", 38) },
+      "'BREAK' é expressão de uso trivial, adequada para entrar em qualquer rodada, mesmo fora de emergência.", false,
+      "A Cartilha diz que 'BREAK' não é de uso trivial; em emergência indica tráfego prioritário."),
+    tf(t, { kind: "cenario", level: 2, pitfall: "Achar que só a estação em emergência tem deveres.", ref: a1("8.3", 38) },
+      "Durante um tráfego de emergência, os demais operadores devem evitar transmissões desnecessárias e ajudar a manter a disciplina na frequência.", true,
+      "A Cartilha atribui esse dever aos outros operadores."),
+    tf(t, { kind: "cenario", level: 1, pitfall: "Prolongar mensagens em emergência.", ref: a1("8.4", 38) },
+      "Em emergência, a comunicação deve ser clara, breve e objetiva.", true,
+      "É a primeira regra da conduta correta em emergência."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Usar a emergência para fins próprios, mesmo que brevemente.", ref: a1("8.4", 38) },
+      "Aproveitar a ativação de uma rede de emergência para testar o alcance de um equipamento novo é aceitável, desde que o teste seja breve.", false,
+      "A Cartilha manda não usar a emergência para testar equipamento ou brincar, independentemente da duração."),
+    tf(t, { kind: "cenario", level: 3, pitfall: "Achar que confirmar mensagens é sempre excesso de tráfego.", ref: a1("8.4", 38) },
+      "Em emergência, confirmar mensagens importantes deve ser sempre evitado, pois toda confirmação é excesso de tráfego.", false,
+      "A Cartilha recomenda confirmar as mensagens importantes, apenas sem gerar excesso de tráfego."),
+    tf(t, { kind: "conceitual", level: 2, pitfall: "Tratar trote de emergência como brincadeira inofensiva.", ref: a1("7.8", 38) },
+      "Simular uma emergência como brincadeira ou trote é incompatível com a natureza do serviço de radioamador.", true,
+      "Brincadeiras enganosas ou trotes, especialmente simulando emergências, estão entre os temas a evitar."),
+    tf(t, { kind: "conceitual", level: 4, pitfall: "Desconhecer as hipóteses de transmissão simultânea.", ref: a2("4.4", 46) },
+      "A transmissão simultânea em mais de uma faixa de frequências é permitida para o atendimento de situação de emergência ou calamidade pública.", true,
+      "Está entre as hipóteses exclusivas previstas: boletins de associações, emergência ou calamidade pública, complementação de transmissões e competições internacionais."),
+    tf(t, { kind: "conceitual", level: 4, pitfall: "Achar que a transmissão simultânea é livre.", ref: a2("4.4", 46) },
+      "A transmissão simultânea em mais de uma faixa é permitida livremente, a critério do radioamador, desde que use baixa potência.", false,
+      "Ela é permitida exclusivamente nas hipóteses previstas (boletins de associações, emergência/calamidade, complementação de transmissões, competições internacionais). Potência baixa não é critério."),
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Restringir a prioridade às emergências declaradas.", ref: a2("12", 53) },
+      "Em busca e salvamento ou defesa civil, as comunicações de socorro só têm precedência se houver declaração formal de calamidade pública.", false,
+      "A Cartilha estende a precedência a emergência, calamidade pública, busca e salvamento e defesa civil, sem exigir declaração formal."),
+    tf(t, { kind: "cenario", level: 4, pitfall: "Achar que conversa paralela é aceitável se não for sobre a emergência.", ref: a1("8.4", 38) },
+      "Durante uma operação de emergência, conversas paralelas na mesma frequência são aceitáveis, desde que não tratem do assunto da emergência.", false,
+      "A Cartilha manda evitar discussões paralelas, pois qualquer ruído pode atrapalhar a operação crítica."),
+    mc(t, { kind: "cenario", level: 2, pitfall: "Ignorar o pedido de prioridade.", ref: a1("8.2", 38) },
+      "Durante um QSO comum, alguém transmite 'break break'. O que os operadores devem fazer?",
+      ["Interromper a conversa e dar espaço à estação em emergência", "Continuar o QSO e responder no próximo câmbio", "Pedir que a estação aguarde o fim da rodada", "Mudar de faixa e seguir conversando sem responder"],
+      "'Break break' indica tráfego prioritário: interrompe-se o papo e dá-se espaço à estação em emergência."),
+    mc(t, { kind: "conceitual", level: 4, pitfall: "Desconhecer as hipóteses de transmissão simultânea.", ref: a2("4.4", 46) },
+      "Em qual destes casos a transmissão simultânea em mais de uma faixa de frequências é permitida?",
+      ["Atendimento de situação de emergência ou calamidade pública", "Sempre que a potência for inferior a 10 W", "Apenas para radioamadores da Classe A, em qualquer situação", "Em conversas locais, para alcançar mais colegas"],
+      "A emergência/calamidade pública é uma das hipóteses exclusivas; potência ou classe, por si sós, não autorizam."),
+    mc(t, { kind: "cenario", level: 2, pitfall: "Gerar tráfego desnecessário em emergência.", ref: a1("8.4", 38) },
+      "Qual conduta é adequada em uma comunicação de emergência?",
+      ["Ser claro, breve e objetivo", "Transmitir longos relatórios de sinal", "Aproveitar para testar equipamentos", "Manter conversas paralelas para animar a rede"],
+      "A Cartilha pede clareza, brevidade e objetividade, sem testes nem discussões paralelas."),
+    mc(t, { kind: "conceitual", level: 3, pitfall: "Achar que a frequência em emergência continua livre para todos.", ref: a1("8.3", 38) },
+      "Em situação de emergência, a frequência em uso:",
+      ["Pode ser tratada como prioritária para aquele tráfego", "Fica livre para qualquer QSO", "Deve ser abandonada por todas as estações", "Só pode ser usada por radioamadores Classe A"],
+      "A Cartilha diz que a frequência pode ser tratada como prioritária para aquele tráfego, e os demais devem evitar transmissões desnecessárias."),
   ];
 }
 
 export function buildTeoQuestions(): QuestionDraft[] {
   return [
-    ...phoneticTf(),
-    ...phoneticMc(),
-    ...qcodesTf(),
-    ...qcodesMc(),
-    ...bandsTf(),
-    ...bandsMc(),
-    ...wavelengthTf(),
-    ...wavelengthMc(),
-    ...handwritten(),
+    ...estacao(),
+    ...antenas(),
+    ...frequencia(),
+    ...propagacao(),
+    ...interferencias(),
+    ...comunicados(),
+    ...etica(),
+    ...emergencias(),
   ];
 }

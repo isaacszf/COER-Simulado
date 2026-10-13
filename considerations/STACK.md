@@ -27,7 +27,7 @@ Static, backendless quiz app. Two independent halves: a **build-time question pi
 
 ```
 app/scripts/
-├── schema.ts        # types + invariants (questionType, ementa topics, reviewed, options, single correct index)
+├── schema.ts        # types + invariants (questionType, ementa topics, kind/level/pitfall, review flags, options, single correct index)
 ├── templates/
 │   ├── teo.ts       # parametric templates per ementa topic
 │   ├── ele.ts
@@ -37,7 +37,7 @@ app/scripts/
 ```
 
 - Question items are pt-BR; `true-false` (official, Simulado) and single-answer `multiple-choice` (Treino) only — enforced by `schema.ts` per `AGENTS.md`.
-- Every item carries an ementa-topic slug and `reviewed: false` until validated (per `AGENTS.md`).
+- Every item carries an ementa-topic slug and a review flag: `checkedByAi` or `reviewed` (per `AGENTS.md`).
 
 ## Site (Astro, under `app/`)
 

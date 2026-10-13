@@ -8,6 +8,7 @@ Static quiz/training app for the COER radioamador exam (Classe C). No backend.
 | --- | --- | --- |
 | `considerations/IDEA.md` | the vision — the human's own notes, **not a spec** | orienting |
 | `considerations/SUBJECTS-SURVEY.md` | exam research, **dated 2026-10-12** | any exam/subject/question work |
+| `considerations/QUESTION-QUALITY-SURVEY.md` | bank-vs-exam benchmark, **dated 2026-10-13** | any question-quality work |
 | `considerations/BRAINSTORM.md` | design decisions + schema + open threads — the product spec | any feature or question work; record new decisions there |
 | `considerations/STACK.md` | technology decisions — static Astro + vanilla TS islands, JSON bank, TS pipeline | any tooling/structure decision |
 | `DESIGN.md` | UI design contract (Dell 1996) — **binding** for UI work | any UI work |
@@ -26,7 +27,7 @@ Static quiz/training app for the COER radioamador exam (Classe C). No backend.
 ## Question content invariants
 
 - Content is pt-BR; exam format per Ato 3448/2026: **certa/errado** (official, Simulado only) + **single-answer multiple-choice** (Treino only). No other types.
-- Every item is tagged with an ementa topic (Ato 3448 §11.4) and `reviewed: false` until validated against the Cartilha — never present generated content as official.
+- Every item is tagged with an ementa topic (Ato 3448 §11.4) and must be checked against the Cartilha before shipping: `checkedByAi: true` (AI review against the Cartilha text) or `reviewed: true` (human review). Human review is optional. Never present generated content as official.
 - Simulado = certa/errado only; Treino may mix (50/50 default).
 
 ## About this file
