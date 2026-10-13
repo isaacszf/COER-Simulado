@@ -2,6 +2,8 @@
 import Layout from "../../components/Layout.astro";
 import TopBanner from "../../components/TopBanner.astro";
 import Footer from "../../components/Footer.astro";
+import SubjectIntro from "../../components/SubjectIntro.astro";
+import { subjectSeo } from "../../lib/site";
 import { readFileSync } from "node:fs";
 import { SUBJECT_ORDER, SUBJECTS } from "../../../scripts/schema";
 import type { Bank, Question } from "../../../scripts/schema";
@@ -24,6 +26,7 @@ try {
 }
 
 const hasBank = !!bank && bank.questions.length > 0;
+const seo = subjectSeo("treino", code, bank, Astro.site);
 
 /** Topics that actually exist in this bank, in ementa order. */
 const topicList = hasBank
@@ -32,11 +35,12 @@ const topicList = hasBank
 
 const inlineJson = JSON.stringify(bank ?? { subject: code, subjectName: meta.name, questions: [] });
 ---
-<Layout title={`Treino ${meta.name} — COER`}>
+<Layout title={seo.title} description={seo.description} jsonLd={hasBank ? seo.jsonLd : undefined}>
   <TopBanner label={`TREINO — ${meta.name.toUpperCase()}`} />
   <main>
     {hasBank ? (
       <>
+        <SubjectIntro mode="treino" code={code} count={seo.count} />
         <div id="bank-data" hidden>{inlineJson}</div>
 
         <section class="notice" id="config-panel">

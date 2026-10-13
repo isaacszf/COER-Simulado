@@ -168,6 +168,13 @@ a { color: var(--link); }
   margin: 0 0 22px;
   font-size: 16px;
 }
+/* FAQ: question headings in the UI face, answers in body copy. */
+.faq h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 700;
+}
 .about-note {
   background: var(--tint-sage);
   border: 2px solid var(--frame-ink);

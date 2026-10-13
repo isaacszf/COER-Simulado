@@ -51,7 +51,7 @@ app/
 └── src/
     ├── pages/       # static pages (index, simulado, treino)
     ├── components/  # .astro components (Dell-96 chrome per DESIGN.md)
-    ├── lib/         # vanilla TS: bank helpers + quiz engine
+    ├── lib/         # vanilla TS: bank helpers, quiz engine, site/SEO metadata
     └── styles/      # design tokens mapped from DESIGN.md
 ```
 
@@ -65,6 +65,13 @@ app/
 - `npm run validate` — lint the bank.
 - `npm run dev` — Astro dev server.
 - `npm run build` — generate + validate + Astro build → `dist/`.
+
+## Hosting & SEO
+
+- **Host:** Cloudflare Pages (free), connected to the GitHub repo. Settings: production branch `main`, root directory `app`, build command `npm run build`, output directory `dist`. Node major version comes from `app/.nvmrc`. Every push to `main` redeploys; a failing validator fails the deploy.
+- **`site`** in `astro.config.mjs` is the public URL (`https://coer-simulado.pages.dev`). It must match the Cloudflare project name. Canonical links, Open Graph tags, the sitemap, `robots.txt` and `llms.txt` are all built from it.
+- **SEO:** `Layout.astro` takes `title`, `description` and optional `jsonLd`. Every page sets its own; subject pages get them from `subjectSeo()` in `src/lib/site.ts`. `@astrojs/sitemap` writes `sitemap-index.xml`, and `src/pages/robots.txt.ts` points crawlers at it. Subject pages render a `SubjectIntro` (summary plus ementa topics) server-side, because the quiz renders client-side.
+- **GEO:** the home page FAQ (`FAQ` in `src/lib/site.ts`) is rendered as visible text and as `FAQPage` JSON-LD. Subject pages emit `Quiz` JSON-LD. `src/pages/llms.txt.ts` builds `/llms.txt` from the same FAQ and subject data, so the facts live in one place.
 
 ## Open / future
 

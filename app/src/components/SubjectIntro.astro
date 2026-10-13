@@ -1,0 +1,30 @@
+---
+/**
+ * SubjectIntro — server-rendered summary above a subject quiz, so the page
+ * has crawlable text (the quiz itself renders client-side).
+ */
+import { SUBJECTS, type SubjectId } from "../../scripts/schema";
+import type { PageMode } from "../lib/site";
+
+interface Props {
+  mode: PageMode;
+  code: SubjectId;
+  count: number;
+}
+const { mode, code, count } = Astro.props;
+const meta = SUBJECTS[code];
+---
+<section class="subject-intro">
+  {mode === "simulado" ? (
+    <p>
+      Simulado de <strong>{meta.name}</strong> no formato da prova da Anatel para a Classe C:
+      15 questões certo/errado, 20 minutos e mínimo de 8 acertos, sorteadas de {count} questões.
+    </p>
+  ) : (
+    <p>
+      Treino de <strong>{meta.name}</strong>: escolha o assunto e o tipo de questão. Cada resposta
+      vem com explicação e a fonte na Cartilha. {count} questões no banco.
+    </p>
+  )}
+  <p><strong>Assuntos da ementa:</strong> {meta.topics.map((t) => t.name).join(" · ")}.</p>
+</section>

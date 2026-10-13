@@ -2,6 +2,8 @@
 import Layout from "../../components/Layout.astro";
 import TopBanner from "../../components/TopBanner.astro";
 import Footer from "../../components/Footer.astro";
+import SubjectIntro from "../../components/SubjectIntro.astro";
+import { subjectSeo } from "../../lib/site";
 import { readFileSync } from "node:fs";
 import { SUBJECT_ORDER, SUBJECTS } from "../../../scripts/schema";
 import type { Bank } from "../../../scripts/schema";
@@ -24,13 +26,15 @@ try {
 }
 
 const hasBank = !!bank && bank.questions.length > 0;
+const seo = subjectSeo("simulado", code, bank, Astro.site);
 const inlineJson = JSON.stringify(bank ?? { subject: code, subjectName: meta.name, questions: [] });
 ---
-<Layout title={`Simulado ${meta.name} — COER`}>
+<Layout title={seo.title} description={seo.description} jsonLd={hasBank ? seo.jsonLd : undefined}>
   <TopBanner label={`SIMULADO — ${meta.name.toUpperCase()}`} />
   <main>
     {hasBank ? (
       <>
+        <SubjectIntro mode="simulado" code={code} count={seo.count} />
         <div id="bank-data" hidden>{inlineJson}</div>
         <div id="quiz-mount" aria-live="polite"></div>
         <script>

@@ -1,11 +1,20 @@
 ---
 import "../styles/tokens.css";
 import "../styles/base.css";
+import { SITE_NAME } from "../lib/site";
 
 interface Props {
     title?: string;
+    description?: string;
+    /** schema.org object(s), emitted as JSON-LD. */
+    jsonLd?: object | object[];
 }
-const { title = "SIMULADO COER — Radioamador Classe C" } = Astro.props;
+const {
+    title = "Simulado COER — Prova de Radioamador Classe C",
+    description = "Simulado gratuito para a prova do COER (radioamador Classe C) da Anatel: questões certo/errado no formato oficial e treino por assunto, com explicação e fonte.",
+    jsonLd,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <!doctype html>
@@ -14,10 +23,19 @@ const { title = "SIMULADO COER — Radioamador Classe C" } = Astro.props;
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title}</title>
-        <meta
-            name="description"
-            content="Treinamento para a prova do Certificado de Operador de Estação de Radioamador (COER) — Classe C. Simulado e treino por assunto."
-        />
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta name="theme-color" content="#e91d2a" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta name="twitter:card" content="summary" />
+        {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     </head>
     <body>
         <div class="page">

@@ -11,6 +11,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "@types/node": "^22.10.5",
     "astro": "^5.1.5",
     "tsx": "^4.19.2",
