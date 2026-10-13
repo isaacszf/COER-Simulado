@@ -23,9 +23,9 @@ The official attachment URL (`sistemas.anatel.gov.br/anexar-api/publico/anexos/d
 
 The site is a JS app. Its question bank ships in the public JS bundle, which we read for analysis only.
 
-| | Old TEO bank (75) | id.qsl.br (1.877) | New TEO bank (161) |
+| | Old TEO bank (75) | id.qsl.br (1.877) | New TEO bank (159) |
 | --- | --- | --- | --- |
-| Format | 59 certo/errado + 16 multiple-choice | 100% certo/errado | 126 certo/errado + 35 multiple-choice (Treino only) |
+| Format | 59 certo/errado + 16 multiple-choice | 100% certo/errado | 124 certo/errado + 35 multiple-choice (Treino only) |
 | Subjects | TEO only | TEO 624 · LEG 540 · ELE 713 | TEO only |
 | Kind mix (conceitual / cenario / calculo) | not tracked; nearly all recall | 46% / 37% / 18% | 47% / 42% / 12% |
 | Level mix (L1–L5) | not tracked; nearly all L1 | 6 / 24 / 49 / 16 / 5% | 8 / 25 / 47 / 16 / 4% |
@@ -71,7 +71,7 @@ Every one of the 161 TEO items was checked against the Cartilha 2026-06 text: an
   - TEO-136: removed an inference the Cartilha doesn't make.
   - TEO-107, TEO-120: page range corrected to pp. 34–35.
 - **Corrected 3 references** (TEO-139, TEO-140, TEO-156): they point to Anexo 2, not the main body.
-- **Limit (resolved later the same day):** rules from Ato 3448 were first checked only through the Cartilha's transcription. The Ato PDF was then supplied locally (`gov/`, not committed), and the TEO items that cite it (Código Q series, identification, simultaneous transmission) match its text. The 10-character special-callsign limit is confirmed by Ato item 12.11.
+- **Limit (resolved later the same day):** rules from Ato 3448 were first checked only through the Cartilha's transcription. The Ato PDF was then supplied locally (`gov/`, not committed), and the TEO items that cite it (Código Q series, identification, simultaneous transmission) match its text. The 10-character special-callsign limit is confirmed by Ato item 12.11. Two TEO items claimed Ato backing for rules that appear only in the Cartilha (keep operating with the old callsign after a move; emergency precedence without a formal declaration). They were dropped, which leaves TEO at 159 items. The remaining Ato-backed TEO items now cite the Ato item numbers.
 
 ELE (153 items) and LEG (182 items) were written to the same standard and AI-reviewed the same way. LEG is checked against both the Cartilha Anexo 2 and the Ato text: call-sign formation (Ato item 12, Tabelas II–V), operating and repeater rules (item 10), exams (item 11), IARP and foreign operators (items 7–8). Items that rest only on the Ato cite it as `Ato nº 3448/2026, item N`.
 

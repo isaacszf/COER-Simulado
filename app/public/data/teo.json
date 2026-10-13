@@ -2,7 +2,7 @@
   "subject": "TEO",
   "subjectName": "Técnica e Ética Operacional",
   "sourceBasis": "Ato 3448/2026 §11.4 ementa · Cartilha do Serviço Radioamador, versão 2026-06",
-  "generatedAt": "2026-10-13T06:25:45.532Z",
+  "generatedAt": "2026-10-13T18:45:19.373Z",
   "questions": [
     {
       "subject": "TEO",
@@ -2527,29 +2527,12 @@
       "level": 3,
       "pitfall": "Achar que a identificação só é exigida no início.",
       "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §13, p. 53; Ato 3448/2026",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §13, p. 53; Ato 3448/2026, item 3.1 I e 10.2",
       "reviewed": false,
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
       "id": "TEO-139"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Quando a mudança de endereço exige troca de indicativo, o radioamador pode continuar operando com o indicativo antigo até receber o novo.",
-      "explanation": "A operação só deve ser reiniciada depois do recebimento do novo indicativo de chamada.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Continuar usando o indicativo antigo após mudança.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §13, p. 53; Ato 3448/2026",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-140"
     },
     {
       "subject": "TEO",
@@ -2572,7 +2555,7 @@
         "Aumentar a potência para ser ouvido primeiro"
       ],
       "answer": 2,
-      "id": "TEO-141"
+      "id": "TEO-140"
     },
     {
       "subject": "TEO",
@@ -2595,7 +2578,7 @@
         "Propaganda política"
       ],
       "answer": 3,
-      "id": "TEO-142"
+      "id": "TEO-141"
     },
     {
       "subject": "TEO",
@@ -2618,7 +2601,7 @@
         "Qualquer estação com sinal forte"
       ],
       "answer": 0,
-      "id": "TEO-143"
+      "id": "TEO-142"
     },
     {
       "subject": "TEO",
@@ -2641,7 +2624,7 @@
         "Ilha do Mel, Ilha Comprida e Ilha do Bananal"
       ],
       "answer": 1,
-      "id": "TEO-144"
+      "id": "TEO-143"
     },
     {
       "subject": "TEO",
@@ -2664,7 +2647,7 @@
         "Transmitir sem pausas para manter o canal ocupado"
       ],
       "answer": 2,
-      "id": "TEO-145"
+      "id": "TEO-144"
     },
     {
       "subject": "TEO",
@@ -2681,7 +2664,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-146"
+      "id": "TEO-145"
     },
     {
       "subject": "TEO",
@@ -2698,7 +2681,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-147"
+      "id": "TEO-146"
     },
     {
       "subject": "TEO",
@@ -2715,7 +2698,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-148"
+      "id": "TEO-147"
     },
     {
       "subject": "TEO",
@@ -2732,7 +2715,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-149"
+      "id": "TEO-148"
     },
     {
       "subject": "TEO",
@@ -2749,7 +2732,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-150"
+      "id": "TEO-149"
     },
     {
       "subject": "TEO",
@@ -2766,7 +2749,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-151"
+      "id": "TEO-150"
     },
     {
       "subject": "TEO",
@@ -2783,7 +2766,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-152"
+      "id": "TEO-151"
     },
     {
       "subject": "TEO",
@@ -2800,7 +2783,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-153"
+      "id": "TEO-152"
     },
     {
       "subject": "TEO",
@@ -2812,12 +2795,12 @@
       "level": 4,
       "pitfall": "Desconhecer as hipóteses de transmissão simultânea.",
       "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §4.4, p. 46; Ato 3448/2026",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §4.4, p. 46; Ato 3448/2026, item 10.1",
       "reviewed": false,
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-154"
+      "id": "TEO-153"
     },
     {
       "subject": "TEO",
@@ -2829,29 +2812,12 @@
       "level": 4,
       "pitfall": "Achar que a transmissão simultânea é livre.",
       "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §4.4, p. 46; Ato 3448/2026",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §4.4, p. 46; Ato 3448/2026, item 10.1",
       "reviewed": false,
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-155"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Em busca e salvamento ou defesa civil, as comunicações de socorro só têm precedência se houver declaração formal de calamidade pública.",
-      "explanation": "A Cartilha estende a precedência a emergência, calamidade pública, busca e salvamento e defesa civil, sem exigir declaração formal.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Restringir a prioridade às emergências declaradas.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §12, p. 53; Ato 3448/2026",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-156"
+      "id": "TEO-154"
     },
     {
       "subject": "TEO",
@@ -2868,7 +2834,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-157"
+      "id": "TEO-155"
     },
     {
       "subject": "TEO",
@@ -2891,7 +2857,7 @@
         "Interromper a conversa e dar espaço à estação em emergência"
       ],
       "answer": 3,
-      "id": "TEO-158"
+      "id": "TEO-156"
     },
     {
       "subject": "TEO",
@@ -2903,7 +2869,7 @@
       "level": 4,
       "pitfall": "Desconhecer as hipóteses de transmissão simultânea.",
       "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §4.4, p. 46; Ato 3448/2026",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §4.4, p. 46; Ato 3448/2026, item 10.1",
       "reviewed": false,
       "checkedByAi": true,
       "questionType": "multiple-choice",
@@ -2914,7 +2880,7 @@
         "Em conversas locais, para alcançar mais colegas"
       ],
       "answer": 0,
-      "id": "TEO-159"
+      "id": "TEO-157"
     },
     {
       "subject": "TEO",
@@ -2937,7 +2903,7 @@
         "Manter conversas paralelas para animar a rede"
       ],
       "answer": 1,
-      "id": "TEO-160"
+      "id": "TEO-158"
     },
     {
       "subject": "TEO",
@@ -2960,7 +2926,7 @@
         "Só pode ser usada por radioamadores Classe A"
       ],
       "answer": 2,
-      "id": "TEO-161"
+      "id": "TEO-159"
     }
   ]
 }

@@ -24,8 +24,9 @@ const { tf, mc } = createBuilder("TEO", { checkedByAi: true });
 const a1 = (sec: string, page: number | string) => cite.annex(1, sec, page);
 /** Main-body section reference. */
 const body = cite.body;
-/** Anexo 2 (Legislação) reference — used where TEO conduct rests on the Ato. */
-const a2 = (sec: string, page: number) => cite.annex(2, sec, page, "; Ato 3448/2026");
+/** Anexo 2 (Legislação) reference plus the Ato 3448/2026 item it transcribes. */
+const a2 = (sec: string, page: number, atoItem: string) =>
+  cite.annex(2, sec, page, `; Ato 3448/2026, item ${atoItem}`);
 
 /* ── 1. Estação de radioamador (Anexo 1 §1, pp. 26–28) ─────────────────── */
 
@@ -520,12 +521,9 @@ function etica(): QuestionDraft[] {
     tf(t, { kind: "cenario", level: 3, pitfall: "Usar a repetidora sem deixar espaço para outros.", ref: a1("7.7", 37) },
       "Em uma repetidora, o ideal é emendar uma transmissão na outra, sem pausas, para não perder o canal.", false,
       "A Cartilha recomenda pausas entre transmissões para permitir intervenções importantes, como uma emergência."),
-    tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que a identificação só é exigida no início.", ref: a2("13", 53) },
+    tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que a identificação só é exigida no início.", ref: a2("13", 53, "3.1 I e 10.2") },
       "O indicativo de chamada deve ser usado no início, durante e no término das emissões, sendo vedada a operação de estação sem identificação.", true,
       "A Cartilha transcreve a regra: indicativo no início, durante e no término; é vedada a operação sem identificação."),
-    tf(t, { kind: "cenario", level: 4, pitfall: "Continuar usando o indicativo antigo após mudança.", ref: a2("13", 53) },
-      "Quando a mudança de endereço exige troca de indicativo, o radioamador pode continuar operando com o indicativo antigo até receber o novo.", false,
-      "A operação só deve ser reiniciada depois do recebimento do novo indicativo de chamada."),
     mc(t, { kind: "cenario", level: 2, pitfall: "Disputar uma frequência ocupada.", ref: a1("7.2", 37) },
       "Ao encontrar uma frequência ocupada por um QSO, qual é o procedimento ético?",
       ["Esperar o intervalo ou procurar outra frequência", "Transmitir por cima, se o seu sinal for mais forte", "Usar 'BREAK' para pedir a frequência", "Aumentar a potência para ser ouvido primeiro"],
@@ -549,7 +547,7 @@ function etica(): QuestionDraft[] {
   ];
 }
 
-/* ── 8. Emergências (Anexo 1 §8, p. 38; §12, p. 53; Anexo 2 §4.4, p. 46) ─ */
+/* ── 8. Emergências (Anexo 1 §8, p. 38; Anexo 2 §4.4, p. 46) ──────────── */
 
 function emergencias(): QuestionDraft[] {
   const t = "emergencias";
@@ -578,15 +576,12 @@ function emergencias(): QuestionDraft[] {
     tf(t, { kind: "conceitual", level: 2, pitfall: "Tratar trote de emergência como brincadeira inofensiva.", ref: a1("7.8", 38) },
       "Simular uma emergência como brincadeira ou trote é incompatível com a natureza do serviço de radioamador.", true,
       "Brincadeiras enganosas ou trotes, especialmente simulando emergências, estão entre os temas a evitar."),
-    tf(t, { kind: "conceitual", level: 4, pitfall: "Desconhecer as hipóteses de transmissão simultânea.", ref: a2("4.4", 46) },
+    tf(t, { kind: "conceitual", level: 4, pitfall: "Desconhecer as hipóteses de transmissão simultânea.", ref: a2("4.4", 46, "10.1") },
       "A transmissão simultânea em mais de uma faixa de frequências é permitida para o atendimento de situação de emergência ou calamidade pública.", true,
       "Está entre as hipóteses exclusivas previstas: boletins de associações, emergência ou calamidade pública, complementação de transmissões e competições internacionais."),
-    tf(t, { kind: "conceitual", level: 4, pitfall: "Achar que a transmissão simultânea é livre.", ref: a2("4.4", 46) },
+    tf(t, { kind: "conceitual", level: 4, pitfall: "Achar que a transmissão simultânea é livre.", ref: a2("4.4", 46, "10.1") },
       "A transmissão simultânea em mais de uma faixa é permitida livremente, a critério do radioamador, desde que use baixa potência.", false,
       "Ela é permitida exclusivamente nas hipóteses previstas (boletins de associações, emergência/calamidade, complementação de transmissões, competições internacionais). Potência baixa não é critério."),
-    tf(t, { kind: "conceitual", level: 3, pitfall: "Restringir a prioridade às emergências declaradas.", ref: a2("12", 53) },
-      "Em busca e salvamento ou defesa civil, as comunicações de socorro só têm precedência se houver declaração formal de calamidade pública.", false,
-      "A Cartilha estende a precedência a emergência, calamidade pública, busca e salvamento e defesa civil, sem exigir declaração formal."),
     tf(t, { kind: "cenario", level: 4, pitfall: "Achar que conversa paralela é aceitável se não for sobre a emergência.", ref: a1("8.4", 38) },
       "Durante uma operação de emergência, conversas paralelas na mesma frequência são aceitáveis, desde que não tratem do assunto da emergência.", false,
       "A Cartilha manda evitar discussões paralelas, pois qualquer ruído pode atrapalhar a operação crítica."),
@@ -594,7 +589,7 @@ function emergencias(): QuestionDraft[] {
       "Durante um QSO comum, alguém transmite 'break break'. O que os operadores devem fazer?",
       ["Interromper a conversa e dar espaço à estação em emergência", "Continuar o QSO e responder no próximo câmbio", "Pedir que a estação aguarde o fim da rodada", "Mudar de faixa e seguir conversando sem responder"],
       "'Break break' indica tráfego prioritário: interrompe-se o papo e dá-se espaço à estação em emergência."),
-    mc(t, { kind: "conceitual", level: 4, pitfall: "Desconhecer as hipóteses de transmissão simultânea.", ref: a2("4.4", 46) },
+    mc(t, { kind: "conceitual", level: 4, pitfall: "Desconhecer as hipóteses de transmissão simultânea.", ref: a2("4.4", 46, "10.1") },
       "Em qual destes casos a transmissão simultânea em mais de uma faixa de frequências é permitida?",
       ["Atendimento de situação de emergência ou calamidade pública", "Sempre que a potência for inferior a 10 W", "Apenas para radioamadores da Classe A, em qualquer situação", "Em conversas locais, para alcançar mais colegas"],
       "A emergência/calamidade pública é uma das hipóteses exclusivas; potência ou classe, por si sós, não autorizam."),
