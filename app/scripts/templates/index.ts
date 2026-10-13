@@ -4,8 +4,10 @@
  * function, then add one line here.
  */
 import type { QuestionDraft, SubjectId } from "../schema";
+import { buildEleQuestions } from "./ele";
 import { buildTeoQuestions } from "./teo";
 
 export const BUILDERS: Partial<Record<SubjectId, () => QuestionDraft[]>> = {
   TEO: buildTeoQuestions,
+  ELE: buildEleQuestions,
 };

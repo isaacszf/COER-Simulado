@@ -47,7 +47,7 @@ Related docs: [`IDEA.md`](./IDEA.md) (the idea) · [`SUBJECTS-SURVEY.md`](./SUBJ
 | Legislação de Telecomunicações | ~165–185 (most hand-written — law content) |
 | **Classe C total** | **~660** |
 
-- **Current MVP bank (2026-10-13):** TEO has 161 questions (126 certo/errado, 35 multiple-choice), rebuilt to the §5 quality standard against Cartilha 2026-06; all `checkedByAi: true` after a full AI review (2026-10-13), none human-reviewed yet. It replaced the earlier 75-item bank, which was 71% phonetic/Código Q/band recall (see `QUESTION-QUALITY-SURVEY.md`). The larger pool estimates remain long-term targets.
+- **Current MVP bank (2026-10-13):** TEO has 161 questions (126 certo/errado, 35 multiple-choice), rebuilt to the §5 quality standard against Cartilha 2026-06; all `checkedByAi: true` after a full AI review (2026-10-13), none human-reviewed yet. It replaced the earlier 75-item bank, which was 71% phonetic/Código Q/band recall (see `QUESTION-QUALITY-SURVEY.md`). ELE (CBEE) has 153 questions (125 certo/errado, 28 multiple-choice) on the Classe C ementa only: Anexo 3's Classe B content (colour code, series/parallel, Kirchhoff, reactance, RLC, ASK/FSK/PSK) is left out. All `checkedByAi: true` after a full AI review (2026-10-13). The larger pool estimates remain long-term targets.
 
 - **Build order:** TEO → ELE → LEG (Eletrônica is the high-yield/low-review win; Legislação last, writ-heavy).
 - Legislação is the honest low spot: if we ever want it > ~250 we'd need legacy extraction or looser/repetitive questions — the recommendation is that ~180 strong items is enough.

@@ -299,6 +299,7 @@ a { color: var(--link); }
 .feedback--bad { background: var(--bad); }
 .feedback__verdict { font-family: var(--font-ui); font-weight: 700; font-size: 14px; text-transform: uppercase; margin-bottom: var(--sp-m); }
 .feedback__explanation { margin: 0; }
+.feedback__source { margin: var(--sp-m) 0 0; font-family: var(--font-body); font-size: 13px; font-style: italic; }
 
 /* ── Results (Simulado) ── */
 .result { text-align: center; }

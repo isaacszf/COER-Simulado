@@ -235,6 +235,7 @@ function runTreino(mount: HTMLElement, cfg: QuizConfig) {
         : `<div class="feedback ${isCorrectChoice ? "feedback--ok" : "feedback--bad"}">
              <div class="feedback__verdict">${isCorrectChoice ? "CERTO ✔" : "ERRADO ✘ — resposta correta: " + correctAnswerLabel}</div>
              <p class="feedback__explanation">${esc(q.explanation)}</p>
+             <p class="feedback__source">Fonte: ${esc(q.sourceRef)}</p>
            </div>`;
 
     mount.innerHTML = `
