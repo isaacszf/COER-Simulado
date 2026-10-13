@@ -75,6 +75,14 @@ Every one of the 161 TEO items was checked against the Cartilha 2026-06 text: an
 
 ELE (153 items) and LEG (182 items) were written to the same standard and AI-reviewed the same way. LEG is checked against both the Cartilha Anexo 2 and the Ato text: call-sign formation (Ato item 12, Tabelas II–V), operating and repeater rules (item 10), exams (item 11), IARP and foreign operators (items 7–8). Items that rest only on the Ato cite it as `Ato nº 3448/2026, item N`.
 
+LEG second-pass review (2026-10-13), all 182 items re-read against both texts. No wrong answers found. Fixed 5 items:
+
+- LEG-111: the "Classe C has three-letter suffixes" errado item is now scoped to São Paulo, because Ato item 12.10.6 II allows two letters for Classe C in Antarctica.
+- LEG-031: rewritten so it no longer says a partial match "follows" the recommendation.
+- LEG-167: homologation wording no longer reads as three options.
+- LEG-179: dropped "instead of radiating through the antenna", which the Cartilha doesn't say.
+- LEG-032: fixed a duplicated Cartilha prefix in the reference.
+
 ---
 
 *Sources (accessed 2026-10-13): id.qsl.br/simulados (app bundle + hosted Cartilha v9); Anatel Cartilha attachment e2bee3ec…; Anatel Manual do Candidato v2026-04.1 (attachment 0a5f2113…); Anatel legacy Legislação bank (attachment 9eba8822…); antenaativa.com.br (prova Anatel, simulador COER, candidate comments); labredf.org.br/2026/10 simulator announcement; telesintese.com.br and gov.br/anatel news on the resumption of exams.*
