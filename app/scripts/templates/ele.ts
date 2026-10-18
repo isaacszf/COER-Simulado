@@ -559,6 +559,176 @@ function telecomunicacoes(): QuestionDraft[] {
   ];
 }
 
+/* ── Expansion (2026-10) ────────────────────────────────────────────────
+ * Second batch of items, one function per topic. They are listed after the
+ * first batch in buildEleQuestions() so the earlier IDs (ELE-001…153) stay
+ * stable. Eletrônica básica gets no new items: it is already near the 25%
+ * topic cap. Same Classe C scope as the first batch.
+ */
+
+// Full AI review of every expansion item against the Cartilha 2026-06 text,
+// done 2026-10-18.
+const ext = createBuilder("ELE", { checkedByAi: true });
+
+function eletromagnetismoExtra(): QuestionDraft[] {
+  const t = "eletromagnetismo-basico";
+  return [
+    ext.tf(t, { kind: "calculo", level: 3, pitfall: "Errar a divisão de 300 por f.", ref: a1("3.1", 29) },
+      "Um sinal de 14,2 MHz tem comprimento de onda de cerca de 21 m e pertence à faixa de HF.", true,
+      "λ ≈ 300 / 14,2 ≈ 21,1 m; 14,2 MHz está em HF (3–30 MHz)."),
+    ext.tf(t, { kind: "calculo", level: 3, pitfall: "Não converter kHz para MHz antes de calcular λ.", ref: a1("3.2", 29) },
+      "Um sinal de 1.500 kHz tem comprimento de onda de cerca de 200 m e pertence à faixa de MF.", true,
+      "1.500 kHz = 1,5 MHz; λ ≈ 300 / 1,5 = 200 m. MF vai de 300 a 3.000 kHz."),
+    ext.tf(t, { kind: "calculo", level: 4, pitfall: "Errar as potências de dez em λ = c / f.", ref: a1("3.1", 29) },
+      "Usando λ = c / f, com c = 3 × 10⁸ m/s, um sinal de 100 MHz tem comprimento de onda de 30 m.", false,
+      "λ = 3 × 10⁸ / 1 × 10⁸ = 3 m. 30 m seria o λ de 10 MHz."),
+    ext.tf(t, { kind: "cenario", level: 3, pitfall: "Achar que frequência maior exige antena maior.", ref: a1("3.1", 29) },
+      "Ao trocar uma antena de 2 m por uma para 70 cm, o operador deve esperar uma antena maior, pois a frequência mais alta tem comprimento de onda maior.", false,
+      "É o contrário: frequência mais alta tem comprimento de onda menor (λ ≈ 300 / f), então a antena para 70 cm é menor que a de 2 m."),
+    ext.tf(t, { kind: "conceitual", level: 3, pitfall: "Trocar os nomes das ondas por faixa.", recall: true, ref: a1("3.2", 29) },
+      "A faixa de VLF, de 3 a 30 kHz, tem ondas chamadas quilométricas.", false,
+      "As ondas de VLF são miriamétricas. Quilométricas são as de LF (30–300 kHz)."),
+    ext.tf(t, { kind: "conceitual", level: 4, pitfall: "Achar que ondas de frequências diferentes viajam a velocidades diferentes.", ref: a1("3.1", 29) },
+      "No espaço livre, ondas de frequências diferentes têm a mesma velocidade, c, mas comprimentos de onda diferentes, já que λ = c / f.", true,
+      "A velocidade no espaço livre é a mesma (c ≈ 3 × 10⁸ m/s); o que muda com a frequência é o comprimento de onda."),
+    ext.mc(t, { kind: "calculo", level: 3, pitfall: "Multiplicar em vez de dividir.", ref: a1("3.1", 29) },
+      "Qual frequência corresponde a um comprimento de onda de 20 m?",
+      ["15 MHz", "6 MHz", "60 MHz", "1,5 MHz"],
+      "f ≈ 300 / λ = 300 / 20 = 15 MHz."),
+    ext.mc(t, { kind: "conceitual", level: 3, pitfall: "Não saber a ordem das faixas do espectro.", ref: a1("3.2", 29) },
+      "Ordenando as faixas da menor para a maior frequência, a sequência correta é:",
+      ["VLF, LF, MF, HF, VHF, UHF, SHF", "LF, VLF, MF, HF, UHF, VHF, SHF", "VLF, MF, LF, HF, VHF, SHF, UHF", "HF, MF, LF, VLF, VHF, UHF, SHF"],
+      "VLF (3–30 kHz), LF (30–300 kHz), MF (0,3–3 MHz), HF (3–30 MHz), VHF (30–300 MHz), UHF (0,3–3 GHz) e SHF (3–30 GHz)."),
+  ];
+}
+
+function protecaoExtra(): QuestionDraft[] {
+  const t = "protecao-eletrica";
+  return [
+    ext.tf(t, { kind: "calculo", level: 3, pitfall: "Não calcular a corrente nominal antes de escolher a proteção.", ref: a3("6.4", 60) },
+      "Um rádio que consome 138 W de uma fonte de 13,8 V tem corrente nominal de 10 A, dado necessário para escolher sua proteção.", true,
+      "I = P / V = 138 / 13,8 = 10 A. A escolha do dispositivo de proteção depende da corrente nominal do circuito."),
+    ext.tf(t, { kind: "calculo", level: 3, pitfall: "Errar a ordem de grandeza da corrente de uma carga de alta potência.", ref: a3("1.3", 54) },
+      "Um chuveiro de 4.400 W ligado em 220 V consome cerca de 2 A.", false,
+      "I = P / V = 4.400 / 220 = 20 A. Por isso esse circuito exige condutores e disjuntor dimensionados para correntes elevadas."),
+    ext.tf(t, { kind: "calculo", level: 3, pitfall: "Dividir a tensão pela potência.", ref: a3("1.3", 54) },
+      "Cargas que somam 1.270 W em uma rede de 127 V exigem uma corrente total de cerca de 100 A.", false,
+      "I = P / V = 1.270 / 127 = 10 A. Essa é a corrente a considerar na escolha do disjuntor."),
+    ext.tf(t, { kind: "calculo", level: 4, pitfall: "Esquecer de somar as correntes das cargas no mesmo circuito.", ref: a3("6.2", 60) },
+      "Dois equipamentos de 13,8 V, de 5 A e de 15 A, no mesmo circuito protegido por um fusível de 10 A farão o fusível atuar ao operarem juntos.", true,
+      "Juntos, eles puxam 5 + 15 = 20 A, acima dos 10 A do fusível, que interrompe a corrente quando ela excede o valor determinado."),
+    ext.mc(t, { kind: "calculo", level: 4, pitfall: "Errar a corrente nominal de um amplificador de 13,8 V.", ref: a3("6.4", 60) },
+      "Um amplificador de 13,8 V consome 690 W da fonte. Qual corrente nominal deve ser considerada na escolha da proteção?",
+      ["50 A", "5 A", "500 A", "9,5 A"],
+      "I = P / V = 690 / 13,8 = 50 A."),
+    ext.tf(t, { kind: "cenario", level: 2, pitfall: "Não reconhecer o papel da proteção em um curto-circuito.", ref: a3("6.1", 59) },
+      "Em um curto-circuito na saída de uma fonte, o fusível ou o disjuntor deve interromper a corrente antes que ela danifique condutores e componentes.", true,
+      "Curtos-circuitos geram correntes muito elevadas em pouco tempo; fusíveis e disjuntores existem para interrompê-las."),
+    ext.tf(t, { kind: "cenario", level: 3, pitfall: "Tratar o rearme como solução da falha.", ref: a3("6.3", 60) },
+      "Um disjuntor que desarma toda vez que o rádio transmite deve ser rearmado até parar de desarmar, pois o rearme corrige a falha.", false,
+      "O disjuntor desarma por sobrecarga ou curto-circuito. Rearmar não remove a causa: é preciso investigar a sobrecarga ou o curto."),
+    ext.tf(t, { kind: "cenario", level: 3, pitfall: "Achar que o aterramento só protege o operador.", ref: a3("6.5", 60) },
+      "Ao desviar para o solo as descargas estáticas acumuladas na antena, o aterramento ajuda a proteger os equipamentos da estação.", true,
+      "Entre os objetivos do aterramento, a Cartilha cita a proteção dos equipamentos, desviando sobretensões e descargas estáticas."),
+  ];
+}
+
+function medicaoExtra(): QuestionDraft[] {
+  const t = "medicao-eletrica";
+  return [
+    ext.tf(t, { kind: "calculo", level: 3, pitfall: "Não descontar a potência refletida.", ref: a3("7.6", 61) },
+      "Um wattímetro direcional indica 50 W de potência transmitida e 2 W de refletida; a potência que efetivamente segue para a antena é de cerca de 48 W.", true,
+      "O wattímetro direcional mede separadamente a potência transmitida e a refletida; 50 − 2 = 48 W seguem para a antena."),
+    ext.tf(t, { kind: "cenario", level: 3, pitfall: "Interpretar errado a queda da ROE durante o ajuste.", ref: a3("7.7", 61) },
+      "Ao ajustar uma antena, o operador vê a ROE cair de 3:1 para 1,2:1; isso indica melhor casamento e menos potência refletida.", true,
+      "Quanto mais perto de 1:1, melhor o casamento de impedância e menor a potência que volta ao transmissor."),
+    ext.tf(t, { kind: "calculo", level: 3, pitfall: "Multiplicar tensão e resistência para achar a corrente.", ref: a3("1.2", 54) },
+      "Com o multímetro em tensão, mede-se 12 V sobre um resistor de 6 Ω; pela Lei de Ohm, a corrente nele é de 72 A.", false,
+      "I = V / R = 12 / 6 = 2 A. 72 é o produto V × R, que não tem significado de corrente."),
+    ext.tf(t, { kind: "cenario", level: 3, pitfall: "Achar que o wattímetro inline fica fora da linha.", ref: a3("7.6", 61) },
+      "Ao instalar um wattímetro inline, um operador o liga em paralelo com a antena, fora da linha de transmissão; essa ligação está correta.", false,
+      "O wattímetro inline (em linha) é instalado entre o transceptor e a antena, em série com a linha de transmissão."),
+    ext.mc(t, { kind: "conceitual", level: 2, pitfall: "Confundir os instrumentos usados no ajuste de antenas.", ref: a3("7.7", 61) },
+      "Qual instrumento, ligado em série com a linha, verifica o casamento entre transmissor, linha e antena e é um dos mais usados no ajuste de antenas?",
+      ["Medidor de ROE", "Ohmímetro", "Frequencímetro", "Multímetro no modo continuidade"],
+      "O medidor de ondas estacionárias (ROE/SWR) verifica o casamento de impedância e é um dos instrumentos mais usados no ajuste e instalação de antenas."),
+    ext.mc(t, { kind: "calculo", level: 3, pitfall: "Dividir em vez de multiplicar tensão e corrente.", ref: a3("1.3", 54) },
+      "Com o multímetro em série, mede-se um consumo de 3 A em um rádio alimentado por 13,8 V. Qual é a potência consumida?",
+      ["41,4 W", "4,6 W", "16,8 W", "414 W"],
+      "P = V × I = 13,8 × 3 = 41,4 W. 4,6 W resultaria de dividir a tensão pela corrente."),
+  ];
+}
+
+function estacaoExtra(): QuestionDraft[] {
+  const t = "estacao-de-radioamador";
+  return [
+    ext.tf(t, { kind: "conceitual", level: 3, pitfall: "Inverter a ordem dos blocos do receptor AM.", ref: a1("3.4", 30) },
+      "No receptor de AM-DSB representado na Cartilha, o demodulador vem antes dos amplificadores de RF.", false,
+      "A ordem é 1º amplificador de RF → 2º amplificador de RF → demodulador → amplificador de áudio → alto-falante."),
+    ext.tf(t, { kind: "conceitual", level: 3, pitfall: "Colocar o discriminador antes da FI.", ref: a1("3.4", 31) },
+      "No receptor FM, o discriminador fica entre o oscilador local e o misturador.", false,
+      "O oscilador local alimenta o misturador. O discriminador vem depois do amplificador de FI e do limitador."),
+    ext.tf(t, { kind: "conceitual", level: 3, pitfall: "Não ver a repetidora como receptor e transmissor ligados.", ref: a1("1.2", 26) },
+      "Uma repetidora reúne receptor e transmissor: o áudio recuperado na recepção é aplicado ao modulador do transmissor.", true,
+      "No diagrama da Cartilha, o detector FM e o processador de áudio da recepção alimentam o modulador do lado de transmissão."),
+    ext.mc(t, { kind: "conceitual", level: 2, pitfall: "Não identificar o transdutor de entrada.", ref: a1("3.4", 30) },
+      "No transmissor genérico de AM-DSB, qual bloco converte a informação (por exemplo, a voz) em sinal elétrico?",
+      ["Transdutor", "Oscilador RF", "Modulador", "Amplificador RF"],
+      "O transdutor, como o microfone, converte a informação em sinal elétrico, que passa pelo pré-amplificador, pelo filtro e pelo amplificador até o modulador."),
+    ext.tf(t, { kind: "calculo", level: 4, pitfall: "Usar λ/4 no lugar de λ/2.", ref: a1("2.2", 28) },
+      "Um dipolo de meia onda para 7,05 MHz tem cerca de 10,6 m de comprimento total.", false,
+      "λ ≈ 300 / 7,05 ≈ 42,6 m; meia onda ≈ 21,3 m. 10,6 m seria ¼ de onda."),
+    ext.mc(t, { kind: "calculo", level: 3, pitfall: "Confundir λ/4 com λ/2.", ref: a1("2.2", 28) },
+      "Qual é o comprimento aproximado de uma antena vertical de ¼ de onda para 146 MHz?",
+      ["≈ 51 cm", "≈ 1,03 m", "≈ 2,05 m", "≈ 26 cm"],
+      "λ ≈ 300 / 146 ≈ 2,05 m; ¼ de onda ≈ 0,51 m."),
+    ext.tf(t, { kind: "calculo", level: 4, pitfall: "Não conferir se a fonte suporta o consumo do rádio.", ref: a3("1.3", 54) },
+      "Uma fonte de 13,8 V e 30 A fornece até cerca de 414 W, o que basta para um rádio que consome 25 A.", true,
+      "P = 13,8 × 30 = 414 W. O rádio consome 13,8 × 25 = 345 W, abaixo da capacidade da fonte."),
+    ext.tf(t, { kind: "calculo", level: 3, pitfall: "Dividir a tensão pela corrente para achar a potência.", ref: a3("1.3", 54) },
+      "Um transceptor que, em recepção, consome 1,2 A de uma fonte de 13,8 V absorve cerca de 11,5 W.", false,
+      "P = V × I = 13,8 × 1,2 ≈ 16,6 W. 11,5 é o resultado de 13,8 / 1,2, que não é potência."),
+  ];
+}
+
+function telecomunicacoesExtra(): QuestionDraft[] {
+  const t = "telecomunicacoes";
+  return [
+    ext.tf(t, { kind: "conceitual", level: 2, pitfall: "Achar que a FM varia a amplitude.", ref: a1("3.4", 31) },
+      "Em FM, a amplitude da portadora permanece fixa, enquanto sua frequência instantânea varia conforme a mensagem.", true,
+      "É a definição de FM da Cartilha."),
+    ext.tf(t, { kind: "conceitual", level: 3, pitfall: "Confundir demodulação com modulação.", ref: a1("3.5", 31) },
+      "A demodulação é feita no transmissor, antes da antena, para imprimir a mensagem na portadora.", false,
+      "Imprimir a mensagem na portadora é a modulação. A demodulação é o processo inverso, feito no receptor para extrair a mensagem."),
+    ext.tf(t, { kind: "conceitual", level: 2, pitfall: "Não reconhecer o SSB como forma de AM.", ref: a1("3.4", 30) },
+      "O SSB (faixa lateral única) é uma forma de AM muito usada em HF.", true,
+      "A Cartilha apresenta o AM-SSB como faixa lateral única, muito usada em HF."),
+    ext.tf(t, { kind: "conceitual", level: 3, pitfall: "Ignorar os múltiplos saltos em HF.", ref: a1("4.6", 33) },
+      "Em HF, o alcance de milhares de quilômetros vem de um único salto, pois o sinal não se reflete sucessivamente entre a ionosfera e a Terra.", false,
+      "A Cartilha diz que a propagação em HF permite múltiplos saltos entre ionosfera e Terra, alcançando milhares de quilômetros."),
+    ext.tf(t, { kind: "cenario", level: 3, pitfall: "Escolher VHF/UHF para contatos a grande distância.", ref: a1("4.4", 32) },
+      "Para falar com uma estação a milhares de quilômetros, sem satélite nem repetidora, a escolha natural é a faixa de HF.", true,
+      "Em HF predomina a refração/reflexão ionosférica, que permite DX. VHF/UHF são para uso local/regional."),
+    ext.tf(t, { kind: "conceitual", level: 3, pitfall: "Associar a onda de superfície a VHF/UHF.", ref: a1("4.4", 32) },
+      "A onda de superfície é o mecanismo de propagação predominante em VHF/UHF.", false,
+      "A onda de superfície predomina em LF/MF (100 kHz a 3 MHz). Em VHF/UHF predominam linha de visada, difração e tropodifusão."),
+    ext.tf(t, { kind: "calculo", level: 4, pitfall: "Achar que mais ruído melhora a SNR.", ref: a1("4.7", 33) },
+      "Se o sinal permanece igual e a potência do ruído dobra, a relação sinal-ruído melhora cerca de 3 dB.", false,
+      "Com o ruído dobrado, a razão sinal/ruído cai à metade, o que equivale a uma piora de cerca de 3 dB."),
+    ext.mc(t, { kind: "calculo", level: 4, pitfall: "Confundir a razão de potências com o valor em dB.", ref: a1("4.7", 33) },
+      "Um sinal chega com potência 1.000 vezes maior que a do ruído. Qual é a SNR aproximada?",
+      ["30 dB", "1.000 dB", "3 dB", "300 dB"],
+      "Em dB, 10·log(1.000) = 30 dB."),
+    ext.mc(t, { kind: "conceitual", level: 3, pitfall: "Achar que a portadora chega ao alto-falante.", ref: a1("3.5", 31) },
+      "Na demodulação, o que acontece com a portadora nas etapas de detecção?",
+      ["É removida ou ignorada, restando a mensagem", "É amplificada e enviada ao alto-falante", "É retransmitida em outra frequência", "É convertida em corrente contínua para alimentar o rádio"],
+      "A Cartilha diz que, na demodulação, a portadora é 'removida/ignorada' nas etapas de detecção e o receptor extrai a mensagem."),
+    ext.tf(t, { kind: "conceitual", level: 3, pitfall: "Achar que modulação e demodulação exigem hardware dedicado.", ref: a3("11.3", 64) },
+      "Em um SDR, filtros, moduladores e demoduladores são obrigatoriamente circuitos de hardware, sem uso de software.", false,
+      "No SDR, funções tradicionalmente feitas em hardware, como filtros, moduladores e demoduladores, são implementadas em software."),
+  ];
+}
+
 export function buildEleQuestions(): QuestionDraft[] {
   return [
     ...eletronicaBasica(),
@@ -567,5 +737,11 @@ export function buildEleQuestions(): QuestionDraft[] {
     ...medicao(),
     ...estacao(),
     ...telecomunicacoes(),
+    // Expansion batch goes last so the first batch's IDs don't shift.
+    ...eletromagnetismoExtra(),
+    ...protecaoExtra(),
+    ...medicaoExtra(),
+    ...estacaoExtra(),
+    ...telecomunicacoesExtra(),
   ];
 }
