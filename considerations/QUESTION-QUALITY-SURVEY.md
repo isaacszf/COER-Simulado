@@ -75,6 +75,14 @@ Every one of the 161 TEO items was checked against the Cartilha 2026-06 text: an
 
 ELE (153 items) and LEG (182 items) were written to the same standard and AI-reviewed the same way. LEG is checked against both the Cartilha Anexo 2 and the Ato text: call-sign formation (Ato item 12, Tabelas II–V), operating and repeater rules (item 10), exams (item 11), IARP and foreign operators (items 7–8). Items that rest only on the Ato cite it as `Ato nº 3448/2026, item N`.
 
+Expansion review (2026-10-18): 129 new TEO items and 40 new ELE items were checked the same way. The Cartilha came from the official attachment URL, verified as versão 2026-06; Ato-backed items were checked against the Ato text. Block-diagram items were checked against the diagram images on Cartilha pp. 26, 30 and 31. No wrong answers were found. One fix: an explanation said split operation across bands happens "as in satellite operation", which the Cartilha doesn't say, so the claim was dropped. A second audit compared the new batch with the old one item by item. It rewrote or replaced:
+- 17 items that restated facts already in the TEO or LEG banks;
+- 4 phonetic/Código Q recall items;
+- 3 harmonic calculations, which are outside the §5 calculation list (one harmonic item tied to the low-pass filter remains);
+- 2 items with weak distractors or unsupported claims.
+
+It also reframed 11 items as on-air scenarios and turned 3 into multiple-choice, so the new batch matches the old mix. The remaining word-overlap pairs are calculation siblings with different values, plus TEO-240, which deliberately mirrors TEO-092 (the opposite diagnosis).
+
 LEG second-pass review (2026-10-13), all 182 items re-read against both texts. No wrong answers found. Fixed 5 items:
 
 - LEG-111: the "Classe C has three-letter suffixes" errado item is now scoped to São Paulo, because Ato item 12.10.6 II allows two letters for Classe C in Antarctica.

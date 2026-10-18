@@ -12,9 +12,9 @@ Plataforma independente e gratuita de estudos para a prova do **COER - Classe C*
 
 | Matéria | Questões | Certo/errado |
 | --- | ---: | ---: |
-| Técnica e Ética Operacional | 159 | 124 |
+| Técnica e Ética Operacional | 288 | 235 |
 | Legislação de Telecomunicações | 182 | 154 |
-| Conhecimentos Básicos de Eletrônica e Eletricidade | 153 | 125 |
+| Conhecimentos Básicos de Eletrônica e Eletricidade | 193 | 156 |
 
 ## Sobre as questões
 
