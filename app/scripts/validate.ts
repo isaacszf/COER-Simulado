@@ -123,6 +123,9 @@ function validateQuestion(q: Question, subject: SubjectId) {
   assert(q.recall === undefined || typeof q.recall === "boolean", `[${q.id}] recall must be boolean`);
   const len = q.statement.length;
   warn(q.questionType !== "true-false" || (len >= STATEMENT_MIN && len <= STATEMENT_MAX), `[${q.id}] statement length ${len} outside ${STATEMENT_MIN}-${STATEMENT_MAX}`);
+  // The exam never quotes its study guide; citations belong in sourceRef/explanation.
+  const shown = [q.statement, ...(q.questionType === "multiple-choice" ? q.options : [])].join(" ");
+  warn(!/cartilha/i.test(shown), `[${q.id}] statement or options mention the Cartilha`);
 
   if (q.questionType === "true-false") {
     assert(typeof q.answer === "boolean", `[${q.id}] true-false answer must be boolean`);

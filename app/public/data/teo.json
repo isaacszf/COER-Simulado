@@ -2,7 +2,7 @@
   "subject": "TEO",
   "subjectName": "Técnica e Ética Operacional",
   "sourceBasis": "Ato 3448/2026 §11.4 ementa · Cartilha do Serviço Radioamador, versão 2026-06",
-  "generatedAt": "2026-10-18T22:00:29.017Z",
+  "generatedAt": "2026-10-22T01:49:06.548Z",
   "questions": [
     {
       "subject": "TEO",
@@ -2932,41 +2932,7 @@
       "subject": "TEO",
       "topic": "estacao-de-radioamador",
       "topicName": "Estação de Radioamador",
-      "statement": "No diagrama de blocos de uma repetidora, o sinal recebido passa pelo amplificador de RF e pelo misturador, que é alimentado por um oscilador local.",
-      "explanation": "No diagrama da Cartilha, a recepção da repetidora começa com amplificador de RF → misturador (com oscilador local) → amplificador de FI/limitador → detector FM.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Não reconhecer os blocos de recepção da repetidora.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.2, p. 26",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-160"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No diagrama de blocos da repetidora, o squelch fica no caminho de transmissão, logo após o amplificador de potência.",
-      "explanation": "O squelch está do lado da recepção: atua junto ao detector FM e ao processador de áudio. O amplificador de potência é o último bloco antes da antena de transmissão.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Colocar o squelch no caminho de transmissão.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.2, p. 26",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-161"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No transmissor genérico de AM-DSB, a portadora do oscilador de RF é amplificada e aplicada ao modulador, que também recebe a informação já amplificada.",
+      "statement": "No transmissor de AM-DSB, a portadora do oscilador de RF é amplificada e aplicada ao modulador, que também recebe a informação já amplificada.",
       "explanation": "No diagrama da Cartilha, oscilador RF → amplificador RF → modulador → antena; a informação vem do transdutor, passa pelo pré-amplificador, pelo filtro e pelo amplificador e chega ao modulador.",
       "kind": "conceitual",
       "level": 3,
@@ -2977,178 +2943,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-162"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No transmissor genérico de AM-DSB, a informação captada pelo transdutor passa por um filtro passa-alta antes de chegar ao amplificador e ao modulador.",
-      "explanation": "O diagrama da Cartilha mostra um filtro passa-baixo entre o pré-amplificador e o amplificador da informação.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Trocar o tipo de filtro do caminho de áudio.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 30",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-163"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No receptor de AM-DSB, o CAG (controle automático de ganho) parte do demodulador e atua sobre os amplificadores de RF.",
-      "explanation": "No diagrama do receptor AM-DSB, a linha do CAG sai do demodulador e volta ao 1º e ao 2º amplificador de RF.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Não saber de onde parte o controle automático de ganho.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 30",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-164"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No receptor FM, o limitador e o discriminador ficam antes do misturador, ainda no estágio de RF.",
-      "explanation": "A ordem é amplificador de RF → misturador (com oscilador local) → amplificador de FI → limitador → discriminador → amplificador → alto-falante.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Inverter a ordem dos estágios do receptor FM.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-165"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No transmissor FM representado na Cartilha, o multiplicador fica depois do amplificador de RF, entre ele e a antena.",
-      "explanation": "O multiplicador fica antes do amplificador de RF. O diagrama mostra amplificador de áudio → modulador → oscilador → multiplicador → amplificador de RF → antena, com um estabilizador de frequência central.",
-      "kind": "conceitual",
-      "level": 4,
-      "pitfall": "Errar a posição do multiplicador no transmissor FM.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-166"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No diagrama de blocos do receptor FM, qual bloco vem logo após o amplificador de FI?",
-      "explanation": "Depois do amplificador de FI vêm o limitador e o discriminador. O misturador e o oscilador local ficam antes da FI.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Confundir a ordem dos blocos do receptor FM.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Limitador",
-        "Misturador",
-        "Oscilador local",
-        "Amplificador de RF"
-      ],
-      "answer": 0,
-      "id": "TEO-167"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No transmissor genérico de AM-DSB, qual bloco recebe tanto a portadora amplificada quanto a informação amplificada?",
-      "explanation": "É no modulador que a informação é 'impressa' na portadora; ele recebe os dois sinais e entrega o sinal modulado à antena.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Não identificar o ponto em que a mensagem é impressa na portadora.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 30",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Oscilador RF",
-        "Modulador",
-        "Pré-amplificador",
-        "Filtro passa-baixo"
-      ],
-      "answer": 1,
-      "id": "TEO-168"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Em uma repetidora, o áudio recuperado pelo detector FM segue para qual bloco antes de chegar ao modulador do transmissor?",
-      "explanation": "No diagrama da Cartilha, detector FM → processador de áudio (controlado pelo squelch) → modulador → multiplicador → amplificador de potência.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Não acompanhar o caminho do áudio dentro da repetidora.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.2, p. 26",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Multiplicador",
-        "Amplificador de potência",
-        "Processador de áudio",
-        "Oscilador local"
-      ],
-      "answer": 2,
-      "id": "TEO-169"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Com recepção programada em 145,290 MHz e shift de −600 kHz, o rádio transmitirá em 144,690 MHz.",
-      "explanation": "Shift negativo subtrai: 145,290 − 0,600 = 144,690 MHz.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Aplicar o shift na direção errada.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.3, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-170"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Para acessar uma repetidora de 70 cm com saída em 439,900 MHz e shift de −5 MHz, o usuário deve transmitir em 444,900 MHz.",
-      "explanation": "Com shift de −5 MHz, a transmissão fica 5 MHz abaixo: 439,900 − 5 = 434,900 MHz. 444,900 MHz corresponderia a um shift de +5 MHz.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Somar um shift negativo.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.3, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-171"
+      "id": "TEO-160"
     },
     {
       "subject": "TEO",
@@ -3165,47 +2960,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
+        "147,420 MHz",
         "146,220 MHz",
         "146,820 MHz",
-        "147,020 MHz",
-        "147,420 MHz"
+        "147,020 MHz"
       ],
-      "answer": 3,
-      "id": "TEO-172"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Um operador quer trabalhar uma DXpedition em split, mas seu rádio tem um só VFO e nenhum recurso equivalente; em geral, ele precisará de um rádio com VFO duplo.",
-      "explanation": "A Cartilha lista o VFO duplo (ou recurso equivalente) entre os requisitos da operação shift/split.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que qualquer rádio opera em split sem recurso específico.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.3, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-173"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Transmitir em 2 m e receber em 70 cm em um contato via satélite é impossível, pois o split exige transmissão e recepção na mesma banda.",
-      "explanation": "A Cartilha cita o satélite como exemplo de split (subida e descida) e observa que alguns equipamentos permitem usar frequências em bandas diferentes.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que o split exige a mesma banda.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.3, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-174"
+      "answer": 0,
+      "id": "TEO-161"
     },
     {
       "subject": "TEO",
@@ -3222,41 +2983,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-175"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Para medir a potência gerada pelo transmissor, o ponto adequado de medição é, em geral, antes da linha de transmissão e da antena.",
-      "explanation": "A Cartilha indica medir a potência gerada pelo transmissor em ponto apropriado, usualmente antes da linha/antena.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Medir a potência do transmissor em ponto inadequado.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.5, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-176"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Equipamentos de caracterização de antena, como o NanoVNA, vão além da simples medida de descasamento fornecida por um medidor de ROE.",
-      "explanation": "A Cartilha cita o NanoVNA como equipamento de baixo custo para caracterizar antenas e diz que esses equipamentos fazem 'uma verdadeira radiografia do meio de transmissão'.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Achar que caracterizar a antena se resume a medir a ROE.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.5 e §2.4, p. 28–29",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-177"
+      "id": "TEO-162"
     },
     {
       "subject": "TEO",
@@ -3273,75 +3000,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-178"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Um dipolo de meia onda para 21 MHz tem comprimento total de aproximadamente 7,1 m.",
-      "explanation": "λ ≈ 300 / 21 ≈ 14,3 m; meia onda ≈ 7,1 m.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Esquecer de dividir λ por dois no dipolo.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §2.2, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-179"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Uma antena vertical de ¼ de onda para 50 MHz deve ter cerca de 3 m.",
-      "explanation": "λ ≈ 300 / 50 = 6 m; ¼ de onda = 1,5 m. Os 3 m corresponderiam a meia onda.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Usar λ/2 no lugar de λ/4.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §2.2, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-180"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Para 435 MHz, na faixa de 70 cm, uma antena vertical de ¼ de onda tem cerca de 17 cm.",
-      "explanation": "λ ≈ 300 / 435 ≈ 0,69 m; ¼ de onda ≈ 0,17 m = 17 cm.",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Errar a ordem de grandeza em UHF.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §2.2, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-181"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Para 14 MHz, uma vertical de ¼ de onda tem cerca de 5,4 m, metade do comprimento de um dipolo de meia onda na mesma frequência.",
-      "explanation": "λ ≈ 300 / 14 ≈ 21,4 m; ¼ de onda ≈ 5,4 m e ½ onda ≈ 10,7 m.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Não relacionar os comprimentos de ¼ e ½ onda.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §2.2, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-182"
+      "id": "TEO-163"
     },
     {
       "subject": "TEO",
@@ -3358,7 +3017,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-183"
+      "id": "TEO-164"
     },
     {
       "subject": "TEO",
@@ -3375,36 +3034,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "≈ 40 m",
         "≈ 80 m",
+        "≈ 40 m",
         "≈ 20 m",
         "≈ 4 m"
       ],
-      "answer": 0,
-      "id": "TEO-184"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Qual é o comprimento total aproximado de um dipolo de meia onda para 146 MHz?",
-      "explanation": "λ ≈ 300 / 146 ≈ 2,05 m; meia onda ≈ 1,03 m. 0,51 m seria ¼ de onda.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Confundir λ com λ/2 em VHF.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §2.2, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "≈ 2,05 m",
-        "≈ 1,03 m",
-        "≈ 0,51 m",
-        "≈ 10,3 m"
-      ],
       "answer": 1,
-      "id": "TEO-185"
+      "id": "TEO-165"
     },
     {
       "subject": "TEO",
@@ -3421,7 +3057,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-186"
+      "id": "TEO-166"
     },
     {
       "subject": "TEO",
@@ -3438,47 +3074,13 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-187"
+      "id": "TEO-167"
     },
     {
       "subject": "TEO",
       "topic": "antenas",
       "topicName": "Antenas",
-      "statement": "Em uma antena de quadro (loop), a polarização é linear e o plano de polarização coincide com o plano da antena.",
-      "explanation": "É a descrição da Cartilha para antenas de quadro.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Não saber como se define a polarização da loop.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §8.2, p. 62",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-188"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "O desempenho de uma antena depende do seu tipo, do comprimento físico em relação ao comprimento de onda e da polarização.",
-      "explanation": "São os três fatores que a Cartilha cita para o desempenho de uma antena.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Achar que só o tipo da antena define seu desempenho.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §8.1, p. 61",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-189"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Segundo a tabela de tipos de antena da Cartilha, os elementos de uma Yagi medem aproximadamente:",
+      "statement": "Os elementos de uma antena Yagi medem aproximadamente:",
       "explanation": "A tabela descreve a Yagi com elementos de ~λ/2. λ/4 é a vertical típica de móveis, e λ/3 a λ/10 é a faixa de projeto da loop magnética.",
       "kind": "conceitual",
       "level": 2,
@@ -3495,7 +3097,7 @@
         "De λ/3 a λ/10"
       ],
       "answer": 2,
-      "id": "TEO-190"
+      "id": "TEO-168"
     },
     {
       "subject": "TEO",
@@ -3512,7 +3114,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-191"
+      "id": "TEO-169"
     },
     {
       "subject": "TEO",
@@ -3529,24 +3131,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-192"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "É típico usar antenas verticais de ¼ de onda em estações móveis e dipolos de ½ onda em estações fixas.",
-      "explanation": "A tabela da Cartilha associa ¼ de onda a verticais e móveis, e ½ onda a dipolos, base de Yagi e estações fixas.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Trocar o uso típico das antenas de ¼ e ½ onda.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §2.2, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-193"
+      "id": "TEO-170"
     },
     {
       "subject": "TEO",
@@ -3563,24 +3148,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-194"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Em uma estação com transceptor, a mesma antena usada para transmitir também capta os sinais recebidos.",
-      "explanation": "A Cartilha diz que a antena irradia e recebe ondas eletromagnéticas.",
-      "kind": "cenario",
-      "level": 2,
-      "pitfall": "Achar que a antena só transmite.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §2.1, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-195"
+      "id": "TEO-171"
     },
     {
       "subject": "TEO",
@@ -3597,7 +3165,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-196"
+      "id": "TEO-172"
     },
     {
       "subject": "TEO",
@@ -3614,7 +3182,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-197"
+      "id": "TEO-173"
     },
     {
       "subject": "TEO",
@@ -3631,24 +3199,58 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-198"
+      "id": "TEO-174"
     },
     {
       "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Um sinal de 3,5 MHz tem comprimento de onda de cerca de 86 m e pertence à faixa de HF, de ondas decamétricas.",
-      "explanation": "λ ≈ 300 / 3,5 ≈ 85,7 m. 3,5 MHz está em HF (3–30 MHz), de ondas decamétricas.",
+      "topic": "antenas",
+      "topicName": "Antenas",
+      "statement": "Se o sinal fica igual e o ruído de fundo aumenta 10 vezes, uma SNR de 20 dB cai para cerca de 10 dB.",
+      "explanation": "Uma razão 10 vezes menor equivale a −10 dB (10·log 10 = 10): 20 − 10 = 10 dB.",
       "kind": "calculo",
-      "level": 3,
-      "pitfall": "Não ligar o comprimento de onda à designação da faixa.",
+      "level": 4,
+      "pitfall": "Não converter uma variação de 10 vezes em dB.",
       "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.2, p. 29",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
       "reviewed": false,
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-199"
+      "id": "TEO-175"
+    },
+    {
+      "subject": "TEO",
+      "topic": "antenas",
+      "topicName": "Antenas",
+      "statement": "Uma SNR de 0 dB indica que o sinal tem potência dez vezes maior que a do ruído.",
+      "explanation": "0 dB significa razão 1: sinal e ruído com a mesma potência. Uma razão de 10 vezes corresponde a 10 dB.",
+      "kind": "calculo",
+      "level": 3,
+      "pitfall": "Achar que 0 dB significa sinal muito forte.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "true-false",
+      "answer": false,
+      "id": "TEO-176"
+    },
+    {
+      "subject": "TEO",
+      "topic": "antenas",
+      "topicName": "Antenas",
+      "statement": "Na recepção, usar antena com ganho apropriado e boa instalação não altera a SNR, que depende só da potência da estação distante.",
+      "explanation": "Usar antenas com ganho apropriado e boa instalação está entre as medidas que a Cartilha indica para melhorar a SNR.",
+      "kind": "cenario",
+      "level": 3,
+      "pitfall": "Achar que a antena receptora não influi na SNR.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "true-false",
+      "answer": false,
+      "id": "TEO-177"
     },
     {
       "subject": "TEO",
@@ -3665,58 +3267,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-200"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Pela relação T = 1 / f, o período de um sinal de 7 MHz é de aproximadamente 1,4 µs.",
-      "explanation": "T = 1 / f = 1 / 7.000.000 s ≈ 0,143 µs. Um período de 1,4 µs corresponderia a cerca de 714 kHz.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Errar a conversão de unidade no período.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.1, p. 29",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-201"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Aplicando f = 1 / T, um sinal com período de 2 µs tem frequência de 2 MHz.",
-      "explanation": "f = 1 / T = 1 / 0,000002 s = 500.000 Hz = 500 kHz. 2 MHz teria período de 0,5 µs.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Achar que período e frequência têm o mesmo número.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.1, p. 29",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-202"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Um comprimento de onda de 2 m corresponde a uma frequência de cerca de 150 MHz, na faixa de VHF.",
-      "explanation": "f ≈ 300 / λ = 300 / 2 = 150 MHz, dentro de VHF (30–300 MHz).",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Não aplicar a fórmula de λ ao contrário.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.2, p. 29",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-203"
+      "id": "TEO-178"
     },
     {
       "subject": "TEO",
@@ -3739,7 +3290,7 @@
         "≈ 430 MHz"
       ],
       "answer": 3,
-      "id": "TEO-204"
+      "id": "TEO-179"
     },
     {
       "subject": "TEO",
@@ -3757,7 +3308,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-205"
+      "id": "TEO-180"
     },
     {
       "subject": "TEO",
@@ -3774,24 +3325,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-206"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Um sinal de 10 GHz pertence à faixa de UHF, cujo limite superior é 30 GHz.",
-      "explanation": "UHF vai até 3 GHz. De 3 a 30 GHz é SHF (ondas centimétricas), onde está o sinal de 10 GHz.",
-      "kind": "conceitual",
-      "level": 4,
-      "pitfall": "Errar o limite superior da UHF.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.2, p. 30",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-207"
+      "id": "TEO-181"
     },
     {
       "subject": "TEO",
@@ -3808,24 +3342,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-208"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Na analogia da Cartilha, a portadora corresponde à carta, e a mensagem corresponde ao envelope com endereço.",
-      "explanation": "É o inverso: a carta é a mensagem, o envelope com endereço é a portadora e o envelope postado é o sinal modulado.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Trocar mensagem e portadora.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.3, p. 30",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-209"
+      "id": "TEO-182"
     },
     {
       "subject": "TEO",
@@ -3842,7 +3359,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-210"
+      "id": "TEO-183"
     },
     {
       "subject": "TEO",
@@ -3859,24 +3376,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-211"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Para conversar pela repetidora local de 2 m, o operador normalmente seleciona o modo FM, muito usado em VHF/UHF.",
-      "explanation": "A Cartilha diz que o FM é muito usado em VHF/UHF (2 m, 70 cm); a repetidora do diagrama da Cartilha também usa detector FM.",
-      "kind": "cenario",
-      "level": 2,
-      "pitfall": "Escolher o modo errado para a repetidora de VHF.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-212"
+      "id": "TEO-184"
     },
     {
       "subject": "TEO",
@@ -3899,7 +3399,7 @@
         "CW"
       ],
       "answer": 0,
-      "id": "TEO-213"
+      "id": "TEO-185"
     },
     {
       "subject": "TEO",
@@ -3916,24 +3416,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-214"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Um receptor com FI de 455 kHz e oscilador local abaixo do sinal sintoniza 3,700 MHz com o oscilador em 4,155 MHz.",
-      "explanation": "Com o oscilador abaixo do sinal, ele fica em 3,700 − 0,455 = 3,245 MHz. 4,155 MHz é a posição com o oscilador acima do sinal.",
-      "kind": "calculo",
-      "level": 5,
-      "pitfall": "Posicionar o oscilador local do lado errado do sinal.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.6, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-215"
+      "id": "TEO-186"
     },
     {
       "subject": "TEO",
@@ -3956,7 +3439,7 @@
         "Apenas 14,250 MHz e 10,700 MHz"
       ],
       "answer": 1,
-      "id": "TEO-216"
+      "id": "TEO-187"
     },
     {
       "subject": "TEO",
@@ -3973,7 +3456,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-217"
+      "id": "TEO-188"
     },
     {
       "subject": "TEO",
@@ -3990,7 +3473,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-218"
+      "id": "TEO-189"
     },
     {
       "subject": "TEO",
@@ -4007,7 +3490,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-219"
+      "id": "TEO-190"
     },
     {
       "subject": "TEO",
@@ -4024,7 +3507,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-220"
+      "id": "TEO-191"
     },
     {
       "subject": "TEO",
@@ -4041,7 +3524,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-221"
+      "id": "TEO-192"
     },
     {
       "subject": "TEO",
@@ -4058,7 +3541,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-222"
+      "id": "TEO-193"
     },
     {
       "subject": "TEO",
@@ -4075,13 +3558,13 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-223"
+      "id": "TEO-194"
     },
     {
       "subject": "TEO",
       "topic": "propagacao",
       "topicName": "Propagação",
-      "statement": "Acima de 3 GHz (SHF), quais fatores a Cartilha associa à propagação?",
+      "statement": "Acima de 3 GHz (SHF), quais fatores predominam na propagação?",
       "explanation": "A tabela da Cartilha lista, para SHF, visada direta, reflexões locais e atenuação por chuva/obstáculos. Refração ionosférica é de HF; onda de superfície, de LF/MF.",
       "kind": "conceitual",
       "level": 3,
@@ -4098,98 +3581,7 @@
         "Apenas a reflexão na estratosfera"
       ],
       "answer": 2,
-      "id": "TEO-224"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Se o sinal fica igual e o ruído de fundo aumenta 10 vezes, uma SNR de 20 dB cai para cerca de 10 dB.",
-      "explanation": "Uma razão 10 vezes menor equivale a −10 dB (10·log 10 = 10): 20 − 10 = 10 dB.",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Não converter uma variação de 10 vezes em dB.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-225"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Se a potência do sinal recebido dobra e o ruído de fundo permanece igual, a SNR melhora cerca de 3 dB.",
-      "explanation": "A SNR é a razão sinal/ruído, normalmente em dB. Dobrar a razão de potências equivale a cerca de +3 dB (10·log 2 ≈ 3).",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Não relacionar 3 dB ao dobro da potência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-226"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Uma SNR de 0 dB indica que o sinal tem potência dez vezes maior que a do ruído.",
-      "explanation": "0 dB significa razão 1: sinal e ruído com a mesma potência. Uma razão de 10 vezes corresponde a 10 dB.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Achar que 0 dB significa sinal muito forte.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-227"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Um receptor recebe um sinal com potência 100 vezes maior que a do ruído de fundo. Qual é a SNR aproximada?",
-      "explanation": "Em dB, a razão vale 10·log(100) = 20 dB. Uma razão de 10 vezes daria 10 dB.",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Confundir a razão de potências com o valor em dB.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "100 dB",
-        "10 dB",
-        "2 dB",
-        "20 dB"
-      ],
-      "answer": 3,
-      "id": "TEO-228"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Na recepção, usar antena com ganho apropriado e boa instalação não altera a SNR, que depende só da potência da estação distante.",
-      "explanation": "Usar antenas com ganho apropriado e boa instalação está entre as medidas que a Cartilha indica para melhorar a SNR.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que a antena receptora não influi na SNR.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-229"
+      "id": "TEO-195"
     },
     {
       "subject": "TEO",
@@ -4206,13 +3598,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Hora do dia, ciclo solar e estação do ano",
         "Somente a hora do dia; o ciclo solar não influi",
         "Somente o ciclo solar; a hora do dia não influi",
-        "Apenas a chuva e os obstáculos na troposfera"
+        "Apenas a chuva e os obstáculos na troposfera",
+        "Hora do dia, ciclo solar e estação do ano"
       ],
-      "answer": 0,
-      "id": "TEO-230"
+      "answer": 3,
+      "id": "TEO-196"
     },
     {
       "subject": "TEO",
@@ -4229,7 +3621,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-231"
+      "id": "TEO-197"
     },
     {
       "subject": "TEO",
@@ -4246,58 +3638,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-232"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Manter a transmissão limpa, sem espúrios e sem largura de banda excessiva, faz parte da operação responsável.",
-      "explanation": "A Cartilha diz que operar corretamente não é só estar dentro da faixa: inclui transmissão limpa, sem espúrios e sem largura excessiva.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Achar que estar na faixa certa basta.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §6.1, p. 15",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-233"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Havendo indícios de interferência durante um teste, o radioamador pode concluir o teste antes de ajustar a estação, desde que use baixa potência.",
-      "explanation": "A expectativa regulatória é parar os testes ou ajustar a estação quando houver indícios de interferência. Baixa potência não dispensa isso.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Continuar o teste mesmo com indícios de interferência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §7.2, p. 18",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-234"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Um transmissor em perfeito estado não pode causar interferência irradiada, mesmo que a antena e os cabos estejam mal instalados.",
-      "explanation": "Na interferência irradiada, a RF 'vaza' pelo sistema irradiante ou por instalação deficiente e afeta rádios, TVs etc.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Ignorar o papel da instalação na interferência irradiada.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §5.2, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-235"
+      "id": "TEO-198"
     },
     {
       "subject": "TEO",
@@ -4314,7 +3655,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-236"
+      "id": "TEO-199"
     },
     {
       "subject": "TEO",
@@ -4331,24 +3672,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-237"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Evitar conexões ruins ao instalar antena e cabos está entre as boas práticas para reduzir interferências.",
-      "explanation": "A Cartilha recomenda instalar antena e cabos com cuidado, evitando conexões ruins e cabos paralelos a fiações internas.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Subestimar conexões mal feitas.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §5.3, p. 34",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-238"
+      "id": "TEO-200"
     },
     {
       "subject": "TEO",
@@ -4365,7 +3689,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-239"
+      "id": "TEO-201"
     },
     {
       "subject": "TEO",
@@ -4382,41 +3706,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-240"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "O radioamador só precisa agir sobre uma interferência que esteja causando depois de receber uma reclamação formal.",
-      "explanation": "A Cartilha pede agir rápido se perceber que está interferindo em alguém, sem esperar reclamação.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Esperar uma reclamação formal para agir.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §6.1, p. 15",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-241"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Se a interferência relatada persiste mesmo após reduzir a potência, o correto é voltar à potência original, já que reduzir não resolveu.",
-      "explanation": "O roteiro continua: verificar cabos, conectores, filtros, aterramento, antenas, segmento e modo. Se persistir, suspende-se a operação até achar a causa.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Desistir da investigação quando a primeira medida falha.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §6.6, p. 16",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-242"
+      "id": "TEO-202"
     },
     {
       "subject": "TEO",
@@ -4433,47 +3723,13 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-243"
+      "id": "TEO-203"
     },
     {
       "subject": "TEO",
       "topic": "interferencias",
       "topicName": "Interferências",
-      "statement": "Cooperar para evitar e solucionar interferências está entre as responsabilidades do radioamador.",
-      "explanation": "A Cartilha lista essa cooperação entre as responsabilidades do radioamador.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Achar que resolver interferência é só tarefa da Anatel.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §7.1, p. 18",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-244"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Confirmada pela Anatel a interferência prejudicial, o radioamador responsável pode continuar transmitindo até a próxima fiscalização.",
-      "explanation": "Confirmada a interferência prejudicial, o responsável pela estação interferente é obrigado a interromper a transmissão imediatamente.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que a interferência confirmada pode continuar até nova fiscalização.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §11.4, p. 52",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-245"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Qual destes fatos pode levar a uma fiscalização da Anatel, segundo a Cartilha?",
+      "statement": "Qual destes fatos pode levar a uma fiscalização da Anatel?",
       "explanation": "A Cartilha cita denúncia de interferência, identificação de emissão irregular e verificação de licenças, dados e conformidade técnica.",
       "kind": "conceitual",
       "level": 2,
@@ -4484,13 +3740,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "A participação em um conteste",
         "Uma denúncia de interferência",
+        "A participação em um conteste",
         "O uso do alfabeto fonético da UIT",
         "A operação em QRP"
       ],
-      "answer": 1,
-      "id": "TEO-246"
+      "answer": 0,
+      "id": "TEO-204"
     },
     {
       "subject": "TEO",
@@ -4507,159 +3763,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-247"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "No APRS, os iGates retransmitem pacotes por rádio para ampliar a cobertura, e os digipeaters encaminham os dados para a internet.",
-      "explanation": "É o contrário: digipeaters recebem e retransmitem pacotes para ampliar a cobertura, e gateways (iGates) encaminham os dados para a internet.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Confundir digipeater com iGate.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.3, p. 64",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-248"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "O WSPR sonda as condições de propagação transmitindo sinais de alta potência, para que sejam detectados em todo o mundo.",
-      "explanation": "O WSPR usa sinais de baixa potência, detectados por outras estações ao redor do mundo.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Achar que o WSPR depende de alta potência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.3, p. 65",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-249"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Qual sistema seleciona automaticamente a melhor frequência de HF para a comunicação, com base nas condições de propagação?",
-      "explanation": "O ALE escolhe automaticamente a melhor frequência de HF. O WSPR sonda a propagação, o APRS transmite dados em tempo real e o IVG liga rádio e internet para voz.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Confundir ALE com WSPR ou APRS.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.3, p. 65",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "WSPR",
-        "APRS",
-        "ALE (Automatic Link Establishment)",
-        "IVG"
-      ],
-      "answer": 2,
-      "id": "TEO-250"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "No alfabeto fonético da UIT, a letra I é anunciada como 'Itália'.",
-      "explanation": "A letra I é 'Índia'. Nomes de países fora do padrão, como 'Itália', geram confusão.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Usar palavras-código fora do padrão UIT.",
-      "recall": true,
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.2, p. 34",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-251"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "O Echolink pode ser acessado por computador, smartphone, tablet ou rádios ligados a nós Echolink.",
-      "explanation": "É o que a Cartilha diz sobre o acesso ao Echolink.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Achar que o Echolink só funciona com rádio.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.3, p. 64",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-252"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Ao dizer 'tenho um QTC para você', o operador informa que vai mudar de frequência.",
-      "explanation": "QTC significa mensagem a transmitir: o operador avisa que tem uma mensagem para a outra estação.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Confundir QTC com QSY.",
-      "recall": true,
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.3, p. 36",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-253"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Perguntar 'QSA?' é pedir à outra estação uma avaliação da intensidade do seu sinal.",
-      "explanation": "QSA: como está recebendo? Qual a intensidade do meu sinal?",
-      "kind": "cenario",
-      "level": 2,
-      "pitfall": "Confundir QSA com QTH.",
-      "recall": true,
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.3, p. 36",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-254"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Em um QSO, a estação pergunta 'QRA?'. O que ela quer saber?",
-      "explanation": "QRA = indicativo. Localização é QTH, frequência exata é QRG, e reduzir a potência é QRP.",
-      "kind": "cenario",
-      "level": 2,
-      "pitfall": "Confundir QRA com QTH ou QRG.",
-      "recall": true,
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.3, p. 36",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "A localização da outra estação",
-        "A frequência exata de transmissão",
-        "Se deve reduzir a potência",
-        "O indicativo da outra estação"
-      ],
-      "answer": 3,
-      "id": "TEO-255"
+      "id": "TEO-205"
     },
     {
       "subject": "TEO",
@@ -4676,7 +3780,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-256"
+      "id": "TEO-206"
     },
     {
       "subject": "TEO",
@@ -4693,41 +3797,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-257"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "As estações ACDS operam automaticamente em modos digitais, mas as repetidoras de voz digital e as IVG não se enquadram como ACDS.",
-      "explanation": "A Cartilha define ACDS como estações de operação automática em modos digitais, exceto repetidoras de voz digital e IVG.",
-      "kind": "conceitual",
-      "level": 4,
-      "pitfall": "Classificar repetidoras de voz digital e IVG como ACDS.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.3, p. 64",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-258"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Pela convenção citada na Cartilha, transmitir com 8 W em CW ainda é considerado operação QRP.",
-      "explanation": "Em CW, o limite convencional é ≤ 5 W. Os ≤ 10 W valem para SSB.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Aplicar o limite de SSB à operação em CW.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.5, p. 36",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-259"
+      "id": "TEO-207"
     },
     {
       "subject": "TEO",
@@ -4744,7 +3814,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-260"
+      "id": "TEO-208"
     },
     {
       "subject": "TEO",
@@ -4761,30 +3831,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-261"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Qual tipo de estação faz a ponte entre rádios convencionais e a internet para voz (VoIP), como nas redes Echolink e DMR BrandMeister?",
-      "explanation": "IVG é a estação que liga rádio e internet para voz. ACDS são estações automáticas de dados, SDR é rádio definido por software e WSPR é um protocolo de sondagem de propagação.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Confundir IVG com ACDS ou SDR.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.3, p. 64",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "IVG (Internet Voice Gateway)",
-        "ACDS",
-        "SDR",
-        "WSPR"
-      ],
-      "answer": 0,
-      "id": "TEO-262"
+      "id": "TEO-209"
     },
     {
       "subject": "TEO",
@@ -4801,92 +3848,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-263"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Mesmo em uma emergência real, pedir que uma frequência ocupada seja liberada deve ser feito com bom senso.",
-      "explanation": "A Cartilha admite pedir a frequência em emergência real, 'e ainda assim com bom senso'.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que a emergência dispensa bom senso.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.2, p. 37",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-264"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Em um pile-up de DXpedition, os contatos devem ser registrados por ordem de chegada e confirmados.",
-      "explanation": "A Cartilha diz que, em pile-up/DXpedition, deve-se registrar por ordem de chegada e confirmar o QSO.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Desconhecer a disciplina de registro em pile-up.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.5, p. 37",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-265"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Ao pegar uma conversa pela metade, é recomendável criticar no ar a estação que parece errada, para corrigir o problema na hora.",
-      "explanation": "A Cartilha recomenda evitar críticas na faixa, especialmente sem conhecer todos os fatos: pegar a conversa na metade é fonte comum de desentendimentos.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Julgar uma conversa ouvida pela metade.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.6, p. 37",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-266"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Diante de um relato consistente de interferência, o radioamador pode continuar transmitindo normalmente enquanto a Anatel não confirmar o problema.",
-      "explanation": "A Cartilha lista 'insistir em transmitir quando houver relato consistente de interferência' entre o que não se deve fazer. Não é preciso esperar confirmação da Anatel.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Insistir em transmitir diante de relato consistente de interferência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §2.4, p. 6",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-267"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Um operador que respeita o tempo máximo por câmbio pode usar a repetidora para espalhar um boato sobre um colega.",
-      "explanation": "A Cartilha manda não usar a repetidora para conflitos, boatos e intrigas, independentemente do tempo do câmbio.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que cumprir o tempo de câmbio autoriza qualquer conteúdo.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.7, p. 37",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-268"
+      "id": "TEO-210"
     },
     {
       "subject": "TEO",
@@ -4903,7 +3865,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-269"
+      "id": "TEO-211"
     },
     {
       "subject": "TEO",
@@ -4920,7 +3882,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-270"
+      "id": "TEO-212"
     },
     {
       "subject": "TEO",
@@ -4937,7 +3899,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-271"
+      "id": "TEO-213"
     },
     {
       "subject": "TEO",
@@ -4954,7 +3916,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-272"
+      "id": "TEO-214"
     },
     {
       "subject": "TEO",
@@ -4971,41 +3933,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-273"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Transmitir de propósito por cima de um QSO comum, sem emergência envolvida, é só descortesia, e não QRM intencional antiético.",
-      "explanation": "Passar por cima da fala de outros é interferência intencional (QRM deliberado), antiética e prejudicial a todos, em qualquer situação.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que o QRM intencional só é grave em emergência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.4, p. 37",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-274"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Colaborar, quando possível, com a manutenção e os custos da repetidora que se usa faz parte da boa conduta.",
-      "explanation": "É uma das recomendações da Cartilha para o uso de repetidoras.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Achar que a repetidora não depende dos usuários.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.7, p. 38",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-275"
+      "id": "TEO-215"
     },
     {
       "subject": "TEO",
@@ -5028,24 +3956,7 @@
         "Simular uma emergência para testar os colegas"
       ],
       "answer": 1,
-      "id": "TEO-276"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Durante uma enchente, um radioamador que ouve pedidos de socorro pode ignorá-los, pois atender emergências é tarefa exclusiva da defesa civil.",
-      "explanation": "A Cartilha inclui 'se inteirar e atender a situações de emergência' entre as responsabilidades do radioamador.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que emergência é assunto só da defesa civil.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §7.1, p. 18",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-277"
+      "id": "TEO-216"
     },
     {
       "subject": "TEO",
@@ -5062,7 +3973,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-278"
+      "id": "TEO-217"
     },
     {
       "subject": "TEO",
@@ -5079,7 +3990,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-279"
+      "id": "TEO-218"
     },
     {
       "subject": "TEO",
@@ -5096,7 +4007,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-280"
+      "id": "TEO-219"
     },
     {
       "subject": "TEO",
@@ -5113,58 +4024,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-281"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "O radioamadorismo tem valor social por possibilitar comunicações alternativas em emergências, quando outros meios falham.",
-      "explanation": "É o que a Cartilha diz sobre a finalidade do serviço.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Não perceber o valor social do serviço.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §2.2, p. 6",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-282"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Estações ACDS, que operam de forma automática em modos digitais, são muito usadas em redes de emergência.",
-      "explanation": "A Cartilha cita redes de emergência, monitoramento ambiental e rastreamento de veículos como usos típicos das ACDS.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Não associar as estações ACDS às redes de emergência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.3, p. 64",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-283"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Em emergência, a estação pode operar sem se identificar, para economizar tempo de transmissão.",
-      "explanation": "O Ato 3448/2026 (item 10.2) veda a operação de estação sem identificação, sem exceção para emergências.",
-      "kind": "conceitual",
-      "level": 4,
-      "pitfall": "Achar que a emergência dispensa a identificação.",
-      "source": "generated",
-      "sourceRef": "Ato nº 3448/2026, item 10.2",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-284"
+      "id": "TEO-220"
     },
     {
       "subject": "TEO",
@@ -5181,7 +4041,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-285"
+      "id": "TEO-221"
     },
     {
       "subject": "TEO",
@@ -5204,7 +4064,7 @@
         "Não precisa se identificar enquanto durar a emergência"
       ],
       "answer": 2,
-      "id": "TEO-286"
+      "id": "TEO-222"
     },
     {
       "subject": "TEO",
@@ -5227,30 +4087,7 @@
         "O limite de 10 minutos para a transmissão entre estações"
       ],
       "answer": 3,
-      "id": "TEO-287"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Em emergências, o APRS é útil principalmente porque permite:",
-      "explanation": "A Cartilha cita o APRS para rastrear veículos, balões e estações em emergência, com posição GPS e mensagens em tempo real.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Desconhecer a utilidade do APRS em emergência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.3, p. 64",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Rastrear estações e transmitir posição GPS em tempo real",
-        "Transmitir em várias faixas ao mesmo tempo sem restrição",
-        "Operar sem indicativo de chamada",
-        "Comunicar sem usar o espectro de radiofrequências"
-      ],
-      "answer": 0,
-      "id": "TEO-288"
+      "id": "TEO-223"
     }
   ]
 }
