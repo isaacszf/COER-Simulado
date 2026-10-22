@@ -2,7 +2,7 @@
   "subject": "ELE",
   "subjectName": "Conhecimentos Básicos de Eletrônica e Eletricidade",
   "sourceBasis": "Ato 3448/2026 §11.4 ementa · Cartilha do Serviço Radioamador, versão 2026-06",
-  "generatedAt": "2026-10-22T01:49:06.556Z",
+  "generatedAt": "2026-10-22T02:11:20.442Z",
   "questions": [
     {
       "subject": "ELE",
@@ -76,23 +76,6 @@
       "subject": "ELE",
       "topic": "eletronica-basica",
       "topicName": "Eletrônica Básica",
-      "statement": "Na pilha comum, o bastão central de carvão constitui o polo negativo.",
-      "explanation": "O bastão central de carvão da pilha constitui o polo positivo.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Inverter os polos da pilha.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §1.1, p. 54",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-005"
-    },
-    {
-      "subject": "ELE",
-      "topic": "eletronica-basica",
-      "topicName": "Eletrônica Básica",
       "statement": "Pela Lei de Ohm, a corrente é diretamente proporcional à tensão aplicada e inversamente proporcional à resistência.",
       "explanation": "É o enunciado da Lei de Ohm na Cartilha: I = V / R.",
       "kind": "conceitual",
@@ -104,7 +87,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-006"
+      "id": "ELE-005"
     },
     {
       "subject": "ELE",
@@ -121,7 +104,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-007"
+      "id": "ELE-006"
     },
     {
       "subject": "ELE",
@@ -138,7 +121,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-008"
+      "id": "ELE-007"
     },
     {
       "subject": "ELE",
@@ -155,7 +138,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-009"
+      "id": "ELE-008"
     },
     {
       "subject": "ELE",
@@ -172,7 +155,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-010"
+      "id": "ELE-009"
     },
     {
       "subject": "ELE",
@@ -189,7 +172,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-011"
+      "id": "ELE-010"
     },
     {
       "subject": "ELE",
@@ -206,7 +189,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-012"
+      "id": "ELE-011"
     },
     {
       "subject": "ELE",
@@ -223,7 +206,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-013"
+      "id": "ELE-012"
     },
     {
       "subject": "ELE",
@@ -240,7 +223,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-014"
+      "id": "ELE-013"
     },
     {
       "subject": "ELE",
@@ -257,7 +240,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-015"
+      "id": "ELE-014"
     },
     {
       "subject": "ELE",
@@ -274,7 +257,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-016"
+      "id": "ELE-015"
     },
     {
       "subject": "ELE",
@@ -291,7 +274,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-017"
+      "id": "ELE-016"
     },
     {
       "subject": "ELE",
@@ -308,7 +291,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-018"
+      "id": "ELE-017"
     },
     {
       "subject": "ELE",
@@ -325,7 +308,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-019"
+      "id": "ELE-018"
     },
     {
       "subject": "ELE",
@@ -342,7 +325,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-020"
+      "id": "ELE-019"
     },
     {
       "subject": "ELE",
@@ -359,7 +342,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-021"
+      "id": "ELE-020"
     },
     {
       "subject": "ELE",
@@ -376,7 +359,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-022"
+      "id": "ELE-021"
     },
     {
       "subject": "ELE",
@@ -393,7 +376,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-023"
+      "id": "ELE-022"
     },
     {
       "subject": "ELE",
@@ -410,7 +393,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-024"
+      "id": "ELE-023"
     },
     {
       "subject": "ELE",
@@ -427,7 +410,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-025"
+      "id": "ELE-024"
     },
     {
       "subject": "ELE",
@@ -444,7 +427,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-026"
+      "id": "ELE-025"
     },
     {
       "subject": "ELE",
@@ -461,7 +444,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-027"
+      "id": "ELE-026"
     },
     {
       "subject": "ELE",
@@ -478,7 +461,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-028"
+      "id": "ELE-027"
     },
     {
       "subject": "ELE",
@@ -495,7 +478,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-029"
+      "id": "ELE-028"
     },
     {
       "subject": "ELE",
@@ -512,7 +495,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-030"
+      "id": "ELE-029"
     },
     {
       "subject": "ELE",
@@ -529,7 +512,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-031"
+      "id": "ELE-030"
     },
     {
       "subject": "ELE",
@@ -552,7 +535,7 @@
         "100 mA"
       ],
       "answer": 0,
-      "id": "ELE-032"
+      "id": "ELE-031"
     },
     {
       "subject": "ELE",
@@ -575,7 +558,7 @@
         "11,8 W"
       ],
       "answer": 1,
-      "id": "ELE-033"
+      "id": "ELE-032"
     },
     {
       "subject": "ELE",
@@ -598,7 +581,7 @@
         "0,2 W"
       ],
       "answer": 2,
-      "id": "ELE-034"
+      "id": "ELE-033"
     },
     {
       "subject": "ELE",
@@ -621,7 +604,7 @@
         "10 A e 2.200 W"
       ],
       "answer": 3,
-      "id": "ELE-035"
+      "id": "ELE-034"
     },
     {
       "subject": "ELE",
@@ -644,7 +627,7 @@
         "Amplifica a corrente aplicada à sua base"
       ],
       "answer": 0,
-      "id": "ELE-036"
+      "id": "ELE-035"
     },
     {
       "subject": "ELE",
@@ -667,7 +650,7 @@
         "A corrente refletida na linha"
       ],
       "answer": 1,
-      "id": "ELE-037"
+      "id": "ELE-036"
     },
     {
       "subject": "ELE",
@@ -684,7 +667,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-038"
+      "id": "ELE-037"
     },
     {
       "subject": "ELE",
@@ -701,7 +684,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-039"
+      "id": "ELE-038"
     },
     {
       "subject": "ELE",
@@ -718,7 +701,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-040"
+      "id": "ELE-039"
     },
     {
       "subject": "ELE",
@@ -735,7 +718,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-041"
+      "id": "ELE-040"
     },
     {
       "subject": "ELE",
@@ -752,7 +735,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-042"
+      "id": "ELE-041"
     },
     {
       "subject": "ELE",
@@ -769,7 +752,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-043"
+      "id": "ELE-042"
     },
     {
       "subject": "ELE",
@@ -786,7 +769,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-044"
+      "id": "ELE-043"
     },
     {
       "subject": "ELE",
@@ -803,7 +786,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-045"
+      "id": "ELE-044"
     },
     {
       "subject": "ELE",
@@ -820,7 +803,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-046"
+      "id": "ELE-045"
     },
     {
       "subject": "ELE",
@@ -837,7 +820,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-047"
+      "id": "ELE-046"
     },
     {
       "subject": "ELE",
@@ -854,7 +837,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-048"
+      "id": "ELE-047"
     },
     {
       "subject": "ELE",
@@ -872,7 +855,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-049"
+      "id": "ELE-048"
     },
     {
       "subject": "ELE",
@@ -890,7 +873,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-050"
+      "id": "ELE-049"
     },
     {
       "subject": "ELE",
@@ -907,7 +890,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-051"
+      "id": "ELE-050"
     },
     {
       "subject": "ELE",
@@ -924,7 +907,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-052"
+      "id": "ELE-051"
     },
     {
       "subject": "ELE",
@@ -941,7 +924,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-053"
+      "id": "ELE-052"
     },
     {
       "subject": "ELE",
@@ -958,7 +941,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-054"
+      "id": "ELE-053"
     },
     {
       "subject": "ELE",
@@ -975,7 +958,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-055"
+      "id": "ELE-054"
     },
     {
       "subject": "ELE",
@@ -998,7 +981,7 @@
         "5 µs"
       ],
       "answer": 2,
-      "id": "ELE-056"
+      "id": "ELE-055"
     },
     {
       "subject": "ELE",
@@ -1021,30 +1004,7 @@
         "≈ 41,7 m"
       ],
       "answer": 3,
-      "id": "ELE-057"
-    },
-    {
-      "subject": "ELE",
-      "topic": "eletromagnetismo-basico",
-      "topicName": "Eletromagnetismo Básico",
-      "statement": "Uma onda tem 70 cm de comprimento no espaço livre. Qual é a sua frequência aproximada?",
-      "explanation": "70 cm = 0,70 m; f ≈ 300 / 0,70 ≈ 430 MHz (faixa de 70 cm).",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Esquecer de converter centímetros em metros.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.1, p. 29",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "≈ 430 MHz",
-        "≈ 43 MHz",
-        "≈ 210 MHz",
-        "≈ 4,3 GHz"
-      ],
-      "answer": 0,
-      "id": "ELE-058"
+      "id": "ELE-056"
     },
     {
       "subject": "ELE",
@@ -1062,13 +1022,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "VHF",
         "UHF",
+        "VHF",
         "SHF",
         "HF"
       ],
-      "answer": 1,
-      "id": "ELE-059"
+      "answer": 0,
+      "id": "ELE-057"
     },
     {
       "subject": "ELE",
@@ -1086,46 +1046,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Triplica",
-        "Não se altera",
         "Cai para um terço",
+        "Não se altera",
         "Cai para a metade"
       ],
-      "answer": 2,
-      "id": "ELE-060"
-    },
-    {
-      "subject": "ELE",
-      "topic": "protecao-eletrica",
-      "topicName": "Proteção Elétrica",
-      "statement": "Correntes excessivas podem superaquecer condutores e componentes, causando danos e risco de incêndio.",
-      "explanation": "É o risco básico apontado pela Cartilha.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Subestimar o risco de correntes excessivas.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §6.1, p. 59",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-061"
-    },
-    {
-      "subject": "ELE",
-      "topic": "protecao-eletrica",
-      "topicName": "Proteção Elétrica",
-      "statement": "Um curto-circuito gera correntes muito elevadas em pouco tempo.",
-      "explanation": "A Cartilha descreve o curto-circuito dessa forma.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Achar que o curto-circuito gera corrente baixa.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §6.1, p. 59",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-062"
+      "answer": 1,
+      "id": "ELE-058"
     },
     {
       "subject": "ELE",
@@ -1142,7 +1068,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-063"
+      "id": "ELE-059"
     },
     {
       "subject": "ELE",
@@ -1159,24 +1085,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-064"
-    },
-    {
-      "subject": "ELE",
-      "topic": "protecao-eletrica",
-      "topicName": "Proteção Elétrica",
-      "statement": "Em operação normal, a temperatura do fusível deve ficar acima do seu ponto de fusão.",
-      "explanation": "Em operação normal, a temperatura deve ficar abaixo do ponto de fusão; acima, o fusível funde e interrompe o circuito.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Inverter a condição normal de temperatura do fusível.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §6.2, p. 60",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-065"
+      "id": "ELE-060"
     },
     {
       "subject": "ELE",
@@ -1193,7 +1102,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-066"
+      "id": "ELE-061"
     },
     {
       "subject": "ELE",
@@ -1210,24 +1119,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-067"
-    },
-    {
-      "subject": "ELE",
-      "topic": "protecao-eletrica",
-      "topicName": "Proteção Elétrica",
-      "statement": "Disjuntores podem ser monopolares, bipolares ou tripolares, conforme o circuito.",
-      "explanation": "São os tipos citados pela Cartilha.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Desconhecer os tipos de disjuntor.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §6.3, p. 60",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-068"
+      "id": "ELE-062"
     },
     {
       "subject": "ELE",
@@ -1244,24 +1136,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-069"
-    },
-    {
-      "subject": "ELE",
-      "topic": "protecao-eletrica",
-      "topicName": "Proteção Elétrica",
-      "statement": "Como fusíveis e disjuntores têm a mesma função básica, qualquer tipo e qualquer valor servem para qualquer aplicação.",
-      "explanation": "Embora tenham a mesma função básica, é importante escolher o tipo e o valor corretos para cada aplicação.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Achar que qualquer proteção serve.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §6.4, p. 60",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-070"
+      "id": "ELE-063"
     },
     {
       "subject": "ELE",
@@ -1278,7 +1153,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-071"
+      "id": "ELE-064"
     },
     {
       "subject": "ELE",
@@ -1295,24 +1170,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-072"
-    },
-    {
-      "subject": "ELE",
-      "topic": "protecao-eletrica",
-      "topicName": "Proteção Elétrica",
-      "statement": "Por convenção, o potencial elétrico da terra é considerado nulo.",
-      "explanation": "A Cartilha registra que, por convenção, o potencial de terra é nulo.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Atribuir um potencial diferente de zero à terra.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §1.1, p. 54",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-073"
+      "id": "ELE-065"
     },
     {
       "subject": "ELE",
@@ -1329,7 +1187,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-074"
+      "id": "ELE-066"
     },
     {
       "subject": "ELE",
@@ -1346,7 +1204,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-075"
+      "id": "ELE-067"
     },
     {
       "subject": "ELE",
@@ -1363,7 +1221,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-076"
+      "id": "ELE-068"
     },
     {
       "subject": "ELE",
@@ -1380,7 +1238,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-077"
+      "id": "ELE-069"
     },
     {
       "subject": "ELE",
@@ -1397,7 +1255,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-078"
+      "id": "ELE-070"
     },
     {
       "subject": "ELE",
@@ -1414,7 +1272,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-079"
+      "id": "ELE-071"
     },
     {
       "subject": "ELE",
@@ -1433,17 +1291,17 @@
       "options": [
         "O fusível protege contra curto-circuito e o disjuntor não",
         "O disjuntor só funciona em corrente contínua",
-        "O fusível dispensa a escolha do valor adequado",
-        "O disjuntor é rearmável; o fusível precisa ser substituído após atuar"
+        "O disjuntor é rearmável; o fusível precisa ser substituído após atuar",
+        "O fusível dispensa a escolha do valor adequado"
       ],
-      "answer": 3,
-      "id": "ELE-080"
+      "answer": 2,
+      "id": "ELE-072"
     },
     {
       "subject": "ELE",
       "topic": "protecao-eletrica",
       "topicName": "Proteção Elétrica",
-      "statement": "Segundo a Cartilha, quais são os três objetivos principais do aterramento no radioamadorismo?",
+      "statement": "Quais são os três objetivos principais do aterramento no radioamadorismo?",
       "explanation": "São os três objetivos listados pela Cartilha.",
       "kind": "conceitual",
       "level": 3,
@@ -1454,13 +1312,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Segurança do operador, proteção dos equipamentos e desempenho técnico",
         "Aumentar a potência, reduzir a ROE e dispensar fusíveis",
         "Elevar a tensão da rede, reduzir a corrente e aquecer os cabos",
-        "Substituir o disjuntor, a antena e a linha de transmissão"
+        "Substituir o disjuntor, a antena e a linha de transmissão",
+        "Segurança do operador, proteção dos equipamentos e desempenho técnico"
       ],
-      "answer": 0,
-      "id": "ELE-081"
+      "answer": 3,
+      "id": "ELE-073"
     },
     {
       "subject": "ELE",
@@ -1477,13 +1335,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "0,6 A",
         "6 A",
+        "0,6 A",
         "60 A",
         "1,5 A"
       ],
-      "answer": 1,
-      "id": "ELE-082"
+      "answer": 0,
+      "id": "ELE-074"
     },
     {
       "subject": "ELE",
@@ -1501,29 +1359,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Trocar por um fusível de valor muito maior",
-        "Substituir o fusível por um fio de cobre",
         "Investigar a causa (curto ou sobrecarga) e manter o fusível do valor especificado",
+        "Substituir o fusível por um fio de cobre",
         "Retirar o fusível e operar sem proteção"
       ],
-      "answer": 2,
-      "id": "ELE-083"
-    },
-    {
-      "subject": "ELE",
-      "topic": "medicao-eletrica",
-      "topicName": "Medição Elétrica",
-      "statement": "O multímetro pode medir tensão, corrente, resistência e, em muitos modelos, frequência e continuidade.",
-      "explanation": "São as funções citadas pela Cartilha.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Desconhecer as funções do multímetro.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §7.1, p. 60",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-084"
+      "answer": 1,
+      "id": "ELE-075"
     },
     {
       "subject": "ELE",
@@ -1540,7 +1381,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-085"
+      "id": "ELE-076"
     },
     {
       "subject": "ELE",
@@ -1557,7 +1398,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-086"
+      "id": "ELE-077"
     },
     {
       "subject": "ELE",
@@ -1574,7 +1415,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-087"
+      "id": "ELE-078"
     },
     {
       "subject": "ELE",
@@ -1591,7 +1432,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-088"
+      "id": "ELE-079"
     },
     {
       "subject": "ELE",
@@ -1608,7 +1449,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-089"
+      "id": "ELE-080"
     },
     {
       "subject": "ELE",
@@ -1625,7 +1466,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-090"
+      "id": "ELE-081"
     },
     {
       "subject": "ELE",
@@ -1642,7 +1483,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-091"
+      "id": "ELE-082"
     },
     {
       "subject": "ELE",
@@ -1659,7 +1500,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-092"
+      "id": "ELE-083"
     },
     {
       "subject": "ELE",
@@ -1676,7 +1517,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-093"
+      "id": "ELE-084"
     },
     {
       "subject": "ELE",
@@ -1693,7 +1534,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-094"
+      "id": "ELE-085"
     },
     {
       "subject": "ELE",
@@ -1710,7 +1551,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-095"
+      "id": "ELE-086"
     },
     {
       "subject": "ELE",
@@ -1727,7 +1568,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-096"
+      "id": "ELE-087"
     },
     {
       "subject": "ELE",
@@ -1744,7 +1585,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-097"
+      "id": "ELE-088"
     },
     {
       "subject": "ELE",
@@ -1761,7 +1602,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-098"
+      "id": "ELE-089"
     },
     {
       "subject": "ELE",
@@ -1778,7 +1619,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-099"
+      "id": "ELE-090"
     },
     {
       "subject": "ELE",
@@ -1795,7 +1636,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-100"
+      "id": "ELE-091"
     },
     {
       "subject": "ELE",
@@ -1812,7 +1653,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-101"
+      "id": "ELE-092"
     },
     {
       "subject": "ELE",
@@ -1829,7 +1670,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-102"
+      "id": "ELE-093"
     },
     {
       "subject": "ELE",
@@ -1846,7 +1687,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-103"
+      "id": "ELE-094"
     },
     {
       "subject": "ELE",
@@ -1863,7 +1704,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-104"
+      "id": "ELE-095"
     },
     {
       "subject": "ELE",
@@ -1882,11 +1723,11 @@
       "options": [
         "Em paralelo com os terminais da fonte",
         "Entre o conector da antena e a terra",
-        "Com o circuito desenergizado, no modo ohms",
-        "Em série com a alimentação do transceptor"
+        "Em série com a alimentação do transceptor",
+        "Com o circuito desenergizado, no modo ohms"
       ],
-      "answer": 3,
-      "id": "ELE-105"
+      "answer": 2,
+      "id": "ELE-096"
     },
     {
       "subject": "ELE",
@@ -1903,13 +1744,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Desenergizar o circuito",
         "Usar o terminal de 10 A",
         "Ligar o multímetro em série com a fonte",
-        "Selecionar o modo tensão CA"
+        "Selecionar o modo tensão CA",
+        "Desenergizar o circuito"
       ],
-      "answer": 0,
-      "id": "ELE-106"
+      "answer": 3,
+      "id": "ELE-097"
     },
     {
       "subject": "ELE",
@@ -1926,13 +1767,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Multímetro no modo continuidade",
         "Wattímetro",
+        "Multímetro no modo continuidade",
         "Frequencímetro",
         "Ohmímetro"
       ],
-      "answer": 1,
-      "id": "ELE-107"
+      "answer": 0,
+      "id": "ELE-098"
     },
     {
       "subject": "ELE",
@@ -1950,12 +1791,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Para poder medir corrente em série",
-        "Para queimar o fusível interno em caso de sobrecarga",
         "Para minimizar sua influência no circuito medido",
+        "Para queimar o fusível interno em caso de sobrecarga",
         "Para medir a potência refletida pela antena"
       ],
-      "answer": 2,
-      "id": "ELE-108"
+      "answer": 1,
+      "id": "ELE-099"
     },
     {
       "subject": "ELE",
@@ -1974,11 +1815,11 @@
       "options": [
         "8 Ω, como a de um alto-falante",
         "300 Ω, em qualquer instalação",
-        "Qualquer valor, pois não afeta a medição",
-        "50 Ω, compatível com a linha"
+        "50 Ω, compatível com a linha",
+        "Qualquer valor, pois não afeta a medição"
       ],
-      "answer": 3,
-      "id": "ELE-109"
+      "answer": 2,
+      "id": "ELE-100"
     },
     {
       "subject": "ELE",
@@ -1995,24 +1836,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-110"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "O receptor recebe o sinal de RF da antena e reconstrói a informação transmitida.",
-      "explanation": "É a função do receptor descrita pela Cartilha.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Inverter as funções de TX e RX.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.1, p. 26",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-111"
+      "id": "ELE-101"
     },
     {
       "subject": "ELE",
@@ -2029,7 +1853,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-112"
+      "id": "ELE-102"
     },
     {
       "subject": "ELE",
@@ -2046,7 +1870,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-113"
+      "id": "ELE-103"
     },
     {
       "subject": "ELE",
@@ -2063,7 +1887,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-114"
+      "id": "ELE-104"
     },
     {
       "subject": "ELE",
@@ -2080,7 +1904,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-115"
+      "id": "ELE-105"
     },
     {
       "subject": "ELE",
@@ -2097,24 +1921,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-116"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "A linha de transmissão conduz a energia de RF entre o equipamento e a antena.",
-      "explanation": "É a definição da Cartilha.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Desconhecer a função da linha.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.4, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-117"
+      "id": "ELE-106"
     },
     {
       "subject": "ELE",
@@ -2131,24 +1938,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-118"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "O desempenho de uma antena depende do seu tipo, do seu comprimento físico em relação ao comprimento de onda e da polarização.",
-      "explanation": "São os fatores citados pela Cartilha.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Ignorar a relação entre tamanho da antena e λ.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §8.1, p. 61",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-119"
+      "id": "ELE-107"
     },
     {
       "subject": "ELE",
@@ -2165,7 +1955,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-120"
+      "id": "ELE-108"
     },
     {
       "subject": "ELE",
@@ -2182,7 +1972,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-121"
+      "id": "ELE-109"
     },
     {
       "subject": "ELE",
@@ -2199,7 +1989,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-122"
+      "id": "ELE-110"
     },
     {
       "subject": "ELE",
@@ -2216,7 +2006,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-123"
+      "id": "ELE-111"
     },
     {
       "subject": "ELE",
@@ -2233,7 +2023,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-124"
+      "id": "ELE-112"
     },
     {
       "subject": "ELE",
@@ -2250,7 +2040,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-125"
+      "id": "ELE-113"
     },
     {
       "subject": "ELE",
@@ -2267,7 +2057,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-126"
+      "id": "ELE-114"
     },
     {
       "subject": "ELE",
@@ -2284,7 +2074,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-127"
+      "id": "ELE-115"
     },
     {
       "subject": "ELE",
@@ -2301,53 +2091,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-128"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Em um receptor, qual circuito usa o batimento de frequências para gerar a frequência intermediária (FI)?",
-      "explanation": "O misturador combina frequências e gera as componentes de soma e diferença, usadas para obter a FI.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Não reconhecer o misturador.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.6, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Misturador",
-        "Filtro passa-baixas do transmissor",
-        "Antena artificial",
-        "Fusível de alimentação"
-      ],
-      "answer": 0,
-      "id": "ELE-129"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "No receptor, qual componente costuma atuar como detector, convertendo o sinal de RF em sinal de baixa frequência?",
-      "explanation": "A Cartilha cita o diodo como retificador em estágios de detecção.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Não reconhecer o detector.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §10.1, p. 63",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Disjuntor",
-        "Diodo",
-        "Fusível",
-        "Wattímetro"
-      ],
-      "answer": 1,
-      "id": "ELE-130"
+      "id": "ELE-116"
     },
     {
       "subject": "ELE",
@@ -2366,34 +2110,11 @@
       "options": [
         "≈ 14,3 m",
         "≈ 3,6 m",
-        "≈ 7,1 m",
-        "≈ 71 m"
-      ],
-      "answer": 2,
-      "id": "ELE-131"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Qual é a polarização de um dipolo montado na vertical?",
-      "explanation": "Dipolo na vertical tem polarização linear vertical.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Inverter a polarização do dipolo.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §8.2, p. 62",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Linear horizontal",
-        "Circular",
-        "Depende apenas da frequência",
-        "Linear vertical"
+        "≈ 71 m",
+        "≈ 7,1 m"
       ],
       "answer": 3,
-      "id": "ELE-132"
+      "id": "ELE-117"
     },
     {
       "subject": "ELE",
@@ -2410,41 +2131,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-133"
-    },
-    {
-      "subject": "ELE",
-      "topic": "telecomunicacoes",
-      "topicName": "Telecomunicações",
-      "statement": "A mensagem é a informação a transmitir, como voz, dados, CW ou imagem.",
-      "explanation": "É a definição da Cartilha.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Confundir mensagem com portadora.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.3, p. 30",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-134"
-    },
-    {
-      "subject": "ELE",
-      "topic": "telecomunicacoes",
-      "topicName": "Telecomunicações",
-      "statement": "Na analogia da Cartilha, o envelope com endereço representa a mensagem, e a carta representa a portadora.",
-      "explanation": "É o inverso: a carta é a mensagem, o envelope com endereço é a portadora e o envelope postado é o sinal modulado.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Inverter a analogia carta/envelope.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.3, p. 30",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-135"
+      "id": "ELE-118"
     },
     {
       "subject": "ELE",
@@ -2461,7 +2148,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-136"
+      "id": "ELE-119"
     },
     {
       "subject": "ELE",
@@ -2478,7 +2165,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-137"
+      "id": "ELE-120"
     },
     {
       "subject": "ELE",
@@ -2495,7 +2182,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-138"
+      "id": "ELE-121"
     },
     {
       "subject": "ELE",
@@ -2512,7 +2199,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-139"
+      "id": "ELE-122"
     },
     {
       "subject": "ELE",
@@ -2529,7 +2216,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-140"
+      "id": "ELE-123"
     },
     {
       "subject": "ELE",
@@ -2546,7 +2233,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-141"
+      "id": "ELE-124"
     },
     {
       "subject": "ELE",
@@ -2563,7 +2250,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-142"
+      "id": "ELE-125"
     },
     {
       "subject": "ELE",
@@ -2580,7 +2267,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-143"
+      "id": "ELE-126"
     },
     {
       "subject": "ELE",
@@ -2597,41 +2284,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-144"
-    },
-    {
-      "subject": "ELE",
-      "topic": "telecomunicacoes",
-      "topicName": "Telecomunicações",
-      "statement": "As ondas de rádio só se propagam pelo espaço livre e não podem ser conduzidas por cabos.",
-      "explanation": "A Cartilha cita três meios: condutores elétricos (cabos, linhas), espaço livre e fibras ópticas.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Achar que ondas de rádio só se propagam pelo ar.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.1, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-145"
-    },
-    {
-      "subject": "ELE",
-      "topic": "telecomunicacoes",
-      "topicName": "Telecomunicações",
-      "statement": "A relação sinal-ruído aumenta tanto quando o sinal fica mais forte quanto quando o ruído diminui.",
-      "explanation": "A SNR é a razão sinal/ruído; a Cartilha lista as duas condições.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Achar que só o sinal forte melhora a SNR.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-146"
+      "id": "ELE-127"
     },
     {
       "subject": "ELE",
@@ -2648,7 +2301,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-147"
+      "id": "ELE-128"
     },
     {
       "subject": "ELE",
@@ -2665,7 +2318,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-148"
+      "id": "ELE-129"
     },
     {
       "subject": "ELE",
@@ -2682,99 +2335,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-149"
-    },
-    {
-      "subject": "ELE",
-      "topic": "telecomunicacoes",
-      "topicName": "Telecomunicações",
-      "statement": "Que tipo de modulação varia a amplitude da portadora conforme a mensagem?",
-      "explanation": "Em AM varia a amplitude; em FM, a frequência; na modulação em fase, a fase.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Confundir os tipos de modulação.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 30",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "AM",
-        "FM",
-        "Modulação em fase",
-        "Nenhum; a amplitude nunca varia"
-      ],
-      "answer": 0,
-      "id": "ELE-150"
-    },
-    {
-      "subject": "ELE",
-      "topic": "telecomunicacoes",
-      "topicName": "Telecomunicações",
-      "statement": "Como se chama o processo pelo qual o receptor extrai a mensagem do sinal modulado?",
-      "explanation": "A demodulação é o processo inverso da modulação.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Confundir modulação com demodulação.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.5, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Modulação",
-        "Demodulação",
-        "Batimento na antena",
-        "Aterramento"
-      ],
-      "answer": 1,
-      "id": "ELE-151"
-    },
-    {
-      "subject": "ELE",
-      "topic": "telecomunicacoes",
-      "topicName": "Telecomunicações",
-      "statement": "Que vantagem da modulação digital sobre a analógica a Cartilha aponta?",
-      "explanation": "Representar a informação por valores discretos torna a transmissão mais resistente a ruídos e interferências.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Não reconhecer a vantagem da modulação digital.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §11.2, p. 64",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Dispensa o uso de portadora",
-        "Elimina os efeitos da propagação",
-        "Maior resistência a ruídos, interferências e degradações do canal",
-        "Só pode ser usada em HF"
-      ],
-      "answer": 2,
-      "id": "ELE-152"
-    },
-    {
-      "subject": "ELE",
-      "topic": "telecomunicacoes",
-      "topicName": "Telecomunicações",
-      "statement": "Qual mecanismo de propagação predomina em VHF/UHF?",
-      "explanation": "Em VHF/UHF predominam linha de visada, difração e tropodifusão. Reflexão ionosférica é típica de HF; onda de superfície, de LF/MF.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Associar VHF/UHF à ionosfera.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.4, p. 32",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Reflexão ionosférica",
-        "Onda de superfície",
-        "Reflexão na estratosfera",
-        "Linha de visada"
-      ],
-      "answer": 3,
-      "id": "ELE-153"
+      "id": "ELE-130"
     },
     {
       "subject": "ELE",
@@ -2791,7 +2352,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-154"
+      "id": "ELE-131"
     },
     {
       "subject": "ELE",
@@ -2808,7 +2369,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-155"
+      "id": "ELE-132"
     },
     {
       "subject": "ELE",
@@ -2825,7 +2386,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-156"
+      "id": "ELE-133"
     },
     {
       "subject": "ELE",
@@ -2848,7 +2409,7 @@
         "1,5 MHz"
       ],
       "answer": 0,
-      "id": "ELE-157"
+      "id": "ELE-134"
     },
     {
       "subject": "ELE",
@@ -2871,7 +2432,7 @@
         "HF, MF, LF, VLF, VHF, UHF, SHF"
       ],
       "answer": 1,
-      "id": "ELE-158"
+      "id": "ELE-135"
     },
     {
       "subject": "ELE",
@@ -2888,7 +2449,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-159"
+      "id": "ELE-136"
     },
     {
       "subject": "ELE",
@@ -2905,7 +2466,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-160"
+      "id": "ELE-137"
     },
     {
       "subject": "ELE",
@@ -2922,7 +2483,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-161"
+      "id": "ELE-138"
     },
     {
       "subject": "ELE",
@@ -2939,7 +2500,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-162"
+      "id": "ELE-139"
     },
     {
       "subject": "ELE",
@@ -2956,7 +2517,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-163"
+      "id": "ELE-140"
     },
     {
       "subject": "ELE",
@@ -2973,7 +2534,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-164"
+      "id": "ELE-141"
     },
     {
       "subject": "ELE",
@@ -2996,30 +2557,7 @@
         "Multímetro no modo continuidade"
       ],
       "answer": 2,
-      "id": "ELE-165"
-    },
-    {
-      "subject": "ELE",
-      "topic": "medicao-eletrica",
-      "topicName": "Medição Elétrica",
-      "statement": "Com o multímetro em série, mede-se um consumo de 3 A em um rádio alimentado por 13,8 V. Qual é a potência consumida?",
-      "explanation": "P = V × I = 13,8 × 3 = 41,4 W. 4,6 W resultaria de dividir a tensão pela corrente.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Dividir em vez de multiplicar tensão e corrente.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §1.3, p. 54",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "4,6 W",
-        "16,8 W",
-        "414 W",
-        "41,4 W"
-      ],
-      "answer": 3,
-      "id": "ELE-166"
+      "id": "ELE-142"
     },
     {
       "subject": "ELE",
@@ -3036,7 +2574,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-167"
+      "id": "ELE-143"
     },
     {
       "subject": "ELE",
@@ -3053,13 +2591,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Transdutor",
         "Oscilador RF",
         "Modulador",
-        "Amplificador RF"
+        "Amplificador RF",
+        "Transdutor"
       ],
-      "answer": 0,
-      "id": "ELE-168"
+      "answer": 3,
+      "id": "ELE-144"
     },
     {
       "subject": "ELE",
@@ -3076,7 +2614,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-169"
+      "id": "ELE-145"
     },
     {
       "subject": "ELE",
@@ -3093,7 +2631,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-170"
+      "id": "ELE-146"
     },
     {
       "subject": "ELE",
@@ -3110,7 +2648,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-171"
+      "id": "ELE-147"
     },
     {
       "subject": "ELE",
@@ -3127,7 +2665,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-172"
+      "id": "ELE-148"
     },
     {
       "subject": "ELE",
@@ -3144,7 +2682,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-173"
+      "id": "ELE-149"
     },
     {
       "subject": "ELE",
@@ -3161,7 +2699,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-174"
+      "id": "ELE-150"
     },
     {
       "subject": "ELE",
@@ -3178,13 +2716,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "É amplificada e enviada ao alto-falante",
         "É removida ou ignorada, restando a mensagem",
+        "É amplificada e enviada ao alto-falante",
         "É retransmitida em outra frequência",
         "É convertida em corrente contínua para alimentar o rádio"
       ],
-      "answer": 1,
-      "id": "ELE-175"
+      "answer": 0,
+      "id": "ELE-151"
     }
   ]
 }

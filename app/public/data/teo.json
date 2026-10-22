@@ -2,7 +2,7 @@
   "subject": "TEO",
   "subjectName": "Técnica e Ética Operacional",
   "sourceBasis": "Ato 3448/2026 §11.4 ementa · Cartilha do Serviço Radioamador, versão 2026-06",
-  "generatedAt": "2026-10-22T01:49:06.548Z",
+  "generatedAt": "2026-10-22T02:11:20.435Z",
   "questions": [
     {
       "subject": "TEO",
@@ -127,23 +127,6 @@
       "subject": "TEO",
       "topic": "estacao-de-radioamador",
       "topicName": "Estação de Radioamador",
-      "statement": "Com recepção programada em 439,250 MHz e shift de +5 MHz, o rádio transmitirá em 434,250 MHz.",
-      "explanation": "Shift positivo soma: 439,250 + 5 = 444,250 MHz. 434,250 MHz resultaria de um shift de −5 MHz.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Subtrair um shift positivo.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.3, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-008"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
       "statement": "Repetidora com saída em 145,370 MHz e shift −600 kHz: quem programa o rádio em simplex em 144,770 MHz transmite na entrada dela, mas não ouve a saída.",
       "explanation": "144,770 MHz é a entrada (145,370 − 0,600). Em simplex o rádio transmite e recebe nessa mesma frequência, então nunca escuta a saída em 145,370 MHz. A Cartilha cita esse erro clássico: falar em uma entrada como se fosse simplex (§6.5).",
       "kind": "calculo",
@@ -155,41 +138,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-009"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Em um pile-up em split, quando a estação DX anuncia 'escuto 5 acima', quem responde deve transmitir na própria frequência em que a estação DX transmite.",
-      "explanation": "No split, a estação DX transmite em uma frequência e escuta em outra. 'Escuto 5 acima' indica que ela escuta acima da própria transmissão; chamar na frequência dela é ignorar a instrução e causar QRM. A Cartilha exige seguir exatamente a instrução.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Ignorar a instrução de split e chamar na frequência da estação DX.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.3, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-010"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "A operação via satélite não é considerada operação em split, pois a subida e a descida usam a mesma frequência.",
-      "explanation": "A Cartilha cita o satélite justamente como exemplo comum de split: há uma frequência de subida e outra de descida.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Achar que subida e descida do satélite usam a mesma frequência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.3, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-011"
+      "id": "TEO-008"
     },
     {
       "subject": "TEO",
@@ -206,7 +155,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-012"
+      "id": "TEO-009"
     },
     {
       "subject": "TEO",
@@ -223,7 +172,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-013"
+      "id": "TEO-010"
     },
     {
       "subject": "TEO",
@@ -240,24 +189,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-014"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Um analisador de espectro de baixo custo, como o TinySA, permite verificar o espectro irradiado pela estação em busca de emissões indesejadas.",
-      "explanation": "A Cartilha cita analisadores de baixo custo, como o TinySA, para observar o espectro livre e o irradiado pela estação.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que só equipamento caro avalia emissões.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.5, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-015"
+      "id": "TEO-011"
     },
     {
       "subject": "TEO",
@@ -274,7 +206,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-016"
+      "id": "TEO-012"
     },
     {
       "subject": "TEO",
@@ -297,76 +229,7 @@
         "147,360 MHz"
       ],
       "answer": 0,
-      "id": "TEO-017"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Qual equipamento reúne transmissor e receptor em um único conjunto?",
-      "explanation": "O transceptor reúne TX e RX. A repetidora retransmite sinais em outra frequência; a antena artificial e o frequencímetro são acessórios de teste e medição.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Confundir transceptor com repetidora.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.1, p. 26",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Repetidora",
-        "Transceptor",
-        "Antena artificial",
-        "Frequencímetro"
-      ],
-      "answer": 1,
-      "id": "TEO-018"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Qual é a principal vantagem do cabo coaxial sobre a linha paralela nas instalações típicas de radioamador?",
-      "explanation": "A blindagem confina os campos de RF e reduz a irradiação indesejada pela linha. O cabo não aumenta potência nem dispensa o casamento de impedância.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Atribuir ao cabo uma função que ele não tem.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.4, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Aumentar a potência de saída do transmissor",
-        "Dispensar o casamento de impedância com a antena",
-        "Campos de RF confinados e menor irradiação pela linha, graças à blindagem",
-        "Permitir transmitir e receber ao mesmo tempo na mesma frequência"
-      ],
-      "answer": 2,
-      "id": "TEO-019"
-    },
-    {
-      "subject": "TEO",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Um transceptor apresenta falhas intermitentes. Por qual medição é mais indicado começar a investigação?",
-      "explanation": "A Cartilha aponta a alimentação como primeira causa de falhas; por isso é o primeiro ponto a verificar.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Começar o diagnóstico pela parte mais sofisticada.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.5, p. 27",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Espectro irradiado com analisador",
-        "Ganho da antena em relação ao dipolo",
-        "Frequência da portadora com frequencímetro",
-        "Tensões e correntes de alimentação"
-      ],
-      "answer": 3,
-      "id": "TEO-020"
+      "id": "TEO-013"
     },
     {
       "subject": "TEO",
@@ -383,7 +246,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-021"
+      "id": "TEO-014"
     },
     {
       "subject": "TEO",
@@ -400,7 +263,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-022"
+      "id": "TEO-015"
     },
     {
       "subject": "TEO",
@@ -417,7 +280,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-023"
+      "id": "TEO-016"
     },
     {
       "subject": "TEO",
@@ -434,24 +297,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-024"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Um dipolo de meia onda para 14 MHz mede aproximadamente 10,7 m.",
-      "explanation": "λ ≈ 300 / 14 ≈ 21,4 m; λ/2 ≈ 10,7 m.",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Errar a conta em duas etapas (λ e depois λ/2).",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §2.2, p. 28",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-025"
+      "id": "TEO-017"
     },
     {
       "subject": "TEO",
@@ -468,7 +314,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-026"
+      "id": "TEO-018"
     },
     {
       "subject": "TEO",
@@ -485,7 +331,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-027"
+      "id": "TEO-019"
     },
     {
       "subject": "TEO",
@@ -502,7 +348,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-028"
+      "id": "TEO-020"
     },
     {
       "subject": "TEO",
@@ -519,7 +365,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-029"
+      "id": "TEO-021"
     },
     {
       "subject": "TEO",
@@ -536,7 +382,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-030"
+      "id": "TEO-022"
     },
     {
       "subject": "TEO",
@@ -553,7 +399,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-031"
+      "id": "TEO-023"
     },
     {
       "subject": "TEO",
@@ -570,7 +416,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-032"
+      "id": "TEO-024"
     },
     {
       "subject": "TEO",
@@ -587,7 +433,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-033"
+      "id": "TEO-025"
     },
     {
       "subject": "TEO",
@@ -604,7 +450,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-034"
+      "id": "TEO-026"
     },
     {
       "subject": "TEO",
@@ -621,7 +467,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-035"
+      "id": "TEO-027"
     },
     {
       "subject": "TEO",
@@ -638,7 +484,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-036"
+      "id": "TEO-028"
     },
     {
       "subject": "TEO",
@@ -655,7 +501,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-037"
+      "id": "TEO-029"
     },
     {
       "subject": "TEO",
@@ -672,13 +518,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "≈ 2,7 m",
         "≈ 10,7 m",
+        "≈ 2,7 m",
         "≈ 5,4 m",
         "≈ 1,3 m"
       ],
-      "answer": 0,
-      "id": "TEO-038"
+      "answer": 1,
+      "id": "TEO-030"
     },
     {
       "subject": "TEO",
@@ -696,12 +542,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Aumento da frequência da portadora ao longo da linha",
-        "Superposição da onda direta com uma onda refletida de mesma frequência e sentido oposto",
         "Excesso de ganho da antena direcional",
+        "Superposição da onda direta com uma onda refletida de mesma frequência e sentido oposto",
         "Uso de cabo coaxial em vez de linha paralela"
       ],
-      "answer": 1,
-      "id": "TEO-039"
+      "answer": 2,
+      "id": "TEO-031"
     },
     {
       "subject": "TEO",
@@ -720,11 +566,11 @@
       "options": [
         "Uma antena Yagi apontada para o alto",
         "Uma antena vertical de ¼ de onda",
-        "Uma antena artificial (carga fictícia)",
-        "Um frequencímetro no lugar da antena"
+        "Um frequencímetro no lugar da antena",
+        "Uma antena artificial (carga fictícia)"
       ],
-      "answer": 2,
-      "id": "TEO-040"
+      "answer": 3,
+      "id": "TEO-032"
     },
     {
       "subject": "TEO",
@@ -741,13 +587,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
+        "Yagi",
         "Vertical omnidirecional de ¼ de onda",
         "Antena artificial",
-        "Linha paralela sem antena",
-        "Yagi"
+        "Linha paralela sem antena"
       ],
-      "answer": 3,
-      "id": "TEO-041"
+      "answer": 0,
+      "id": "TEO-033"
     },
     {
       "subject": "TEO",
@@ -764,24 +610,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-042"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Um sinal de 430 MHz tem comprimento de onda de cerca de 7 m.",
-      "explanation": "300 / 430 ≈ 0,70 m, ou seja, cerca de 70 cm (daí o nome da faixa de 70 cm). 7 m seria uma frequência em torno de 43 MHz.",
-      "kind": "calculo",
-      "level": 3,
-      "pitfall": "Deslocar a vírgula no resultado.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.1, p. 29",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-043"
+      "id": "TEO-034"
     },
     {
       "subject": "TEO",
@@ -798,7 +627,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-044"
+      "id": "TEO-035"
     },
     {
       "subject": "TEO",
@@ -815,7 +644,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-045"
+      "id": "TEO-036"
     },
     {
       "subject": "TEO",
@@ -832,7 +661,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-046"
+      "id": "TEO-037"
     },
     {
       "subject": "TEO",
@@ -850,7 +679,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-047"
+      "id": "TEO-038"
     },
     {
       "subject": "TEO",
@@ -867,7 +696,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-048"
+      "id": "TEO-039"
     },
     {
       "subject": "TEO",
@@ -884,7 +713,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-049"
+      "id": "TEO-040"
     },
     {
       "subject": "TEO",
@@ -901,7 +730,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-050"
+      "id": "TEO-041"
     },
     {
       "subject": "TEO",
@@ -918,7 +747,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-051"
+      "id": "TEO-042"
     },
     {
       "subject": "TEO",
@@ -935,7 +764,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-052"
+      "id": "TEO-043"
     },
     {
       "subject": "TEO",
@@ -952,7 +781,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-053"
+      "id": "TEO-044"
     },
     {
       "subject": "TEO",
@@ -969,7 +798,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-054"
+      "id": "TEO-045"
     },
     {
       "subject": "TEO",
@@ -986,7 +815,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-055"
+      "id": "TEO-046"
     },
     {
       "subject": "TEO",
@@ -1003,7 +832,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-056"
+      "id": "TEO-047"
     },
     {
       "subject": "TEO",
@@ -1020,7 +849,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-057"
+      "id": "TEO-048"
     },
     {
       "subject": "TEO",
@@ -1037,7 +866,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-058"
+      "id": "TEO-049"
     },
     {
       "subject": "TEO",
@@ -1054,7 +883,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-059"
+      "id": "TEO-050"
     },
     {
       "subject": "TEO",
@@ -1071,7 +900,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-060"
+      "id": "TEO-051"
     },
     {
       "subject": "TEO",
@@ -1088,13 +917,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "≈ 14,3 m",
         "≈ 1,43 m",
+        "≈ 14,3 m",
         "≈ 6,3 m",
         "≈ 143 m"
       ],
-      "answer": 0,
-      "id": "TEO-061"
+      "answer": 1,
+      "id": "TEO-052"
     },
     {
       "subject": "TEO",
@@ -1113,12 +942,12 @@
       "questionType": "multiple-choice",
       "options": [
         "HF",
-        "VHF",
         "UHF",
+        "VHF",
         "MF"
       ],
-      "answer": 1,
-      "id": "TEO-062"
+      "answer": 2,
+      "id": "TEO-053"
     },
     {
       "subject": "TEO",
@@ -1137,34 +966,11 @@
       "options": [
         "14,655 MHz",
         "7,555 MHz",
-        "455 kHz",
-        "45,5 kHz"
-      ],
-      "answer": 2,
-      "id": "TEO-063"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Na modulação em frequência (FM), o que varia conforme a mensagem?",
-      "explanation": "Em FM varia a frequência instantânea, com a amplitude fixa. Variar a amplitude é AM; ligar e desligar é CW.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Trocar o parâmetro que varia em FM.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "A amplitude da portadora",
-        "O liga-desliga da portadora",
-        "A impedância da antena",
-        "A frequência instantânea da portadora"
+        "45,5 kHz",
+        "455 kHz"
       ],
       "answer": 3,
-      "id": "TEO-064"
+      "id": "TEO-054"
     },
     {
       "subject": "TEO",
@@ -1187,24 +993,7 @@
         "0,1 µs"
       ],
       "answer": 0,
-      "id": "TEO-065"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Ondas de rádio podem se propagar em condutores elétricos, pelo espaço livre e em fibras ópticas usadas em telecomunicações.",
-      "explanation": "A Cartilha lista três meios: condutores elétricos, espaço livre e condutores ópticos.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Achar que ondas de rádio só se propagam pelo ar.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.1, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-066"
+      "id": "TEO-055"
     },
     {
       "subject": "TEO",
@@ -1221,7 +1010,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-067"
+      "id": "TEO-056"
     },
     {
       "subject": "TEO",
@@ -1238,7 +1027,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-068"
+      "id": "TEO-057"
     },
     {
       "subject": "TEO",
@@ -1255,7 +1044,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-069"
+      "id": "TEO-058"
     },
     {
       "subject": "TEO",
@@ -1272,24 +1061,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-070"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "A estratosfera, entre cerca de 10 e 50 km de altura, tem pouco impacto direto na prática do radioamador.",
-      "explanation": "A tabela da Cartilha indica para a estratosfera 'menos impacto direto na prática do radioamador'.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Superestimar o papel da estratosfera.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.3, p. 32",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-071"
+      "id": "TEO-059"
     },
     {
       "subject": "TEO",
@@ -1306,7 +1078,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-072"
+      "id": "TEO-060"
     },
     {
       "subject": "TEO",
@@ -1323,7 +1095,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-073"
+      "id": "TEO-061"
     },
     {
       "subject": "TEO",
@@ -1340,7 +1112,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-074"
+      "id": "TEO-062"
     },
     {
       "subject": "TEO",
@@ -1357,7 +1129,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-075"
+      "id": "TEO-063"
     },
     {
       "subject": "TEO",
@@ -1374,24 +1146,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-076"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "A propagação em HF é estável: as condições não variam com a hora do dia, o ciclo solar ou a estação do ano.",
-      "explanation": "Pela Cartilha, a propagação em HF varia com a hora do dia (dia/noite), o ciclo solar e a estação do ano.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que a propagação em HF é constante.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.6, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-077"
+      "id": "TEO-064"
     },
     {
       "subject": "TEO",
@@ -1408,7 +1163,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-078"
+      "id": "TEO-065"
     },
     {
       "subject": "TEO",
@@ -1425,7 +1180,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-079"
+      "id": "TEO-066"
     },
     {
       "subject": "TEO",
@@ -1442,7 +1197,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-080"
+      "id": "TEO-067"
     },
     {
       "subject": "TEO",
@@ -1459,24 +1214,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-081"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Aumentar o volume do áudio do receptor melhora a relação sinal-ruído de um sinal fraco.",
-      "explanation": "O volume amplifica igualmente o sinal e o ruído, então a razão não muda. A SNR melhora com frequência menos ruidosa, antena adequada, menos ruído local, filtros/DSP e cabos em bom estado.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Achar que o volume do áudio melhora a SNR.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-082"
+      "id": "TEO-068"
     },
     {
       "subject": "TEO",
@@ -1499,7 +1237,7 @@
         "Tropodifusão"
       ],
       "answer": 1,
-      "id": "TEO-083"
+      "id": "TEO-069"
     },
     {
       "subject": "TEO",
@@ -1522,7 +1260,7 @@
         "VLF, LF e MF"
       ],
       "answer": 2,
-      "id": "TEO-084"
+      "id": "TEO-070"
     },
     {
       "subject": "TEO",
@@ -1545,7 +1283,7 @@
         "VHF/UHF"
       ],
       "answer": 3,
-      "id": "TEO-085"
+      "id": "TEO-071"
     },
     {
       "subject": "TEO",
@@ -1568,7 +1306,7 @@
         "Escolher uma frequência menos congestionada"
       ],
       "answer": 0,
-      "id": "TEO-086"
+      "id": "TEO-072"
     },
     {
       "subject": "TEO",
@@ -1591,24 +1329,7 @@
         "Camada F2"
       ],
       "answer": 1,
-      "id": "TEO-087"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Antes de transmitir, o radioamador deve evitar interferir em comunicações em andamento, inclusive serviços essenciais e tráfego de emergência.",
-      "explanation": "A Cartilha lista comunicações de rotina, serviços essenciais e de segurança, e tráfego de emergência entre os prejudicados pela interferência.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Achar que só o tráfego de rotina pode ser afetado.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §5.1, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-088"
+      "id": "TEO-073"
     },
     {
       "subject": "TEO",
@@ -1625,7 +1346,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-089"
+      "id": "TEO-074"
     },
     {
       "subject": "TEO",
@@ -1642,24 +1363,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-090"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Se, ao trocar a alimentação da rede por uma bateria, a interferência muda muito, isso indica forte componente conduzida pela fonte ou pela rede.",
-      "explanation": "É a 'dica clássica' da Cartilha para suspeita de interferência via alimentação.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Não usar a bateria como teste de diagnóstico.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §5.2, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-091"
+      "id": "TEO-075"
     },
     {
       "subject": "TEO",
@@ -1676,24 +1380,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-092"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Operar sempre com a potência máxima permitida é boa prática para reduzir interferências, pois encurta o tempo de transmissão.",
-      "explanation": "A boa prática é o contrário: operar com a menor potência necessária para manter a comunicação.",
-      "kind": "cenario",
-      "level": 2,
-      "pitfall": "Achar que mais potência é sempre melhor.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §5.3, p. 34",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-093"
+      "id": "TEO-076"
     },
     {
       "subject": "TEO",
@@ -1710,24 +1397,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-094"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Sempre operar em frequência mais baixa ou instalar filtros passa-altas aleatoriamente resolve, como regra geral, qualquer problema de interferência.",
-      "explanation": "A Cartilha diz expressamente que isso não é regra geral correta: é preciso identificar a causa da interferência.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Aplicar receita genérica sem identificar a causa.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §5.3, p. 34",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-095"
+      "id": "TEO-077"
     },
     {
       "subject": "TEO",
@@ -1744,7 +1414,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-096"
+      "id": "TEO-078"
     },
     {
       "subject": "TEO",
@@ -1761,41 +1431,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-097"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Um bom aterramento da estação, quando aplicável, faz parte das boas práticas para reduzir interferências.",
-      "explanation": "O bom aterramento está entre as boas práticas listadas pela Cartilha.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Desconsiderar o aterramento.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §5.3, p. 34",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-098"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Se um vizinho relata interferência, a primeira atitude adequada é aumentar a potência para verificar se o problema piora.",
-      "explanation": "O roteiro da Cartilha (§6.6) começa por parar a transmissão e ouvir; depois, reduzir a potência e testar novamente.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Continuar transmitindo após o relato.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §6.6, p. 16",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-099"
+      "id": "TEO-079"
     },
     {
       "subject": "TEO",
@@ -1812,24 +1448,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-100"
-    },
-    {
-      "subject": "TEO",
-      "topic": "interferencias",
-      "topicName": "Interferências",
-      "statement": "Diante de um relato de interferência, a postura esperada é manter a transmissão e disputar o canal até que o reclamante comprove a origem.",
-      "explanation": "A postura esperada é cooperativa e técnica: resolver o problema, não disputar no ar.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Adotar postura de disputa diante da interferência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, §6.6, p. 16",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-101"
+      "id": "TEO-080"
     },
     {
       "subject": "TEO",
@@ -1852,7 +1471,7 @@
         "Operação em frequência de chamada"
       ],
       "answer": 2,
-      "id": "TEO-102"
+      "id": "TEO-081"
     },
     {
       "subject": "TEO",
@@ -1875,7 +1494,7 @@
         "Filtro passa-baixas na saída do transmissor"
       ],
       "answer": 3,
-      "id": "TEO-103"
+      "id": "TEO-082"
     },
     {
       "subject": "TEO",
@@ -1898,7 +1517,7 @@
         "Continuar operando até a fiscalização intervir"
       ],
       "answer": 0,
-      "id": "TEO-104"
+      "id": "TEO-083"
     },
     {
       "subject": "TEO",
@@ -1921,7 +1540,7 @@
         "Linha paralela no lugar do coaxial"
       ],
       "answer": 1,
-      "id": "TEO-105"
+      "id": "TEO-084"
     },
     {
       "subject": "TEO",
@@ -1938,7 +1557,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-106"
+      "id": "TEO-085"
     },
     {
       "subject": "TEO",
@@ -1956,7 +1575,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-107"
+      "id": "TEO-086"
     },
     {
       "subject": "TEO",
@@ -1974,25 +1593,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-108"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "No alfabeto fonético internacional, as letras Q e X são anunciadas, respectivamente, como Quebec e X-Ray.",
-      "explanation": "Q = Quebec e X = X-Ray, conforme a tabela da Cartilha.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Confundir as palavras fonéticas de letras menos usadas.",
-      "recall": true,
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.2, p. 35",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-109"
+      "id": "TEO-087"
     },
     {
       "subject": "TEO",
@@ -2010,7 +1611,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-110"
+      "id": "TEO-088"
     },
     {
       "subject": "TEO",
@@ -2028,7 +1629,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-111"
+      "id": "TEO-089"
     },
     {
       "subject": "TEO",
@@ -2046,7 +1647,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-112"
+      "id": "TEO-090"
     },
     {
       "subject": "TEO",
@@ -2064,7 +1665,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-113"
+      "id": "TEO-091"
     },
     {
       "subject": "TEO",
@@ -2081,7 +1682,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-114"
+      "id": "TEO-092"
     },
     {
       "subject": "TEO",
@@ -2098,7 +1699,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-115"
+      "id": "TEO-093"
     },
     {
       "subject": "TEO",
@@ -2115,41 +1716,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-116"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Em um conteste (concurso de rádio), o objetivo é realizar o maior número possível de contatos válidos.",
-      "explanation": "A Cartilha define o conteste como o concurso em que se busca o maior número de contatos válidos.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Confundir conteste com rodada.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.5, p. 36",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-117"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Por convenção, a operação QRP costuma usar até 10 W em CW e até 5 W em SSB.",
-      "explanation": "Os valores estão trocados: a convenção citada na Cartilha é ≤ 5 W em CW e ≤ 10 W em SSB.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Trocar os limites convencionais de QRP entre CW e SSB.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.5, p. 36",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-118"
+      "id": "TEO-094"
     },
     {
       "subject": "TEO",
@@ -2166,7 +1733,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-119"
+      "id": "TEO-095"
     },
     {
       "subject": "TEO",
@@ -2190,7 +1757,7 @@
         "Bola, Escola, Mike"
       ],
       "answer": 2,
-      "id": "TEO-120"
+      "id": "TEO-096"
     },
     {
       "subject": "TEO",
@@ -2214,70 +1781,7 @@
         "QRG"
       ],
       "answer": 3,
-      "id": "TEO-121"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Qual é a função do cartão QSL?",
-      "explanation": "O QSL confirma o contato e serve como recordação e prova para diplomas; não é licença nem autorização.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Confundir o cartão QSL com licença.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.4, p. 36",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Confirmar formalmente um contato realizado",
-        "Autorizar o funcionamento da estação",
-        "Substituir o COER em viagens ao exterior",
-        "Comunicar uma interferência à Anatel"
-      ],
-      "answer": 0,
-      "id": "TEO-122"
-    },
-    {
-      "subject": "TEO",
-      "topic": "comunicados",
-      "topicName": "Comunicados",
-      "statement": "Qual subconjunto do Código Q o regulamento especifica para uso no radioamadorismo?",
-      "explanation": "Só QRA a QUZ; os demais subconjuntos atendem a operações aeronáuticas, marítimas e de outros serviços.",
-      "kind": "conceitual",
-      "level": 4,
-      "pitfall": "Achar que todo o Código Q vale para o radioamador.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §6.3, p. 36",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Séries QAA a QNZ",
-        "Séries QRA a QUZ",
-        "Séries QOA a QQZ",
-        "Todo o Código Q, sem restrição"
-      ],
-      "answer": 1,
-      "id": "TEO-123"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Como o espectro é compartilhado, a conduta de cada operador afeta todos os demais.",
-      "explanation": "É a regra principal da ética operacional na Cartilha: 'Respeite para ser respeitado.'",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Tratar o espectro como recurso individual.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.1, p. 37",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-124"
+      "id": "TEO-097"
     },
     {
       "subject": "TEO",
@@ -2294,24 +1798,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-125"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Se há um QSO ativo na frequência, o operador pode chamar por cima, desde que seu sinal seja mais forte.",
-      "explanation": "Passar por cima da fala de outros, mesmo com sinal mais forte, é interferência intencional (QRM deliberado). Deve-se esperar ou procurar outra frequência.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que sinal mais forte dá prioridade.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.4, p. 37",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-126"
+      "id": "TEO-098"
     },
     {
       "subject": "TEO",
@@ -2328,7 +1815,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-127"
+      "id": "TEO-099"
     },
     {
       "subject": "TEO",
@@ -2345,7 +1832,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-128"
+      "id": "TEO-100"
     },
     {
       "subject": "TEO",
@@ -2362,7 +1849,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-129"
+      "id": "TEO-101"
     },
     {
       "subject": "TEO",
@@ -2379,7 +1866,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-130"
+      "id": "TEO-102"
     },
     {
       "subject": "TEO",
@@ -2396,24 +1883,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-131"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Uma estação em Fernando de Noronha que responde a um CQ dirigido a 'entidades fora do Brasil continental' age corretamente, pois Noronha é entidade DX distinta.",
-      "explanation": "Fernando de Noronha é entidade DX distinta do Brasil continental, então é alvo legítimo desse CQ direcionado.",
-      "kind": "cenario",
-      "level": 5,
-      "pitfall": "Não combinar a regra do CQ direcionado com as entidades DX.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.9, p. 38",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-132"
+      "id": "TEO-103"
     },
     {
       "subject": "TEO",
@@ -2430,7 +1900,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-133"
+      "id": "TEO-104"
     },
     {
       "subject": "TEO",
@@ -2447,24 +1917,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-134"
-    },
-    {
-      "subject": "TEO",
-      "topic": "etica",
-      "topicName": "Ética",
-      "statement": "Divergências entre operadores devem ser resolvidas de forma objetiva e, preferencialmente, fora do 'palco' do rádio.",
-      "explanation": "A Cartilha recomenda resolver divergências fora do 'palco' do rádio.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Resolver conflitos no ar.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.6, p. 37",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-135"
+      "id": "TEO-105"
     },
     {
       "subject": "TEO",
@@ -2481,7 +1934,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-136"
+      "id": "TEO-106"
     },
     {
       "subject": "TEO",
@@ -2498,7 +1951,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-137"
+      "id": "TEO-107"
     },
     {
       "subject": "TEO",
@@ -2515,7 +1968,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-138"
+      "id": "TEO-108"
     },
     {
       "subject": "TEO",
@@ -2532,7 +1985,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-139"
+      "id": "TEO-109"
     },
     {
       "subject": "TEO",
@@ -2549,13 +2002,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
+        "Esperar o intervalo ou procurar outra frequência",
         "Transmitir por cima, se o seu sinal for mais forte",
         "Usar 'BREAK' para pedir a frequência",
-        "Esperar o intervalo ou procurar outra frequência",
         "Aumentar a potência para ser ouvido primeiro"
       ],
-      "answer": 2,
-      "id": "TEO-140"
+      "answer": 0,
+      "id": "TEO-110"
     },
     {
       "subject": "TEO",
@@ -2573,12 +2026,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Troca de informações técnicas",
+        "Propaganda política",
         "Relatório de sinal",
-        "Organização de conteste",
-        "Propaganda política"
+        "Organização de conteste"
       ],
-      "answer": 3,
-      "id": "TEO-141"
+      "answer": 1,
+      "id": "TEO-111"
     },
     {
       "subject": "TEO",
@@ -2595,13 +2048,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Apenas estações com prefixo PY5",
         "Qualquer estação brasileira",
         "Somente estações estrangeiras",
+        "Apenas estações com prefixo PY5",
         "Qualquer estação com sinal forte"
       ],
-      "answer": 0,
-      "id": "TEO-142"
+      "answer": 2,
+      "id": "TEO-112"
     },
     {
       "subject": "TEO",
@@ -2619,12 +2072,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Ilha de Marajó, Ilha Grande e Ilhabela",
-        "Fernando de Noronha, Ilhas de São Pedro e São Paulo e Ilha de Trindade",
         "Florianópolis, Vitória e São Luís",
-        "Ilha do Mel, Ilha Comprida e Ilha do Bananal"
+        "Ilha do Mel, Ilha Comprida e Ilha do Bananal",
+        "Fernando de Noronha, Ilhas de São Pedro e São Paulo e Ilha de Trindade"
       ],
-      "answer": 1,
-      "id": "TEO-143"
+      "answer": 3,
+      "id": "TEO-113"
     },
     {
       "subject": "TEO",
@@ -2641,13 +2094,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
+        "Respeitar o tempo máximo por câmbio e fazer pausas entre transmissões",
         "Usar o canal para resolver conflitos pessoais",
         "Criticar no ar outra repetidora da região",
-        "Respeitar o tempo máximo por câmbio e fazer pausas entre transmissões",
         "Transmitir sem pausas para manter o canal ocupado"
       ],
-      "answer": 2,
-      "id": "TEO-144"
+      "answer": 0,
+      "id": "TEO-114"
     },
     {
       "subject": "TEO",
@@ -2664,7 +2117,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-145"
+      "id": "TEO-115"
     },
     {
       "subject": "TEO",
@@ -2681,24 +2134,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-146"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "'BREAK' é expressão de uso trivial, adequada para entrar em qualquer rodada, mesmo fora de emergência.",
-      "explanation": "A Cartilha diz que 'BREAK' não é de uso trivial; em emergência indica tráfego prioritário.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Banalizar o uso de BREAK.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §8.2, p. 38",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-147"
+      "id": "TEO-116"
     },
     {
       "subject": "TEO",
@@ -2715,24 +2151,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-148"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Em emergência, a comunicação deve ser clara, breve e objetiva.",
-      "explanation": "É a primeira regra da conduta correta em emergência.",
-      "kind": "cenario",
-      "level": 1,
-      "pitfall": "Prolongar mensagens em emergência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §8.4, p. 38",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-149"
+      "id": "TEO-117"
     },
     {
       "subject": "TEO",
@@ -2749,41 +2168,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-150"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Em emergência, confirmar mensagens importantes deve ser sempre evitado, pois toda confirmação é excesso de tráfego.",
-      "explanation": "A Cartilha recomenda confirmar as mensagens importantes, apenas sem gerar excesso de tráfego.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Achar que confirmar mensagens é sempre excesso de tráfego.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §8.4, p. 38",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-151"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Simular uma emergência como brincadeira ou trote é incompatível com a natureza do serviço de radioamador.",
-      "explanation": "Brincadeiras enganosas ou trotes, especialmente simulando emergências, estão entre os temas a evitar.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Tratar trote de emergência como brincadeira inofensiva.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §7.8, p. 38",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-152"
+      "id": "TEO-118"
     },
     {
       "subject": "TEO",
@@ -2800,7 +2185,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-153"
+      "id": "TEO-119"
     },
     {
       "subject": "TEO",
@@ -2817,70 +2202,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-154"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Durante uma operação de emergência, conversas paralelas na mesma frequência são aceitáveis, desde que não tratem do assunto da emergência.",
-      "explanation": "A Cartilha manda evitar discussões paralelas, pois qualquer ruído pode atrapalhar a operação crítica.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Achar que conversa paralela é aceitável se não for sobre a emergência.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §8.4, p. 38",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-155"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Durante um QSO comum, alguém transmite 'break break'. O que os operadores devem fazer?",
-      "explanation": "'Break break' indica tráfego prioritário: interrompe-se o papo e dá-se espaço à estação em emergência.",
-      "kind": "cenario",
-      "level": 2,
-      "pitfall": "Ignorar o pedido de prioridade.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §8.2, p. 38",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Continuar o QSO e responder no próximo câmbio",
-        "Pedir que a estação aguarde o fim da rodada",
-        "Mudar de faixa e seguir conversando sem responder",
-        "Interromper a conversa e dar espaço à estação em emergência"
-      ],
-      "answer": 3,
-      "id": "TEO-156"
-    },
-    {
-      "subject": "TEO",
-      "topic": "emergencias",
-      "topicName": "Emergências",
-      "statement": "Em qual destes casos a transmissão simultânea em mais de uma faixa de frequências é permitida?",
-      "explanation": "A emergência/calamidade pública é uma das hipóteses exclusivas; potência ou classe, por si sós, não autorizam.",
-      "kind": "conceitual",
-      "level": 4,
-      "pitfall": "Desconhecer as hipóteses de transmissão simultânea.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 2 §4.4, p. 46; Ato 3448/2026, item 10.1",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Atendimento de situação de emergência ou calamidade pública",
-        "Sempre que a potência for inferior a 10 W",
-        "Apenas para radioamadores da Classe A, em qualquer situação",
-        "Em conversas locais, para alcançar mais colegas"
-      ],
-      "answer": 0,
-      "id": "TEO-157"
+      "id": "TEO-120"
     },
     {
       "subject": "TEO",
@@ -2903,7 +2225,7 @@
         "Manter conversas paralelas para animar a rede"
       ],
       "answer": 1,
-      "id": "TEO-158"
+      "id": "TEO-121"
     },
     {
       "subject": "TEO",
@@ -2926,7 +2248,7 @@
         "Só pode ser usada por radioamadores Classe A"
       ],
       "answer": 2,
-      "id": "TEO-159"
+      "id": "TEO-122"
     },
     {
       "subject": "TEO",
@@ -2943,7 +2265,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-160"
+      "id": "TEO-123"
     },
     {
       "subject": "TEO",
@@ -2966,7 +2288,7 @@
         "147,020 MHz"
       ],
       "answer": 0,
-      "id": "TEO-161"
+      "id": "TEO-124"
     },
     {
       "subject": "TEO",
@@ -2983,7 +2305,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-162"
+      "id": "TEO-125"
     },
     {
       "subject": "TEO",
@@ -3000,7 +2322,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-163"
+      "id": "TEO-126"
     },
     {
       "subject": "TEO",
@@ -3017,7 +2339,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-164"
+      "id": "TEO-127"
     },
     {
       "subject": "TEO",
@@ -3040,7 +2362,7 @@
         "≈ 4 m"
       ],
       "answer": 1,
-      "id": "TEO-165"
+      "id": "TEO-128"
     },
     {
       "subject": "TEO",
@@ -3057,7 +2379,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-166"
+      "id": "TEO-129"
     },
     {
       "subject": "TEO",
@@ -3074,7 +2396,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-167"
+      "id": "TEO-130"
     },
     {
       "subject": "TEO",
@@ -3097,7 +2419,7 @@
         "De λ/3 a λ/10"
       ],
       "answer": 2,
-      "id": "TEO-168"
+      "id": "TEO-131"
     },
     {
       "subject": "TEO",
@@ -3114,7 +2436,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-169"
+      "id": "TEO-132"
     },
     {
       "subject": "TEO",
@@ -3131,7 +2453,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-170"
+      "id": "TEO-133"
     },
     {
       "subject": "TEO",
@@ -3148,7 +2470,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-171"
+      "id": "TEO-134"
     },
     {
       "subject": "TEO",
@@ -3165,7 +2487,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-172"
+      "id": "TEO-135"
     },
     {
       "subject": "TEO",
@@ -3182,7 +2504,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-173"
+      "id": "TEO-136"
     },
     {
       "subject": "TEO",
@@ -3199,7 +2521,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-174"
+      "id": "TEO-137"
     },
     {
       "subject": "TEO",
@@ -3216,7 +2538,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-175"
+      "id": "TEO-138"
     },
     {
       "subject": "TEO",
@@ -3233,7 +2555,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-176"
+      "id": "TEO-139"
     },
     {
       "subject": "TEO",
@@ -3250,7 +2572,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-177"
+      "id": "TEO-140"
     },
     {
       "subject": "TEO",
@@ -3267,7 +2589,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-178"
+      "id": "TEO-141"
     },
     {
       "subject": "TEO",
@@ -3290,7 +2612,7 @@
         "≈ 430 MHz"
       ],
       "answer": 3,
-      "id": "TEO-179"
+      "id": "TEO-142"
     },
     {
       "subject": "TEO",
@@ -3308,7 +2630,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-180"
+      "id": "TEO-143"
     },
     {
       "subject": "TEO",
@@ -3325,7 +2647,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-181"
+      "id": "TEO-144"
     },
     {
       "subject": "TEO",
@@ -3342,7 +2664,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-182"
+      "id": "TEO-145"
     },
     {
       "subject": "TEO",
@@ -3359,7 +2681,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-183"
+      "id": "TEO-146"
     },
     {
       "subject": "TEO",
@@ -3376,7 +2698,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-184"
+      "id": "TEO-147"
     },
     {
       "subject": "TEO",
@@ -3399,47 +2721,7 @@
         "CW"
       ],
       "answer": 0,
-      "id": "TEO-185"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Combinando 21,000 MHz e 20,545 MHz em um circuito não linear, surge uma componente de diferença de 455 kHz.",
-      "explanation": "21,000 − 20,545 = 0,455 MHz = 455 kHz. Também surge a soma, 41,545 MHz.",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Errar a subtração do batimento.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.6, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-186"
-    },
-    {
-      "subject": "TEO",
-      "topic": "frequencia-comprimento-de-onda",
-      "topicName": "Frequência e Comprimento de Onda",
-      "statement": "Sinais de 14,250 MHz e 10,700 MHz são combinados em um misturador. Quais componentes de soma e diferença surgem?",
-      "explanation": "Soma: 14,250 + 10,700 = 24,950 MHz. Diferença: 14,250 − 10,700 = 3,550 MHz.",
-      "kind": "calculo",
-      "level": 4,
-      "pitfall": "Errar a soma ou a diferença no misturador.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.6, p. 31",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "24,950 MHz e 3,450 MHz",
-        "24,950 MHz e 3,550 MHz",
-        "25,950 MHz e 3,550 MHz",
-        "Apenas 14,250 MHz e 10,700 MHz"
-      ],
-      "answer": 1,
-      "id": "TEO-187"
+      "id": "TEO-148"
     },
     {
       "subject": "TEO",
@@ -3456,7 +2738,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-188"
+      "id": "TEO-149"
     },
     {
       "subject": "TEO",
@@ -3473,7 +2755,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-189"
+      "id": "TEO-150"
     },
     {
       "subject": "TEO",
@@ -3490,7 +2772,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-190"
+      "id": "TEO-151"
     },
     {
       "subject": "TEO",
@@ -3507,7 +2789,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-191"
+      "id": "TEO-152"
     },
     {
       "subject": "TEO",
@@ -3524,7 +2806,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-192"
+      "id": "TEO-153"
     },
     {
       "subject": "TEO",
@@ -3541,7 +2823,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-193"
+      "id": "TEO-154"
     },
     {
       "subject": "TEO",
@@ -3558,7 +2840,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-194"
+      "id": "TEO-155"
     },
     {
       "subject": "TEO",
@@ -3576,12 +2858,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Refração ionosférica e múltiplos saltos",
-        "Onda de superfície que segue a curvatura da Terra",
         "Visada direta, reflexões locais e atenuação por chuva/obstáculos",
+        "Onda de superfície que segue a curvatura da Terra",
         "Apenas a reflexão na estratosfera"
       ],
-      "answer": 2,
-      "id": "TEO-195"
+      "answer": 1,
+      "id": "TEO-156"
     },
     {
       "subject": "TEO",
@@ -3600,11 +2882,11 @@
       "options": [
         "Somente a hora do dia; o ciclo solar não influi",
         "Somente o ciclo solar; a hora do dia não influi",
-        "Apenas a chuva e os obstáculos na troposfera",
-        "Hora do dia, ciclo solar e estação do ano"
+        "Hora do dia, ciclo solar e estação do ano",
+        "Apenas a chuva e os obstáculos na troposfera"
       ],
-      "answer": 3,
-      "id": "TEO-196"
+      "answer": 2,
+      "id": "TEO-157"
     },
     {
       "subject": "TEO",
@@ -3621,7 +2903,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-197"
+      "id": "TEO-158"
     },
     {
       "subject": "TEO",
@@ -3638,7 +2920,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-198"
+      "id": "TEO-159"
     },
     {
       "subject": "TEO",
@@ -3655,7 +2937,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-199"
+      "id": "TEO-160"
     },
     {
       "subject": "TEO",
@@ -3672,7 +2954,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-200"
+      "id": "TEO-161"
     },
     {
       "subject": "TEO",
@@ -3689,7 +2971,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-201"
+      "id": "TEO-162"
     },
     {
       "subject": "TEO",
@@ -3706,7 +2988,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-202"
+      "id": "TEO-163"
     },
     {
       "subject": "TEO",
@@ -3723,7 +3005,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-203"
+      "id": "TEO-164"
     },
     {
       "subject": "TEO",
@@ -3740,13 +3022,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Uma denúncia de interferência",
         "A participação em um conteste",
         "O uso do alfabeto fonético da UIT",
-        "A operação em QRP"
+        "A operação em QRP",
+        "Uma denúncia de interferência"
       ],
-      "answer": 0,
-      "id": "TEO-204"
+      "answer": 3,
+      "id": "TEO-165"
     },
     {
       "subject": "TEO",
@@ -3763,7 +3045,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-205"
+      "id": "TEO-166"
     },
     {
       "subject": "TEO",
@@ -3780,7 +3062,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-206"
+      "id": "TEO-167"
     },
     {
       "subject": "TEO",
@@ -3797,7 +3079,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-207"
+      "id": "TEO-168"
     },
     {
       "subject": "TEO",
@@ -3814,7 +3096,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-208"
+      "id": "TEO-169"
     },
     {
       "subject": "TEO",
@@ -3831,7 +3113,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-209"
+      "id": "TEO-170"
     },
     {
       "subject": "TEO",
@@ -3848,7 +3130,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-210"
+      "id": "TEO-171"
     },
     {
       "subject": "TEO",
@@ -3865,7 +3147,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-211"
+      "id": "TEO-172"
     },
     {
       "subject": "TEO",
@@ -3882,7 +3164,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-212"
+      "id": "TEO-173"
     },
     {
       "subject": "TEO",
@@ -3899,7 +3181,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-213"
+      "id": "TEO-174"
     },
     {
       "subject": "TEO",
@@ -3916,7 +3198,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-214"
+      "id": "TEO-175"
     },
     {
       "subject": "TEO",
@@ -3933,7 +3215,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-215"
+      "id": "TEO-176"
     },
     {
       "subject": "TEO",
@@ -3950,13 +3232,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Anunciar produtos de uma loja",
         "Experimentação técnica com antenas",
+        "Anunciar produtos de uma loja",
         "Pedir votos para um candidato",
         "Simular uma emergência para testar os colegas"
       ],
-      "answer": 1,
-      "id": "TEO-216"
+      "answer": 0,
+      "id": "TEO-177"
     },
     {
       "subject": "TEO",
@@ -3973,7 +3255,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-217"
+      "id": "TEO-178"
     },
     {
       "subject": "TEO",
@@ -3990,7 +3272,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-218"
+      "id": "TEO-179"
     },
     {
       "subject": "TEO",
@@ -4007,7 +3289,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-219"
+      "id": "TEO-180"
     },
     {
       "subject": "TEO",
@@ -4024,7 +3306,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-220"
+      "id": "TEO-181"
     },
     {
       "subject": "TEO",
@@ -4041,7 +3323,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-221"
+      "id": "TEO-182"
     },
     {
       "subject": "TEO",
@@ -4059,12 +3341,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Só no início, para economizar tempo",
-        "Apenas com o sufixo, por ser mais rápido",
         "Com o indicativo completo, no início, durante e no término das emissões",
+        "Apenas com o sufixo, por ser mais rápido",
         "Não precisa se identificar enquanto durar a emergência"
       ],
-      "answer": 2,
-      "id": "TEO-222"
+      "answer": 1,
+      "id": "TEO-183"
     },
     {
       "subject": "TEO",
@@ -4083,11 +3365,11 @@
       "options": [
         "A proibição de operar sem identificação",
         "A declaração completa do indicativo de chamada",
-        "O uso do Código Q limitado às séries QRA a QUZ",
-        "O limite de 10 minutos para a transmissão entre estações"
+        "O limite de 10 minutos para a transmissão entre estações",
+        "O uso do Código Q limitado às séries QRA a QUZ"
       ],
-      "answer": 3,
-      "id": "TEO-223"
+      "answer": 2,
+      "id": "TEO-184"
     }
   ]
 }

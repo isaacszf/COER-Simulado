@@ -108,6 +108,15 @@ Kept items whose stems mentioned the Cartilha were reworded. A new `validate.ts`
 
 Result: TEO 288 → 223 and ELE 193 → 175. Every distribution target still passes. The rules are recorded in `BRAINSTORM.md` §5 "Exam fidelity".
 
+**First-batch pass (same day).** The first batch (TEO-001–159, ELE-001–153) got the same review. It was in better shape, but the same patterns showed up at a lower rate:
+
+- **Niche topics:** pile-up split, satellite split, TinySA, QRP watt convention and the Fernando de Noronha DX scenario.
+- **Multiple-choice twins:** these restated a certo/errado item word for word (transceptor, coax, dummy load, break break, simultaneous transmission, Código Q series, misturador, detector).
+- **Strawman errados and content-free certos:** for example "raise power to see if it gets worse", "the fuse runs above its melting point" and "conduct affects everyone".
+- **SNR items in ELE.**
+
+The pass cut 37 TEO and 24 ELE first-batch items, plus 2 expansion mixer items that duplicated TEO-057/063. ELE-081 lost its Cartilha mention, and ELE-135 and ELE-152 were cut. The bank now holds TEO 184, ELE 151 and LEG 182 (not reviewed yet), so 517 items. The Cartilha warning now flags only LEG-074, LEG-158 and LEG-179.
+
 ---
 
 *Sources (accessed 2026-10-13): id.qsl.br/simulados (app bundle + hosted Cartilha v9); Anatel Cartilha attachment e2bee3ec…; Anatel Manual do Candidato v2026-04.1 (attachment 0a5f2113…); Anatel legacy Legislação bank (attachment 9eba8822…); antenaativa.com.br (prova Anatel, simulador COER, candidate comments); labredf.org.br/2026/10 simulator announcement; telesintese.com.br and gov.br/anatel news on the resumption of exams.*
