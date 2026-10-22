@@ -2,7 +2,7 @@
   "subject": "ELE",
   "subjectName": "Conhecimentos Básicos de Eletrônica e Eletricidade",
   "sourceBasis": "Ato 3448/2026 §11.4 ementa · Cartilha do Serviço Radioamador, versão 2026-06",
-  "generatedAt": "2026-10-22T02:11:20.442Z",
+  "generatedAt": "2026-10-22T02:21:38.823Z",
   "questions": [
     {
       "subject": "ELE",
@@ -399,57 +399,6 @@
       "subject": "ELE",
       "topic": "eletronica-basica",
       "topicName": "Eletrônica Básica",
-      "statement": "A capacitância de um capacitor depende da área das placas e da distância entre elas, mas não do material dielétrico.",
-      "explanation": "A Cartilha lista três fatores: área das placas, distância entre elas e o material dielétrico.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Esquecer o dielétrico entre os fatores da capacitância.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §2.4, p. 56",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-024"
-    },
-    {
-      "subject": "ELE",
-      "topic": "eletronica-basica",
-      "topicName": "Eletrônica Básica",
-      "statement": "Aumentar o número de espiras de um indutor diminui a sua indutância.",
-      "explanation": "A Cartilha diz o contrário: aumentar o número de espiras aumenta a indutância.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Inverter o efeito do número de espiras.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §2.5, p. 56",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-025"
-    },
-    {
-      "subject": "ELE",
-      "topic": "eletronica-basica",
-      "topicName": "Eletrônica Básica",
-      "statement": "A capacitância é medida em farad (F) e a indutância em henry (H).",
-      "explanation": "Farad para capacitância, henry para indutância.",
-      "kind": "conceitual",
-      "level": 1,
-      "pitfall": "Trocar as unidades de capacitância e indutância.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §2.4–2.5, p. 56",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-026"
-    },
-    {
-      "subject": "ELE",
-      "topic": "eletronica-basica",
-      "topicName": "Eletrônica Básica",
       "statement": "Um diodo polarizado diretamente conduz corrente essencialmente em um único sentido; polarizado reversamente, bloqueia a corrente até certo limite.",
       "explanation": "É o funcionamento descrito pela Cartilha.",
       "kind": "conceitual",
@@ -461,7 +410,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-027"
+      "id": "ELE-024"
     },
     {
       "subject": "ELE",
@@ -478,7 +427,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-028"
+      "id": "ELE-025"
     },
     {
       "subject": "ELE",
@@ -495,7 +444,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-029"
+      "id": "ELE-026"
     },
     {
       "subject": "ELE",
@@ -512,7 +461,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-030"
+      "id": "ELE-027"
     },
     {
       "subject": "ELE",
@@ -535,7 +484,7 @@
         "100 mA"
       ],
       "answer": 0,
-      "id": "ELE-031"
+      "id": "ELE-028"
     },
     {
       "subject": "ELE",
@@ -558,7 +507,7 @@
         "11,8 W"
       ],
       "answer": 1,
-      "id": "ELE-032"
+      "id": "ELE-029"
     },
     {
       "subject": "ELE",
@@ -581,7 +530,7 @@
         "0,2 W"
       ],
       "answer": 2,
-      "id": "ELE-033"
+      "id": "ELE-030"
     },
     {
       "subject": "ELE",
@@ -604,7 +553,7 @@
         "10 A e 2.200 W"
       ],
       "answer": 3,
-      "id": "ELE-034"
+      "id": "ELE-031"
     },
     {
       "subject": "ELE",
@@ -627,7 +576,7 @@
         "Amplifica a corrente aplicada à sua base"
       ],
       "answer": 0,
-      "id": "ELE-035"
+      "id": "ELE-032"
     },
     {
       "subject": "ELE",
@@ -650,7 +599,7 @@
         "A corrente refletida na linha"
       ],
       "answer": 1,
-      "id": "ELE-036"
+      "id": "ELE-033"
     },
     {
       "subject": "ELE",
@@ -667,7 +616,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-037"
+      "id": "ELE-034"
     },
     {
       "subject": "ELE",
@@ -684,7 +633,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-038"
+      "id": "ELE-035"
     },
     {
       "subject": "ELE",
@@ -701,7 +650,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-039"
+      "id": "ELE-036"
     },
     {
       "subject": "ELE",
@@ -718,7 +667,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-040"
+      "id": "ELE-037"
     },
     {
       "subject": "ELE",
@@ -735,7 +684,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-041"
+      "id": "ELE-038"
     },
     {
       "subject": "ELE",
@@ -752,7 +701,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-042"
+      "id": "ELE-039"
     },
     {
       "subject": "ELE",
@@ -769,7 +718,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-043"
+      "id": "ELE-040"
     },
     {
       "subject": "ELE",
@@ -786,7 +735,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-044"
+      "id": "ELE-041"
     },
     {
       "subject": "ELE",
@@ -803,7 +752,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-045"
+      "id": "ELE-042"
     },
     {
       "subject": "ELE",
@@ -820,7 +769,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-046"
+      "id": "ELE-043"
     },
     {
       "subject": "ELE",
@@ -837,7 +786,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-047"
+      "id": "ELE-044"
     },
     {
       "subject": "ELE",
@@ -855,7 +804,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-048"
+      "id": "ELE-045"
     },
     {
       "subject": "ELE",
@@ -873,7 +822,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-049"
+      "id": "ELE-046"
     },
     {
       "subject": "ELE",
@@ -890,7 +839,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-050"
+      "id": "ELE-047"
     },
     {
       "subject": "ELE",
@@ -907,7 +856,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-051"
+      "id": "ELE-048"
     },
     {
       "subject": "ELE",
@@ -924,7 +873,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-052"
+      "id": "ELE-049"
     },
     {
       "subject": "ELE",
@@ -941,7 +890,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-053"
+      "id": "ELE-050"
     },
     {
       "subject": "ELE",
@@ -958,7 +907,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-054"
+      "id": "ELE-051"
     },
     {
       "subject": "ELE",
@@ -981,7 +930,7 @@
         "5 µs"
       ],
       "answer": 2,
-      "id": "ELE-055"
+      "id": "ELE-052"
     },
     {
       "subject": "ELE",
@@ -1004,7 +953,7 @@
         "≈ 41,7 m"
       ],
       "answer": 3,
-      "id": "ELE-056"
+      "id": "ELE-053"
     },
     {
       "subject": "ELE",
@@ -1028,7 +977,7 @@
         "HF"
       ],
       "answer": 0,
-      "id": "ELE-057"
+      "id": "ELE-054"
     },
     {
       "subject": "ELE",
@@ -1051,7 +1000,7 @@
         "Cai para a metade"
       ],
       "answer": 1,
-      "id": "ELE-058"
+      "id": "ELE-055"
     },
     {
       "subject": "ELE",
@@ -1068,7 +1017,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-059"
+      "id": "ELE-056"
     },
     {
       "subject": "ELE",
@@ -1085,7 +1034,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-060"
+      "id": "ELE-057"
     },
     {
       "subject": "ELE",
@@ -1102,7 +1051,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-061"
+      "id": "ELE-058"
     },
     {
       "subject": "ELE",
@@ -1119,7 +1068,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-062"
+      "id": "ELE-059"
     },
     {
       "subject": "ELE",
@@ -1136,7 +1085,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-063"
+      "id": "ELE-060"
     },
     {
       "subject": "ELE",
@@ -1153,7 +1102,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-064"
+      "id": "ELE-061"
     },
     {
       "subject": "ELE",
@@ -1170,7 +1119,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-065"
+      "id": "ELE-062"
     },
     {
       "subject": "ELE",
@@ -1187,7 +1136,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-066"
+      "id": "ELE-063"
     },
     {
       "subject": "ELE",
@@ -1204,7 +1153,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-067"
+      "id": "ELE-064"
     },
     {
       "subject": "ELE",
@@ -1221,7 +1170,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-068"
+      "id": "ELE-065"
     },
     {
       "subject": "ELE",
@@ -1238,7 +1187,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-069"
+      "id": "ELE-066"
     },
     {
       "subject": "ELE",
@@ -1255,7 +1204,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-070"
+      "id": "ELE-067"
     },
     {
       "subject": "ELE",
@@ -1272,7 +1221,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-071"
+      "id": "ELE-068"
     },
     {
       "subject": "ELE",
@@ -1295,7 +1244,7 @@
         "O fusível dispensa a escolha do valor adequado"
       ],
       "answer": 2,
-      "id": "ELE-072"
+      "id": "ELE-069"
     },
     {
       "subject": "ELE",
@@ -1318,7 +1267,7 @@
         "Segurança do operador, proteção dos equipamentos e desempenho técnico"
       ],
       "answer": 3,
-      "id": "ELE-073"
+      "id": "ELE-070"
     },
     {
       "subject": "ELE",
@@ -1341,7 +1290,7 @@
         "1,5 A"
       ],
       "answer": 0,
-      "id": "ELE-074"
+      "id": "ELE-071"
     },
     {
       "subject": "ELE",
@@ -1364,7 +1313,7 @@
         "Retirar o fusível e operar sem proteção"
       ],
       "answer": 1,
-      "id": "ELE-075"
+      "id": "ELE-072"
     },
     {
       "subject": "ELE",
@@ -1381,7 +1330,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-076"
+      "id": "ELE-073"
     },
     {
       "subject": "ELE",
@@ -1398,7 +1347,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-077"
+      "id": "ELE-074"
     },
     {
       "subject": "ELE",
@@ -1415,7 +1364,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-078"
+      "id": "ELE-075"
     },
     {
       "subject": "ELE",
@@ -1432,7 +1381,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-079"
+      "id": "ELE-076"
     },
     {
       "subject": "ELE",
@@ -1449,7 +1398,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-080"
+      "id": "ELE-077"
     },
     {
       "subject": "ELE",
@@ -1466,7 +1415,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-081"
+      "id": "ELE-078"
     },
     {
       "subject": "ELE",
@@ -1483,7 +1432,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-082"
+      "id": "ELE-079"
     },
     {
       "subject": "ELE",
@@ -1500,7 +1449,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-083"
+      "id": "ELE-080"
     },
     {
       "subject": "ELE",
@@ -1517,7 +1466,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-084"
+      "id": "ELE-081"
     },
     {
       "subject": "ELE",
@@ -1534,7 +1483,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-085"
+      "id": "ELE-082"
     },
     {
       "subject": "ELE",
@@ -1551,7 +1500,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-086"
+      "id": "ELE-083"
     },
     {
       "subject": "ELE",
@@ -1568,7 +1517,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-087"
+      "id": "ELE-084"
     },
     {
       "subject": "ELE",
@@ -1585,7 +1534,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-088"
+      "id": "ELE-085"
     },
     {
       "subject": "ELE",
@@ -1602,7 +1551,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-089"
+      "id": "ELE-086"
     },
     {
       "subject": "ELE",
@@ -1619,7 +1568,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-090"
+      "id": "ELE-087"
     },
     {
       "subject": "ELE",
@@ -1636,7 +1585,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-091"
+      "id": "ELE-088"
     },
     {
       "subject": "ELE",
@@ -1653,7 +1602,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-092"
+      "id": "ELE-089"
     },
     {
       "subject": "ELE",
@@ -1670,7 +1619,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-093"
+      "id": "ELE-090"
     },
     {
       "subject": "ELE",
@@ -1687,7 +1636,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-094"
+      "id": "ELE-091"
     },
     {
       "subject": "ELE",
@@ -1704,7 +1653,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-095"
+      "id": "ELE-092"
     },
     {
       "subject": "ELE",
@@ -1727,7 +1676,7 @@
         "Com o circuito desenergizado, no modo ohms"
       ],
       "answer": 2,
-      "id": "ELE-096"
+      "id": "ELE-093"
     },
     {
       "subject": "ELE",
@@ -1750,7 +1699,7 @@
         "Desenergizar o circuito"
       ],
       "answer": 3,
-      "id": "ELE-097"
+      "id": "ELE-094"
     },
     {
       "subject": "ELE",
@@ -1773,7 +1722,7 @@
         "Ohmímetro"
       ],
       "answer": 0,
-      "id": "ELE-098"
+      "id": "ELE-095"
     },
     {
       "subject": "ELE",
@@ -1796,7 +1745,7 @@
         "Para medir a potência refletida pela antena"
       ],
       "answer": 1,
-      "id": "ELE-099"
+      "id": "ELE-096"
     },
     {
       "subject": "ELE",
@@ -1819,7 +1768,7 @@
         "Qualquer valor, pois não afeta a medição"
       ],
       "answer": 2,
-      "id": "ELE-100"
+      "id": "ELE-097"
     },
     {
       "subject": "ELE",
@@ -1836,7 +1785,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-101"
+      "id": "ELE-098"
     },
     {
       "subject": "ELE",
@@ -1853,7 +1802,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-102"
+      "id": "ELE-099"
     },
     {
       "subject": "ELE",
@@ -1870,7 +1819,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-103"
+      "id": "ELE-100"
     },
     {
       "subject": "ELE",
@@ -1887,7 +1836,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-104"
+      "id": "ELE-101"
     },
     {
       "subject": "ELE",
@@ -1904,24 +1853,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-105"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Em RF, o transistor funciona bem com qualquer polarização, pois o ponto de operação (ponto Q) só importa em áudio.",
-      "explanation": "Para funcionamento adequado em RF, a Cartilha exige ponto de operação estável e polarização DC bem dimensionada.",
-      "kind": "conceitual",
-      "level": 4,
-      "pitfall": "Achar que o ponto Q só importa em áudio.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §10.2, p. 63",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-106"
+      "id": "ELE-102"
     },
     {
       "subject": "ELE",
@@ -1938,7 +1870,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-107"
+      "id": "ELE-103"
     },
     {
       "subject": "ELE",
@@ -1955,7 +1887,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-108"
+      "id": "ELE-104"
     },
     {
       "subject": "ELE",
@@ -1972,58 +1904,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-109"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Um dipolo montado na horizontal tem polarização linear vertical.",
-      "explanation": "Dipolo na horizontal: polarização linear horizontal. Na vertical: linear vertical.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Inverter a polarização do dipolo.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §8.2, p. 62",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "ELE-110"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Uma antena Yagi-Uda é formada por um dipolo ativo, refletores e diretores.",
-      "explanation": "É a composição descrita pela Cartilha.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Desconhecer os elementos da Yagi.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §8.2, p. 62",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-111"
-    },
-    {
-      "subject": "ELE",
-      "topic": "estacao-de-radioamador",
-      "topicName": "Estação de Radioamador",
-      "statement": "Para máxima transferência de sinal, busca-se casar impedâncias, como ligar a saída de 8 Ω de um amplificador a alto-falantes de 8 Ω.",
-      "explanation": "É o exemplo da Cartilha para casamento de impedâncias.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Ignorar o casamento de impedâncias.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §5.3, p. 59",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "ELE-112"
+      "id": "ELE-105"
     },
     {
       "subject": "ELE",
@@ -2040,7 +1921,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-113"
+      "id": "ELE-106"
     },
     {
       "subject": "ELE",
@@ -2057,7 +1938,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-114"
+      "id": "ELE-107"
     },
     {
       "subject": "ELE",
@@ -2074,7 +1955,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-115"
+      "id": "ELE-108"
     },
     {
       "subject": "ELE",
@@ -2091,7 +1972,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-116"
+      "id": "ELE-109"
     },
     {
       "subject": "ELE",
@@ -2114,7 +1995,7 @@
         "≈ 7,1 m"
       ],
       "answer": 3,
-      "id": "ELE-117"
+      "id": "ELE-110"
     },
     {
       "subject": "ELE",
@@ -2131,7 +2012,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-118"
+      "id": "ELE-111"
     },
     {
       "subject": "ELE",
@@ -2148,7 +2029,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-119"
+      "id": "ELE-112"
     },
     {
       "subject": "ELE",
@@ -2165,7 +2046,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-120"
+      "id": "ELE-113"
     },
     {
       "subject": "ELE",
@@ -2182,7 +2063,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-121"
+      "id": "ELE-114"
     },
     {
       "subject": "ELE",
@@ -2199,7 +2080,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-122"
+      "id": "ELE-115"
     },
     {
       "subject": "ELE",
@@ -2216,7 +2097,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-123"
+      "id": "ELE-116"
     },
     {
       "subject": "ELE",
@@ -2233,7 +2114,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-124"
+      "id": "ELE-117"
     },
     {
       "subject": "ELE",
@@ -2250,7 +2131,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-125"
+      "id": "ELE-118"
     },
     {
       "subject": "ELE",
@@ -2267,7 +2148,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-126"
+      "id": "ELE-119"
     },
     {
       "subject": "ELE",
@@ -2284,7 +2165,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-127"
+      "id": "ELE-120"
     },
     {
       "subject": "ELE",
@@ -2301,7 +2182,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-128"
+      "id": "ELE-121"
     },
     {
       "subject": "ELE",
@@ -2318,7 +2199,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-129"
+      "id": "ELE-122"
     },
     {
       "subject": "ELE",
@@ -2335,7 +2216,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-130"
+      "id": "ELE-123"
     },
     {
       "subject": "ELE",
@@ -2352,7 +2233,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-131"
+      "id": "ELE-124"
     },
     {
       "subject": "ELE",
@@ -2369,7 +2250,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-132"
+      "id": "ELE-125"
     },
     {
       "subject": "ELE",
@@ -2386,7 +2267,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-133"
+      "id": "ELE-126"
     },
     {
       "subject": "ELE",
@@ -2409,7 +2290,7 @@
         "1,5 MHz"
       ],
       "answer": 0,
-      "id": "ELE-134"
+      "id": "ELE-127"
     },
     {
       "subject": "ELE",
@@ -2432,7 +2313,7 @@
         "HF, MF, LF, VLF, VHF, UHF, SHF"
       ],
       "answer": 1,
-      "id": "ELE-135"
+      "id": "ELE-128"
     },
     {
       "subject": "ELE",
@@ -2449,7 +2330,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-136"
+      "id": "ELE-129"
     },
     {
       "subject": "ELE",
@@ -2466,7 +2347,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-137"
+      "id": "ELE-130"
     },
     {
       "subject": "ELE",
@@ -2483,7 +2364,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-138"
+      "id": "ELE-131"
     },
     {
       "subject": "ELE",
@@ -2500,7 +2381,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-139"
+      "id": "ELE-132"
     },
     {
       "subject": "ELE",
@@ -2517,7 +2398,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-140"
+      "id": "ELE-133"
     },
     {
       "subject": "ELE",
@@ -2534,7 +2415,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-141"
+      "id": "ELE-134"
     },
     {
       "subject": "ELE",
@@ -2557,7 +2438,7 @@
         "Multímetro no modo continuidade"
       ],
       "answer": 2,
-      "id": "ELE-142"
+      "id": "ELE-135"
     },
     {
       "subject": "ELE",
@@ -2574,7 +2455,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-143"
+      "id": "ELE-136"
     },
     {
       "subject": "ELE",
@@ -2597,7 +2478,7 @@
         "Transdutor"
       ],
       "answer": 3,
-      "id": "ELE-144"
+      "id": "ELE-137"
     },
     {
       "subject": "ELE",
@@ -2614,7 +2495,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-145"
+      "id": "ELE-138"
     },
     {
       "subject": "ELE",
@@ -2631,7 +2512,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-146"
+      "id": "ELE-139"
     },
     {
       "subject": "ELE",
@@ -2648,7 +2529,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-147"
+      "id": "ELE-140"
     },
     {
       "subject": "ELE",
@@ -2665,7 +2546,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-148"
+      "id": "ELE-141"
     },
     {
       "subject": "ELE",
@@ -2682,7 +2563,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "ELE-149"
+      "id": "ELE-142"
     },
     {
       "subject": "ELE",
@@ -2699,7 +2580,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "ELE-150"
+      "id": "ELE-143"
     },
     {
       "subject": "ELE",
@@ -2722,7 +2603,7 @@
         "É convertida em corrente contínua para alimentar o rádio"
       ],
       "answer": 0,
-      "id": "ELE-151"
+      "id": "ELE-144"
     }
   ]
 }

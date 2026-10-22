@@ -2,7 +2,7 @@
   "subject": "TEO",
   "subjectName": "Técnica e Ética Operacional",
   "sourceBasis": "Ato 3448/2026 §11.4 ementa · Cartilha do Serviço Radioamador, versão 2026-06",
-  "generatedAt": "2026-10-22T02:11:20.435Z",
+  "generatedAt": "2026-10-22T02:21:38.816Z",
   "questions": [
     {
       "subject": "TEO",
@@ -597,6 +597,63 @@
     },
     {
       "subject": "TEO",
+      "topic": "antenas",
+      "topicName": "Antenas",
+      "statement": "Se a potência do ruído diminuir e o sinal permanecer igual, a relação sinal-ruído (SNR) diminui.",
+      "explanation": "A SNR é sinal/ruído: com o denominador menor, a razão aumenta. A Cartilha lista 'ruído menor' entre as condições que aumentam a SNR.",
+      "kind": "conceitual",
+      "level": 3,
+      "pitfall": "Achar que só o sinal mais forte melhora a SNR.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "true-false",
+      "answer": false,
+      "id": "TEO-034"
+    },
+    {
+      "subject": "TEO",
+      "topic": "antenas",
+      "topicName": "Antenas",
+      "statement": "Para melhorar a SNR na recepção, reduzir fontes de ruído locais, como fontes com defeito e iluminação ruidosa, é uma medida eficaz.",
+      "explanation": "Reduzir fontes de ruído locais (eletrônicos, iluminação, fontes com defeito) está entre as formas de melhorar a SNR citadas pela Cartilha.",
+      "kind": "cenario",
+      "level": 3,
+      "pitfall": "Ignorar as fontes de ruído locais.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "true-false",
+      "answer": true,
+      "id": "TEO-035"
+    },
+    {
+      "subject": "TEO",
+      "topic": "antenas",
+      "topicName": "Antenas",
+      "statement": "Qual das medidas abaixo NÃO melhora a relação sinal-ruído na recepção?",
+      "explanation": "O volume amplifica sinal e ruído por igual. As outras três estão na lista da Cartilha de formas de melhorar a SNR.",
+      "kind": "cenario",
+      "level": 4,
+      "pitfall": "Achar que amplificar o áudio melhora a SNR.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "multiple-choice",
+      "options": [
+        "Reduzir fontes de ruído locais",
+        "Aumentar o volume do alto-falante",
+        "Usar filtros e recursos de DSP do receptor",
+        "Escolher uma frequência menos congestionada"
+      ],
+      "answer": 1,
+      "id": "TEO-036"
+    },
+    {
+      "subject": "TEO",
       "topic": "frequencia-comprimento-de-onda",
       "topicName": "Frequência e Comprimento de Onda",
       "statement": "Usando λ (m) ≈ 300 / f (MHz), um sinal de 50 MHz tem comprimento de onda de aproximadamente 6 m.",
@@ -610,7 +667,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-034"
+      "id": "TEO-037"
     },
     {
       "subject": "TEO",
@@ -627,7 +684,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-035"
+      "id": "TEO-038"
     },
     {
       "subject": "TEO",
@@ -644,7 +701,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-036"
+      "id": "TEO-039"
     },
     {
       "subject": "TEO",
@@ -661,7 +718,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-037"
+      "id": "TEO-040"
     },
     {
       "subject": "TEO",
@@ -679,7 +736,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-038"
+      "id": "TEO-041"
     },
     {
       "subject": "TEO",
@@ -696,7 +753,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-039"
+      "id": "TEO-042"
     },
     {
       "subject": "TEO",
@@ -713,7 +770,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-040"
+      "id": "TEO-043"
     },
     {
       "subject": "TEO",
@@ -730,7 +787,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-041"
+      "id": "TEO-044"
     },
     {
       "subject": "TEO",
@@ -747,7 +804,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-042"
+      "id": "TEO-045"
     },
     {
       "subject": "TEO",
@@ -764,7 +821,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-043"
+      "id": "TEO-046"
     },
     {
       "subject": "TEO",
@@ -781,7 +838,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-044"
+      "id": "TEO-047"
     },
     {
       "subject": "TEO",
@@ -798,7 +855,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-045"
+      "id": "TEO-048"
     },
     {
       "subject": "TEO",
@@ -815,7 +872,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-046"
+      "id": "TEO-049"
     },
     {
       "subject": "TEO",
@@ -832,7 +889,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-047"
+      "id": "TEO-050"
     },
     {
       "subject": "TEO",
@@ -849,7 +906,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-048"
+      "id": "TEO-051"
     },
     {
       "subject": "TEO",
@@ -866,7 +923,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-049"
+      "id": "TEO-052"
     },
     {
       "subject": "TEO",
@@ -883,7 +940,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-050"
+      "id": "TEO-053"
     },
     {
       "subject": "TEO",
@@ -900,7 +957,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-051"
+      "id": "TEO-054"
     },
     {
       "subject": "TEO",
@@ -918,12 +975,12 @@
       "questionType": "multiple-choice",
       "options": [
         "≈ 1,43 m",
-        "≈ 14,3 m",
         "≈ 6,3 m",
+        "≈ 14,3 m",
         "≈ 143 m"
       ],
-      "answer": 1,
-      "id": "TEO-052"
+      "answer": 2,
+      "id": "TEO-055"
     },
     {
       "subject": "TEO",
@@ -943,11 +1000,11 @@
       "options": [
         "HF",
         "UHF",
-        "VHF",
-        "MF"
+        "MF",
+        "VHF"
       ],
-      "answer": 2,
-      "id": "TEO-053"
+      "answer": 3,
+      "id": "TEO-056"
     },
     {
       "subject": "TEO",
@@ -964,13 +1021,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
+        "455 kHz",
         "14,655 MHz",
         "7,555 MHz",
-        "45,5 kHz",
-        "455 kHz"
+        "45,5 kHz"
       ],
-      "answer": 3,
-      "id": "TEO-054"
+      "answer": 0,
+      "id": "TEO-057"
     },
     {
       "subject": "TEO",
@@ -987,13 +1044,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "100 µs",
         "10 µs",
+        "100 µs",
         "1 ms",
         "0,1 µs"
       ],
-      "answer": 0,
-      "id": "TEO-055"
+      "answer": 1,
+      "id": "TEO-058"
     },
     {
       "subject": "TEO",
@@ -1010,7 +1067,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-056"
+      "id": "TEO-059"
     },
     {
       "subject": "TEO",
@@ -1027,7 +1084,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-057"
+      "id": "TEO-060"
     },
     {
       "subject": "TEO",
@@ -1044,7 +1101,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-058"
+      "id": "TEO-061"
     },
     {
       "subject": "TEO",
@@ -1061,7 +1118,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-059"
+      "id": "TEO-062"
     },
     {
       "subject": "TEO",
@@ -1078,7 +1135,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-060"
+      "id": "TEO-063"
     },
     {
       "subject": "TEO",
@@ -1095,7 +1152,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-061"
+      "id": "TEO-064"
     },
     {
       "subject": "TEO",
@@ -1112,7 +1169,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-062"
+      "id": "TEO-065"
     },
     {
       "subject": "TEO",
@@ -1129,7 +1186,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-063"
+      "id": "TEO-066"
     },
     {
       "subject": "TEO",
@@ -1146,7 +1203,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-064"
+      "id": "TEO-067"
     },
     {
       "subject": "TEO",
@@ -1163,7 +1220,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-065"
+      "id": "TEO-068"
     },
     {
       "subject": "TEO",
@@ -1180,41 +1237,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-066"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Se a potência do ruído diminuir e o sinal permanecer igual, a relação sinal-ruído (SNR) diminui.",
-      "explanation": "A SNR é sinal/ruído: com o denominador menor, a razão aumenta. A Cartilha lista 'ruído menor' entre as condições que aumentam a SNR.",
-      "kind": "conceitual",
-      "level": 3,
-      "pitfall": "Achar que só o sinal mais forte melhora a SNR.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-067"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Para melhorar a SNR na recepção, reduzir fontes de ruído locais, como fontes com defeito e iluminação ruidosa, é uma medida eficaz.",
-      "explanation": "Reduzir fontes de ruído locais (eletrônicos, iluminação, fontes com defeito) está entre as formas de melhorar a SNR citadas pela Cartilha.",
-      "kind": "cenario",
-      "level": 3,
-      "pitfall": "Ignorar as fontes de ruído locais.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-068"
+      "id": "TEO-069"
     },
     {
       "subject": "TEO",
@@ -1232,12 +1255,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Linha de visada",
-        "Refração/reflexão ionosférica",
         "Onda de superfície",
+        "Refração/reflexão ionosférica",
         "Tropodifusão"
       ],
-      "answer": 1,
-      "id": "TEO-069"
+      "answer": 2,
+      "id": "TEO-070"
     },
     {
       "subject": "TEO",
@@ -1256,11 +1279,11 @@
       "options": [
         "Troposfera e estratosfera",
         "Apenas a camada de ozônio",
-        "D, E, F1 e F2",
-        "VLF, LF e MF"
+        "VLF, LF e MF",
+        "D, E, F1 e F2"
       ],
-      "answer": 2,
-      "id": "TEO-070"
+      "answer": 3,
+      "id": "TEO-071"
     },
     {
       "subject": "TEO",
@@ -1277,33 +1300,10 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
+        "VHF/UHF",
         "HF",
         "VLF",
-        "LF",
-        "VHF/UHF"
-      ],
-      "answer": 3,
-      "id": "TEO-071"
-    },
-    {
-      "subject": "TEO",
-      "topic": "propagacao",
-      "topicName": "Propagação",
-      "statement": "Qual das medidas abaixo NÃO melhora a relação sinal-ruído na recepção?",
-      "explanation": "O volume amplifica sinal e ruído por igual. As outras três estão na lista da Cartilha de formas de melhorar a SNR.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Achar que amplificar o áudio melhora a SNR.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §4.7, p. 33",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "multiple-choice",
-      "options": [
-        "Aumentar o volume do alto-falante",
-        "Reduzir fontes de ruído locais",
-        "Usar filtros e recursos de DSP do receptor",
-        "Escolher uma frequência menos congestionada"
+        "LF"
       ],
       "answer": 0,
       "id": "TEO-072"
@@ -2326,6 +2326,80 @@
     },
     {
       "subject": "TEO",
+      "topic": "estacao-de-radioamador",
+      "topicName": "Estação de Radioamador",
+      "statement": "Na repetidora, o sinal recebido passa direto do amplificador de RF da entrada para o amplificador de potência da saída, sem ser demodulado.",
+      "explanation": "No diagrama da repetidora, a recepção passa por amplificador de RF, misturador, FI/limitador e detector FM. O áudio recuperado vai ao processador de áudio e ao modulador do transmissor, que segue para o multiplicador e o amplificador de potência.",
+      "kind": "conceitual",
+      "level": 3,
+      "pitfall": "Achar que a repetidora só amplifica o sinal recebido, sem demodulá-lo.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §1.2, p. 26",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "true-false",
+      "answer": false,
+      "id": "TEO-127"
+    },
+    {
+      "subject": "TEO",
+      "topic": "estacao-de-radioamador",
+      "topicName": "Estação de Radioamador",
+      "statement": "No receptor AM-DSB, o CAG (controle automático de ganho) atua sobre o amplificador de áudio, fazendo o papel do controle de volume.",
+      "explanation": "No diagrama do receptor AM-DSB, o CAG parte do demodulador e atua sobre o 1º e o 2º amplificadores de RF, ajustando o ganho dessas etapas. Ele não atua sobre o amplificador de áudio que alimenta o alto-falante.",
+      "kind": "conceitual",
+      "level": 3,
+      "pitfall": "Achar que o CAG é o controle de volume do áudio.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 30",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "true-false",
+      "answer": false,
+      "id": "TEO-128"
+    },
+    {
+      "subject": "TEO",
+      "topic": "estacao-de-radioamador",
+      "topicName": "Estação de Radioamador",
+      "statement": "No receptor FM, qual bloco extrai a mensagem (o áudio) do sinal de FI?",
+      "explanation": "Demodular é extrair a mensagem do sinal modulado. No receptor FM, quem faz isso é o discriminador, depois do amplificador de FI e do limitador; na repetidora, o bloco equivalente aparece como detector FM. Misturador e oscilador local geram a FI, e o amplificador de RF só amplifica.",
+      "kind": "conceitual",
+      "level": 3,
+      "pitfall": "Confundir o bloco que demodula com os que convertem ou amplificam o sinal.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 31",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "multiple-choice",
+      "options": [
+        "Misturador",
+        "Discriminador",
+        "Oscilador local",
+        "Amplificador de RF"
+      ],
+      "answer": 1,
+      "id": "TEO-129"
+    },
+    {
+      "subject": "TEO",
+      "topic": "estacao-de-radioamador",
+      "topicName": "Estação de Radioamador",
+      "statement": "No transmissor FM, o áudio é aplicado ao amplificador de RF final, logo antes da antena, como acontece com o modulador no transmissor AM-DSB.",
+      "explanation": "No transmissor FM, o áudio passa pelo modulador, que atua sobre o oscilador; o sinal segue pelo multiplicador e só então pelo amplificador de RF até a antena. No AM-DSB, ao contrário, o modulador é o último bloco antes da antena.",
+      "kind": "conceitual",
+      "level": 4,
+      "pitfall": "Achar que o FM é modulado no último estágio, como no transmissor AM.",
+      "source": "generated",
+      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 1 §3.4, p. 30–31",
+      "reviewed": false,
+      "checkedByAi": true,
+      "questionType": "true-false",
+      "answer": false,
+      "id": "TEO-130"
+    },
+    {
+      "subject": "TEO",
       "topic": "antenas",
       "topicName": "Antenas",
       "statement": "Com 12 m livres no quintal, cabe um dipolo de meia onda esticado para 14 MHz, mas não um para 7 MHz.",
@@ -2339,7 +2413,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-127"
+      "id": "TEO-131"
     },
     {
       "subject": "TEO",
@@ -2357,46 +2431,12 @@
       "questionType": "multiple-choice",
       "options": [
         "≈ 80 m",
-        "≈ 40 m",
         "≈ 20 m",
+        "≈ 40 m",
         "≈ 4 m"
       ],
-      "answer": 1,
-      "id": "TEO-128"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Um dipolo montado na horizontal tem polarização linear horizontal; montado na vertical, tem polarização linear vertical.",
-      "explanation": "É o que a Cartilha descreve para o dipolo: a polarização acompanha a orientação física da antena.",
-      "kind": "conceitual",
-      "level": 2,
-      "pitfall": "Não relacionar a montagem do dipolo à polarização.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §8.2, p. 62",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": true,
-      "id": "TEO-129"
-    },
-    {
-      "subject": "TEO",
-      "topic": "antenas",
-      "topicName": "Antenas",
-      "statement": "Ao girar uma Yagi de elementos horizontais para que os elementos fiquem na vertical, sua polarização continua horizontal.",
-      "explanation": "A polarização da Yagi é linear e depende da orientação física dos elementos: com os elementos na vertical, ela passa a ser vertical.",
-      "kind": "cenario",
-      "level": 4,
-      "pitfall": "Achar que a polarização da Yagi não depende da orientação.",
-      "source": "generated",
-      "sourceRef": "Cartilha do Serviço Radioamador, versão 2026-06, Anexo 3 §8.2, p. 62",
-      "reviewed": false,
-      "checkedByAi": true,
-      "questionType": "true-false",
-      "answer": false,
-      "id": "TEO-130"
+      "answer": 2,
+      "id": "TEO-132"
     },
     {
       "subject": "TEO",
@@ -2415,11 +2455,11 @@
       "options": [
         "λ/4",
         "Uma onda inteira (λ)",
-        "λ/2",
-        "De λ/3 a λ/10"
+        "De λ/3 a λ/10",
+        "λ/2"
       ],
-      "answer": 2,
-      "id": "TEO-131"
+      "answer": 3,
+      "id": "TEO-133"
     },
     {
       "subject": "TEO",
@@ -2436,7 +2476,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-132"
+      "id": "TEO-134"
     },
     {
       "subject": "TEO",
@@ -2453,7 +2493,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-133"
+      "id": "TEO-135"
     },
     {
       "subject": "TEO",
@@ -2470,7 +2510,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-134"
+      "id": "TEO-136"
     },
     {
       "subject": "TEO",
@@ -2487,7 +2527,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-135"
+      "id": "TEO-137"
     },
     {
       "subject": "TEO",
@@ -2504,7 +2544,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-136"
+      "id": "TEO-138"
     },
     {
       "subject": "TEO",
@@ -2521,7 +2561,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-137"
+      "id": "TEO-139"
     },
     {
       "subject": "TEO",
@@ -2538,7 +2578,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-138"
+      "id": "TEO-140"
     },
     {
       "subject": "TEO",
@@ -2555,7 +2595,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-139"
+      "id": "TEO-141"
     },
     {
       "subject": "TEO",
@@ -2572,7 +2612,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-140"
+      "id": "TEO-142"
     },
     {
       "subject": "TEO",
@@ -2589,7 +2629,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-141"
+      "id": "TEO-143"
     },
     {
       "subject": "TEO",
@@ -2606,13 +2646,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
+        "≈ 430 MHz",
         "≈ 43 MHz",
         "≈ 210 MHz",
-        "≈ 4,3 GHz",
-        "≈ 430 MHz"
+        "≈ 4,3 GHz"
       ],
-      "answer": 3,
-      "id": "TEO-142"
+      "answer": 0,
+      "id": "TEO-144"
     },
     {
       "subject": "TEO",
@@ -2630,7 +2670,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-143"
+      "id": "TEO-145"
     },
     {
       "subject": "TEO",
@@ -2647,7 +2687,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-144"
+      "id": "TEO-146"
     },
     {
       "subject": "TEO",
@@ -2664,7 +2704,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-145"
+      "id": "TEO-147"
     },
     {
       "subject": "TEO",
@@ -2681,7 +2721,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-146"
+      "id": "TEO-148"
     },
     {
       "subject": "TEO",
@@ -2698,7 +2738,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-147"
+      "id": "TEO-149"
     },
     {
       "subject": "TEO",
@@ -2715,13 +2755,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "AM-SSB (SSB)",
         "AM-DSB",
+        "AM-SSB (SSB)",
         "FM",
         "CW"
       ],
-      "answer": 0,
-      "id": "TEO-148"
+      "answer": 1,
+      "id": "TEO-150"
     },
     {
       "subject": "TEO",
@@ -2738,7 +2778,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-149"
+      "id": "TEO-151"
     },
     {
       "subject": "TEO",
@@ -2755,7 +2795,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-150"
+      "id": "TEO-152"
     },
     {
       "subject": "TEO",
@@ -2772,7 +2812,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-151"
+      "id": "TEO-153"
     },
     {
       "subject": "TEO",
@@ -2789,7 +2829,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-152"
+      "id": "TEO-154"
     },
     {
       "subject": "TEO",
@@ -2806,7 +2846,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-153"
+      "id": "TEO-155"
     },
     {
       "subject": "TEO",
@@ -2823,7 +2863,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-154"
+      "id": "TEO-156"
     },
     {
       "subject": "TEO",
@@ -2840,7 +2880,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-155"
+      "id": "TEO-157"
     },
     {
       "subject": "TEO",
@@ -2858,12 +2898,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Refração ionosférica e múltiplos saltos",
-        "Visada direta, reflexões locais e atenuação por chuva/obstáculos",
         "Onda de superfície que segue a curvatura da Terra",
+        "Visada direta, reflexões locais e atenuação por chuva/obstáculos",
         "Apenas a reflexão na estratosfera"
       ],
-      "answer": 1,
-      "id": "TEO-156"
+      "answer": 2,
+      "id": "TEO-158"
     },
     {
       "subject": "TEO",
@@ -2882,11 +2922,11 @@
       "options": [
         "Somente a hora do dia; o ciclo solar não influi",
         "Somente o ciclo solar; a hora do dia não influi",
-        "Hora do dia, ciclo solar e estação do ano",
-        "Apenas a chuva e os obstáculos na troposfera"
+        "Apenas a chuva e os obstáculos na troposfera",
+        "Hora do dia, ciclo solar e estação do ano"
       ],
-      "answer": 2,
-      "id": "TEO-157"
+      "answer": 3,
+      "id": "TEO-159"
     },
     {
       "subject": "TEO",
@@ -2903,7 +2943,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-158"
+      "id": "TEO-160"
     },
     {
       "subject": "TEO",
@@ -2920,7 +2960,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-159"
+      "id": "TEO-161"
     },
     {
       "subject": "TEO",
@@ -2937,7 +2977,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-160"
+      "id": "TEO-162"
     },
     {
       "subject": "TEO",
@@ -2954,7 +2994,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-161"
+      "id": "TEO-163"
     },
     {
       "subject": "TEO",
@@ -2971,7 +3011,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-162"
+      "id": "TEO-164"
     },
     {
       "subject": "TEO",
@@ -2988,7 +3028,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-163"
+      "id": "TEO-165"
     },
     {
       "subject": "TEO",
@@ -3005,7 +3045,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-164"
+      "id": "TEO-166"
     },
     {
       "subject": "TEO",
@@ -3022,13 +3062,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
+        "Uma denúncia de interferência",
         "A participação em um conteste",
         "O uso do alfabeto fonético da UIT",
-        "A operação em QRP",
-        "Uma denúncia de interferência"
+        "A operação em QRP"
       ],
-      "answer": 3,
-      "id": "TEO-165"
+      "answer": 0,
+      "id": "TEO-167"
     },
     {
       "subject": "TEO",
@@ -3045,7 +3085,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-166"
+      "id": "TEO-168"
     },
     {
       "subject": "TEO",
@@ -3062,7 +3102,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-167"
+      "id": "TEO-169"
     },
     {
       "subject": "TEO",
@@ -3079,7 +3119,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-168"
+      "id": "TEO-170"
     },
     {
       "subject": "TEO",
@@ -3096,7 +3136,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-169"
+      "id": "TEO-171"
     },
     {
       "subject": "TEO",
@@ -3113,7 +3153,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-170"
+      "id": "TEO-172"
     },
     {
       "subject": "TEO",
@@ -3130,7 +3170,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-171"
+      "id": "TEO-173"
     },
     {
       "subject": "TEO",
@@ -3147,7 +3187,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-172"
+      "id": "TEO-174"
     },
     {
       "subject": "TEO",
@@ -3164,7 +3204,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-173"
+      "id": "TEO-175"
     },
     {
       "subject": "TEO",
@@ -3181,7 +3221,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-174"
+      "id": "TEO-176"
     },
     {
       "subject": "TEO",
@@ -3198,7 +3238,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-175"
+      "id": "TEO-177"
     },
     {
       "subject": "TEO",
@@ -3215,7 +3255,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-176"
+      "id": "TEO-178"
     },
     {
       "subject": "TEO",
@@ -3232,13 +3272,13 @@
       "checkedByAi": true,
       "questionType": "multiple-choice",
       "options": [
-        "Experimentação técnica com antenas",
         "Anunciar produtos de uma loja",
+        "Experimentação técnica com antenas",
         "Pedir votos para um candidato",
         "Simular uma emergência para testar os colegas"
       ],
-      "answer": 0,
-      "id": "TEO-177"
+      "answer": 1,
+      "id": "TEO-179"
     },
     {
       "subject": "TEO",
@@ -3255,7 +3295,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-178"
+      "id": "TEO-180"
     },
     {
       "subject": "TEO",
@@ -3272,7 +3312,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-179"
+      "id": "TEO-181"
     },
     {
       "subject": "TEO",
@@ -3289,7 +3329,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-180"
+      "id": "TEO-182"
     },
     {
       "subject": "TEO",
@@ -3306,7 +3346,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": true,
-      "id": "TEO-181"
+      "id": "TEO-183"
     },
     {
       "subject": "TEO",
@@ -3323,7 +3363,7 @@
       "checkedByAi": true,
       "questionType": "true-false",
       "answer": false,
-      "id": "TEO-182"
+      "id": "TEO-184"
     },
     {
       "subject": "TEO",
@@ -3341,12 +3381,12 @@
       "questionType": "multiple-choice",
       "options": [
         "Só no início, para economizar tempo",
-        "Com o indicativo completo, no início, durante e no término das emissões",
         "Apenas com o sufixo, por ser mais rápido",
+        "Com o indicativo completo, no início, durante e no término das emissões",
         "Não precisa se identificar enquanto durar a emergência"
       ],
-      "answer": 1,
-      "id": "TEO-183"
+      "answer": 2,
+      "id": "TEO-185"
     },
     {
       "subject": "TEO",
@@ -3365,11 +3405,11 @@
       "options": [
         "A proibição de operar sem identificação",
         "A declaração completa do indicativo de chamada",
-        "O limite de 10 minutos para a transmissão entre estações",
-        "O uso do Código Q limitado às séries QRA a QUZ"
+        "O uso do Código Q limitado às séries QRA a QUZ",
+        "O limite de 10 minutos para a transmissão entre estações"
       ],
-      "answer": 2,
-      "id": "TEO-184"
+      "answer": 3,
+      "id": "TEO-186"
     }
   ]
 }

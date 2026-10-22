@@ -9,6 +9,7 @@ Static quiz/training app for the COER radioamador exam (Classe C). No backend.
 | `considerations/IDEA.md` | the vision — the human's own notes, **not a spec** | orienting |
 | `considerations/SUBJECTS-SURVEY.md` | exam research, **dated 2026-10-12** | any exam/subject/question work |
 | `considerations/QUESTION-QUALITY-SURVEY.md` | bank-vs-exam benchmark, **dated 2026-10-13** | any question-quality work |
+| `considerations/COVERAGE.md` | ementa point → Cartilha section → item counts for TEO/ELE, plus the Classe C/B/A boundary, **dated 2026-10-21** | adding or cutting items; any ELE content near Classe B |
 | `considerations/BRAINSTORM.md` | design decisions + schema + open threads — the product spec | any feature or question work; record new decisions there |
 | `considerations/STACK.md` | technology decisions — static Astro + vanilla TS islands, JSON bank, TS pipeline | any tooling/structure decision |
 | `DESIGN.md` | UI design contract (Dell 1996) — **binding** for UI work | any UI work |
