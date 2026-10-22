@@ -91,6 +91,23 @@ LEG second-pass review (2026-10-13), all 182 items re-read against both texts. N
 - LEG-179: dropped "instead of radiating through the antenna", which the Cartilha doesn't say.
 - LEG-032: fixed a duplicated Cartilha prefix in the reference.
 
+## 6. Expansion cleanup (2026-10-21)
+
+After the 2026-10-18 expansion, the bank felt less like the exam: random topics that don't quite fit COER. A re-read of the 169 new items found four patterns:
+
+| Pattern | Examples | Items cut |
+| --- | --- | --- |
+| Off-ementa niche | NanoVNA, WSPR, ALE, ACDS, IVG, Echolink device list, SDR, DXpedition split, satellite split, QRP watt convention | TEO 15, ELE 1 |
+| Block-diagram position trivia | "which block comes right after the FI amplifier", where the squelch or multiplier sits | TEO 9, ELE 2 |
+| Repeated calculations | about 20 λ/dipole/¼-wave items, extra repeater shifts, SNR in dB in both subjects, P = V·I near-copies | TEO 14, ELE 8 |
+| Strawman errados, content-free certos, extra phonetic/Código Q recall | "ignore distress calls", "spread a rumor on the repeater", "reset the breaker until it holds"; "cooperating against interference is a duty"; QTC/QSA/QRA lookups | TEO 27, ELE 7 |
+
+The CAG and FM limiter/discriminator items (cut in the diagram row) were meant to be rewritten as "what the stage does". The Cartilha shows these stages only as diagram images, with no text, so a function claim would have no Cartilha backing. Mixer/FI is already covered by TEO-057–063 and ELE-113/129, so these two items were cut instead.
+
+Kept items whose stems mentioned the Cartilha were reworded. A new `validate.ts` warning catches Cartilha mentions in stems and options. It still flags six first-batch items (LEG-074, LEG-158, LEG-179, ELE-081, ELE-135, ELE-152), which were left out of this cleanup.
+
+Result: TEO 288 → 223 and ELE 193 → 175. Every distribution target still passes. The rules are recorded in `BRAINSTORM.md` §5 "Exam fidelity".
+
 ---
 
 *Sources (accessed 2026-10-13): id.qsl.br/simulados (app bundle + hosted Cartilha v9); Anatel Cartilha attachment e2bee3ec…; Anatel Manual do Candidato v2026-04.1 (attachment 0a5f2113…); Anatel legacy Legislação bank (attachment 9eba8822…); antenaativa.com.br (prova Anatel, simulador COER, candidate comments); labredf.org.br/2026/10 simulator announcement; telesintese.com.br and gov.br/anatel news on the resumption of exams.*

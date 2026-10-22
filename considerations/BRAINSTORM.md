@@ -38,7 +38,7 @@ Related docs: [`IDEA.md`](./IDEA.md) (the idea) · [`SUBJECTS-SURVEY.md`](./SUBJ
   - **Parametric/template questions**: one reviewed template yields distinct items (e.g. bounded frequency-band and wavelength calculations, selected Código Q and phonetic-alphabet checks, and computable λ/f and Ohm items). Parameter expansion is capped by the diversity guard below.
   - **Template register** as the review artifact: one line per template (topic, shape, option/parameter ranges, expected count). You approve the register, not each sentence.
 - **Diversity guard:** parametric expansion must not become a one-fact-per-question dump. In particular, avoid a long sequence of questions like “a letra X representa Y?” or “o código Q X significa Y?”. Parametric families are kept only for real computations; direct recall is capped (see the quality standard in §5).
-- Honest per-subject pool targets (Parametric-driven):
+- ~~Honest per-subject pool targets (Parametric-driven)~~ — **dropped (2026-10-21):** chasing these numbers pulled in off-exam filler (see the cleanup note below). Bank size is now whatever passes the §5 standard.
 
 | Matéria | Pool estimado |
 | --- | --- |
@@ -47,7 +47,8 @@ Related docs: [`IDEA.md`](./IDEA.md) (the idea) · [`SUBJECTS-SURVEY.md`](./SUBJ
 | Legislação de Telecomunicações | ~165–185 (most hand-written — law content) |
 | **Classe C total** | **~660** |
 
-- **Bank expansion (2026-10-18):** TEO grew to 288 questions (235 certo/errado, 53 multiple-choice) and ELE to 193 (156 certo/errado, 37 multiple-choice). With LEG at 182, the bank holds 663 items, which meets the ~660 target. The 129 TEO and 40 ELE items are appended after the first batch, so earlier IDs are unchanged. All of them are `checkedByAi: true` after a full AI review against Cartilha 2026-06 (2026-10-18). The new TEO material covers the Cartilha block diagrams, antenna polarization, SNR in dB, digital modes and Ato item 10 procedures. ELE added no Eletrônica básica items because that topic is near the 25% cap.
+- **Expansion cleanup (2026-10-21):** the 2026-10-18 expansion (129 TEO, 40 ELE items) drifted away from the exam. It added niche topics (NanoVNA, WSPR, ALE, ACDS, SDR, DXpedition split), block-diagram position trivia, repeated calculation families (about 20 λ/dipole items, SNR in both TEO and ELE), and strawman errado items. The cleanup cut 65 TEO and 18 ELE items. It also removed Cartilha mentions from four stems and retagged the SNR items to `antenas`, where the ementa lists them. The bank is now TEO 223 (176 certo/errado, 47 multiple-choice), ELE 175 (141 certo/errado, 34 multiple-choice) and LEG 182, so 580 items. TEO-001…159 and ELE-001…153 keep their IDs; the expansion items behind them were renumbered. The rules that came out of this are in §5 ("Exam fidelity").
+- **Bank expansion (2026-10-18), superseded by the cleanup above:** TEO grew to 288 and ELE to 193, appended after the first batch. All items were `checkedByAi: true` against Cartilha 2026-06.
 - **First MVP bank (2026-10-13):** TEO has 159 questions (124 certo/errado, 35 multiple-choice), rebuilt to the §5 quality standard against Cartilha 2026-06; all `checkedByAi: true` after a full AI review (2026-10-13), none human-reviewed yet. It replaced the earlier 75-item bank, which was 71% phonetic/Código Q/band recall (see `QUESTION-QUALITY-SURVEY.md`). ELE (CBEE) has 153 questions (125 certo/errado, 28 multiple-choice) on the Classe C ementa only: Anexo 3's Classe B content (colour code, series/parallel, Kirchhoff, reactance, RLC, ASK/FSK/PSK) is left out. All `checkedByAi: true` after a full AI review (2026-10-13). LEG has 182 questions (154 certo/errado, 28 multiple-choice), checked against Cartilha Anexo 2 and the Ato 3448/2026 text; all `checkedByAi: true` (2026-10-13). The larger pool estimates remain long-term targets.
 
 - ~~**Build order:** TEO → ELE → LEG~~ — **done (2026-10-13):** all three banks are built and AI-reviewed.
@@ -97,6 +98,17 @@ Benchmarked against id.qsl.br, the strongest community bank (`QUESTION-QUALITY-S
 - **sourceRef** cites the Cartilha 2026-06 section and page (or Ato 3448 via the Cartilha's transcription).
 - **Calculations** use only real computations (λ ≈ 300/f, λ/2 and λ/4, period, repeater shift, beat frequency, dB/SNR reasoning) with bounded values.
 - **Inspiration, not copying:** community banks (id.qsl.br, LABRE-DF) inform structure and topic breadth only; our wording is original.
+
+### Exam fidelity (decided 2026-10-21)
+
+These rules came out of the expansion cleanup (§4). They apply to every new item.
+
+- **Ementa only.** An item must test a point the Ato 3448 §11.4 ementa names, at the depth the Cartilha teaches it. No tool or brand names (NanoVNA, SDR), and no niche digital-mode detail (WSPR, ALE, ACDS, iGate vs digipeater). One or two items on what a common mode is for (APRS, Echolink) are fine.
+- **No mention of the Cartilha in stems or options.** The real exam doesn't quote its study guide. Citations go in `sourceRef` and the explanation. `validate.ts` warns on this.
+- **Block diagrams test function, not position.** Ask what a stage does or what signal it handles, not which box comes after which in one figure.
+- **Calculation families are capped.** A new batch adds at most 2–3 items per family (λ, dipole length, repeater shift, SNR in dB, P = V·I). It doesn't repeat a calculation the other subject already covers.
+- **No strawman errados.** If nobody would plausibly believe the false version ("ignore distress calls", "reset the breaker until it holds"), the item tests nothing.
+- **No content-free certos.** "Cooperating against interference is a duty" can't be got wrong. Make it a scenario or drop it.
 
 ## 6. Other decisions
 
